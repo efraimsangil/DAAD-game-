@@ -153,4 +153,101 @@ Este apartado es especialmente importante.
 
 #### Acciones
 
+Vamos a comenzar a introducir cierta funcionalidad a la aventura. Para eso vamos a hacer uso de la zona **/PRO**, en este caso **/PRO 5**.
 
+```json
+> EXAMINA MESITA AT lMadrid
+                MESSAGE "La mesita de noche está limpia y perfecta."
+                ISAT oMovil 252
+                MESSAGE "Hay un teléfono móvil en ella."
+                CREATE oMovil
+                DONE
+
+> EXAMINA MESITA AT lMadrid
+                NOTCARR oMovil
+                MESSAGE "El teléfono sigue sonando"
+                DONE  
+
+> EXAMINA MESITA AT lMadrid
+                DONE  
+```
+
+Explicación de la primera entrada:
+
+La primera que pones **EXAMINAR MESITA**, va a encontrar el objeto (lo hacemos visible en esta localización) y lo creamos.
+
+- **EXAMINA**: este es el verbo al que vamos a darle funcionalidad
+- **MESITA**: es el objeto al cual podemos hacer uso del verbo
+- **AT lMadrid**: indica que se puede usar en esta localización
+- **MESSAGE**: El texto que mostramos al ejecutar esta acción.
+- **ISAT oMovil 252**: Indicamos que hay un móvil. Si no ha usado antes **EXAMINA MESITA**, ese móvil no aparece por ningún sitio porque es un objeto oculto que deja de serlo al usar esta acción.
+- **MESSAGE**: El texto que vamos a mostrar en pantalla tras descubrir el nuevo objeto.
+- **CREATE oMovil**: Acabamos de crear el objeto y ya será siempre visible.
+- **DONE**: Acaba la acción. No se ejecuta nada más.
+
+Explicación de la segunda entrada: (Sólo los cambios que hay)
+
+Si pones de nuevo **EXAMINAR MESITA** y **NOTCARR oMovil**, es decir, no hemos cogido el móvil aún (es el acrónimo de **NOT CARRIED**), el mensaje de texto “*El teléfono sigue sonando*” es una pista más que te indica que debes cogerlo.
+
+- **NOTCARR oMobil**: Comprueba si aún no hemos cogido el móvil
+- **MESSAGE**: El texto que mostramos
+- **DONE**: Fin de acción
+
+Explicación de la última entrada:
+
+Habiendo cogido ya el móvil, el mensaje simplemente describe la mesita.
+
+#### Seguimos con más acciones
+
+Vamos a poner un par de acciones más para la localización **lMadrid**:
+
+```json
+> USAR  MOVIL AT lMadrid
+                CARRIED oMovil ; ¿lleva móvil?
+                MESSAGE "+Buenos días hijo. Qué tal estás?.#n-Hasta que me llamaste estaba como un rey, en cama, calentito y tratando de negociar con Morpheo una segunda ronda.#n+Dile a Morpheo que espere un momento. Escucha, vente a la cabaña a pasar el día con nosotros, tenemos algo que contarte#n-Me apetece mucho, si... Pero no puede...#n+Hasta luego#n-Cojonudo, no he podido poner un excusa, tengo que ir."
+                SET fUsarMovil
+                DONE
+
+> MIRAR   _    AT lMadrid
+                CARRIED oMovil ; ¿lleva movil?
+                NOTZERO fUsarMovil
+                MESSAGE "Aquí ya no tienes nada que hacer. Tira para el coche: Este"
+                DONE
+
+> E     _      AT lMadrid
+                Zero fUsarMovil
+                MESSAGE "No crees que deberías atender al móvil?"
+                DONE
+```
+
+Explicación de la primera entrada:
+
+Aquí vamos a controlar que, una vez cogido el móvil, lo use.
+
+- **USAR MOVIL**: la acción que vamos a controlar.
+- **AT lMadrid**: en la localización de lMadrid
+- **CARRIED oMovil**: controlamos que cogió el móvil.
+- **MESSAGE**: Es el texto que aparece al coger el móvil. La conversación con su padre.
+- **SET fUsarMovil**: Activamos el Flag de ha usado el móvil. El Flag se pone a 1.
+- **DONE**: Acaba la acción.
+
+Explicación de la segunda entrada:
+
+Como se supone que ya hemos cogido el móvil y hablado con nuestro Padre, debemos ayudar al jugador a que dé el siguiente paso. Y para que no se ponga a enredar en la habitación porque NO hay nada más que hacer, le ayudamos con la acción **MIRAR**, que siempre que la usamos, nos muestra la descripción de dicha localización. Al definirla aquí, le podemos dar más pistas al jugador.
+
+- **MIRAR**  __ : Es el verbo al que le programamos esta funcionalidad, que es cuando use MIRAR lo que sea (ese _ es lo que indica).
+- **AT lMadrid**: en la localización lMadrid
+- **CARRIED**: Comprobamos que lleve el móvil en su inventario
+- **NOTZERO fUsarMovil**: Comprobamos que usó el móvil, es decir, que cogió la llamada.
+- **MESSAGE**: El mensaje que mostramos al jugador.
+- 	**DONE**: Acaba la acción.
+
+Explicación de la tercera entrada:
+
+Esta entrada es para controlar que no se vaya de la habitación a la localización lCoche (Este) sin haber cogido la llamada.
+
+- **E  _**: Si quiere ir al este .
+- **AT lMadrid**: estando en dicha localización.
+- **ZERO fUsarMovil:** comprobamos si el Flag es 0, es decir, que no ha usado el móvil, que no cogió la llamada.
+- **MESSAGE**: El texto a mostrar.
+- **DONE**: Acaba la acción.
