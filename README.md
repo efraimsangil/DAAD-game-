@@ -62,6 +62,6 @@ Explicación:
 
 Lo primero de todo es decir que, por cada **CONexión**, debe existir una localidad definida en **/CTL**. 
 
-	- **/0** es el comienzo de la aventura, la primera pantalla que aparece nada más cargar nuestro juego. En esta localidad no hay objetos ni acciones. Es sencillamente la presentación de nuestra aventura y una vez leída, pasa automáticamente a la siguiente localidad, la **/1**.
-	
-	El texto que se muestra aquí es el definido en **/LTX** como **/0**. Y también debe existir una entrada de dicha localidad en **/CTL**, ya que dicha entrada o definición, será la que se use más adelante en las secciones de **PROcesos** o **/PRO** de nuestro fichero **DSF**. Ya, explicaremos esto de los **/PRO** más adelante.
+- **/0** es el comienzo de la aventura, la primera pantalla que aparece nada más cargar nuestro juego. En esta localidad no hay objetos ni acciones. Es sencillamente la presentación de nuestra aventura y una vez leída, pasa automáticamente a la siguiente localidad, la **/1**.
+
+El texto que se muestra aquí es el definido en **/LTX** como **/0**. Y también debe existir una entrada de dicha localidad en **/CTL**, ya que dicha entrada o definición, será la que se use más adelante en las secciones de **PROcesos** o **/PRO** de nuestro fichero **DSF**. Ya, explicaremos esto de los **/PRO** más adelante.
