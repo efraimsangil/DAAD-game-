@@ -92,3 +92,65 @@ También vamos a definir algunos verbos nuevos que vamos a usar en la aventura y
 USAR    33      verb
 ```
 
+Para esta primera parte, hemos definido el verbo **USAR** porque será lo que tendrá que hacer nuestro protagonista con el móvil, **USAR MOVIL**. De este modo, es como podrá continuar la aventura. Luego veremos el por qué.
+
+En la parte principal, en la zona **/CTL** o **Sección de ConTroL**, vamos a añadir algunas cositas más.
+
+Algunos **Flags** que necesitaremos para esta primera parte. Ahora explicaré para que los usaremos:
+
+```json
+;Flags de usuario   
+#define fPuertaLenera       64
+#define fPuertaGarage       65
+#define fPuertaPorche       66
+#define fUsarMovil          67
+```
+
+Estos **Flags**, son los que vamos a usar durante la aventura para saber si abrió alguna puerta o si usó el móvil. Son condicionales para avanzar en la aventura, me explico, si por ejemplo no has usado el móvil, es decir, no decidiste coger la llamada de teléfono, no puedes seguir avanzando en la aventura. Los **Flags** de las puertas, igual, si no se activan dichos **Flags**, no podrás acceder a nuevas localizaciones, como la *Leñera*, el *Garage* o abrir la puerta principal de la casa ubicada en la localización *Porche de la casa*. Estos **Flags** van a contener un 0 al inicio de la aventura y valdrán 1 cuando hayamos realizado ciertas acciones, como **COGER MOVIL** o **COGER LLAVE**.
+
+Y ahora definimos todos los objetos que vamos a usar en estas **Localizaciones**.
+
+```json
+;Objetos
+#define oMovil          0
+#define oLlave1         1
+#define oLlave2         2
+#define oBateriaCoche   3
+#define oPinzasCoche    4
+#define oLlave0         5
+#define oFelpudo        6
+#define oMaceta         7
+```
+
+También tenemos que definir nuestros **OBJetos** en la zona **/OBJ**. 
+
+```json
+/OBJ    ;Objetos
+;obj  starts  weight    c w  5 4 3 2 1 0 9 8 7 6 5 4 3 2 1 0    noun   adjective
+;num    at
+/0      252     1       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    MOVIL       _
+/1      252     1       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    LLAV1       _
+/2      252     1       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    LLAV2       _
+/3      252     1       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    BATERIA     _
+/4      252     1       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    PINZAS      _
+/5      252     1       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    LLAV0       _
+/6      252     1       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    FELPUDO     _
+/7      252     1       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    MACETA      _
+```
+
+Este apartado es especialmente importante.
+- **Obj**: es el número del objeto definido en /CTL
+- **Starts**: hay tres posibilidades:
+ - 252: El objeto no está en ninguna parte (de momento no es visible).
+ - 253: El objeto lo llevamos puesto (es una prenda).
+ - 254: El objeto lo llevamos en nuestro inventario.
+- **Weight**: (Buscar documentación)
+- **C**: (Buscar documentación)
+- **W**: (Buscar documentación)
+- **Números**: (Buscar documentación)
+- **Noun**: Nombre del objeto
+- **Adjetive**: (Buscar documentación)
+
+#### Acciones
+
+
