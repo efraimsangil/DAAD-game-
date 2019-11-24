@@ -225,18 +225,18 @@ Explicación de la primera entrada:
 Aquí vamos a controlar que, una vez cogido el móvil, lo use.
 
 - **USAR MOVIL**: la acción que vamos a controlar.
-- **AT lMadrid**: en la localización de lMadrid
+- **AT lMadrid**: en la localización de **lMadrid**
 - **CARRIED oMovil**: controlamos que cogió el móvil.
 - **MESSAGE**: Es el texto que aparece al coger el móvil. La conversación con su padre.
-- **SET fUsarMovil**: Activamos el Flag de ha usado el móvil. El Flag se pone a 1.
+- **SET fUsarMovil**: Activamos el Flag de ha usado el móvil. El **Flag** se pone a 1.
 - **DONE**: Acaba la acción.
 
 Explicación de la segunda entrada:
 
 Como se supone que ya hemos cogido el móvil y hablado con nuestro Padre, debemos ayudar al jugador a que dé el siguiente paso. Y para que no se ponga a enredar en la habitación porque NO hay nada más que hacer, le ayudamos con la acción **MIRAR**, que siempre que la usamos, nos muestra la descripción de dicha localización. Al definirla aquí, le podemos dar más pistas al jugador.
 
-- **MIRAR**  __ : Es el verbo al que le programamos esta funcionalidad, que es cuando use MIRAR lo que sea (ese _ es lo que indica).
-- **AT lMadrid**: en la localización lMadrid
+- **MIRAR**  __ : Es el verbo al que le programamos esta funcionalidad, que es cuando use **MIRAR** lo que sea (ese **_** es lo que indica).
+- **AT lMadrid**: en la localización **lMadrid**
 - **CARRIED**: Comprobamos que lleve el móvil en su inventario
 - **NOTZERO fUsarMovil**: Comprobamos que usó el móvil, es decir, que cogió la llamada.
 - **MESSAGE**: El mensaje que mostramos al jugador.
@@ -244,7 +244,7 @@ Como se supone que ya hemos cogido el móvil y hablado con nuestro Padre, debemo
 
 Explicación de la tercera entrada:
 
-Esta entrada es para controlar que no se vaya de la habitación a la localización lCoche (Este) sin haber cogido la llamada.
+Esta entrada es para controlar que no se vaya de la habitación a la localización **lCoche (Este)* sin haber cogido la llamada.
 
 - **E  _**: Si quiere ir al este .
 - **AT lMadrid**: estando en dicha localización.
