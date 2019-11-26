@@ -59,6 +59,9 @@ _
 #define fPuertaGarage       65
 #define fPuertaPorche       66
 #define fUsarMovil          67
+#define fNoUsarMovil        68
+#define fExaminarMaceta     69
+
 
 ;localidades
 #define lIntro      0
@@ -75,10 +78,10 @@ _
 #define oLlave2         2
 #define oBateriaCoche   3
 #define oPinzasCoche    4
-#define oLlave0         5
+#define oLlavePorche    5
 #define oFelpudo        6
 #define oMaceta         7
-
+#define oGnomo          8
 
 ;------------------------------------------------------------------------------
 /VOC    ;Vocabulario
@@ -120,6 +123,8 @@ PINZAS  104     noun
 LLAV0   105     noun
 FELPUDO 106     noun
 MACETA  107     noun
+GNOMO   108     noun
+PORCHE  109     noun
 
 ;                       Verbos
 COGER   20      verb
@@ -148,6 +153,7 @@ JUGAR   32      verb
 
 ;verbos jugador
 USAR    33      verb
+DORMIR  34      verb
 
 ;                            Adjetivos
 PEQUE   2       adjective
@@ -266,17 +272,18 @@ LUEGO   2       conjugation
 /5 "una llave 0"
 /6 "un felpudo"
 /7 "una maceta"
+/8 "un Gnomo"
 
 
 ;------------------------------------------------------------------------------
 /LTX    ;Location Texts
 /0 "Es sábado, son las 08:00AM y aún sigues en la cama. Semi despierto y sin ganas de levantarte. Madrugas mucho durante la semana y no te apetece mucho abandonar el calorcito que sientes bajo el plumón."
 /1 "Te giras en la cama con la firme intención de dormir un poquito más. Suena el teléfono móvil. Alguien ya decidió por ti que te debes despertar del todo. Tienes a tu lado la mesita de noche."
-/2 "Sales de casa y coges tu coche rumbo a la sierra de gredos desde Madrid. Es un paseito, pero el viaje se hace ameno escuchando un poco de música."
+/2 "Sales de casa y coges tu coche rumbo a la sierra de gredos desde Madrid. Es un paseito, pero el viaje se hace ameno escuchando un poco de música. Vete al Este"
 /3 "Estás en el exterior de la casa. Desde aquí puedes ir al Norte, Sur y Este"
 /4 "Estás en la leñera. Puedes entrar o volver al Sur"
 /5 "Lograste entrar en el garage. Que fácil es todo cuando tienes las llaves"
-/6 "Estás en el porche de la casa. Al Este está la puerta principal. Oeste para volver al exterior de la casa"
+/6 "Estás en el porche de la casa. Pero recuerdas que cuando tus padres salían a pasear por el bosque, solían esconderla en algún sitio. Lo recuerdas? Al Este está la puerta principal."
 ;------------------------------------------------------------------------------
 /CON    ;Conexiones
 /0
@@ -307,16 +314,13 @@ O lExtcasa
 /5      252     1       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    LLAV0       _
 /6      252     1       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    FELPUDO     _
 /7      252     1       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    MACETA      _
-
+/8      252     1       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    GNOMO       _
 
 ;------------------------------------------------------------------------------
 /PRO 0       ;Bucle principal de localidades
 
-
 > _       _     AT      0               ; Empezamos una partida
                 PROCESS 6               ; El proceso de inicialización
-                
-                
 
 > _       _     WINDOW  0               ; Ventana de gráficos
                 CLEAR   fDarkF           ; Asume que hay luz
@@ -419,13 +423,73 @@ O lExtcasa
                 SET fUsarMovil
                 DONE 
 
-> MIRAR   _    AT lMadrid
+> MIRAR   _    AT lMadrid ; Si ya has cogido el movil e insistes en mirar cosas
                 CARRIED oMovil ; ¿lleva movil?
                 NOTZERO fUsarMovil
                 MESSAGE "Aquí ya no tienes nada que hacer. Tira para el coche: Este"
                 DONE
 
-> E     _      AT lMadrid
+> DORMIR  _    AT lMadrid
+                NOTCARR oMovil ; No hemos cogido el movil
+                ZERO fNoUsarMovil
+                SET fNoUsarMovil
+                MESSAGE "El móvil sigue sonando. No piensas cogerlo?"             
+                DONE
+
+> DORMIR  _    AT lMadrid
+                NOTZERO fNoUsarMovil
+                NOTCARR oMovil ; No hemos cogido el movil
+                MESSAGE "Nada en este mundo va a romper tu momento de paz y tranquilidad. Cuando te levantes, seguro que te hechas una partida al nuevo juego de MSX, Venganza"
+                END
+
+> EXAMINAR MACETA AT lPorche
+                NOTCARR oMaceta
+                MESSAGE "Igual es mejor coger la maceta para verla más de cerca"
+                DONE
+                
+> EXAMINAR MACETA AT lPorche
+                CARRIED oMaceta
+                ZERO fExaminarMaceta
+                SET fExaminarMaceta
+                MESSAGE "La maceta contiene aún arena y una planta que está más seca que la mojama."
+                DONE
+
+> EXAMINAR MACETA AT lPorche
+                NOTZERO fExaminarMaceta                
+                MESSAGE "Yo creo que ya está bien de jugar con la maceta."
+                DONE
+
+> EXAMINAR FELPUDO AT lPorche
+	            MESSAGE "Es un clásico felpudo de esparto con el mensaje WELCOME HOME."
+                DONE
+
+> EXAMINAR GNOMO AT lPorche
+	            MESSAGE "Es un gnomo rechoncho, con sonrisa picaresca y una mirada intensa. Suena algo suelto dentro."
+                DONE
+
+> MIRAR     _ AT lPorche
+                ISAT oLlavePorche 252
+                ;CREATE oLlavePorche
+                ISAT oMaceta 252
+                CREATE oMaceta
+                ISAT oFelpudo 252
+                CREATE oFelpudo
+                ISAT oGnomo 252
+                CREATE oGnomo
+                MESSAGE "A tu alrededor puedes ver en el suelo una vieja maceta con lo que debió ser una planta, un felpudo y un gnomo de jardín."
+                DONE
+
+> COGER FELPUDO AT lPorche
+	            MESSAGE "Debajo del felpudo no hay nada a excepción de un cienpies que sale por patas al haber sido descubierto."
+                DONE
+
+
+
+> E     _      AT lPorche ; Si no has usado el movil y quieres salir al Este
+                MESSAGE "No puedes entrar en la casa. No tienes llaves."
+                DONE
+
+> E     _      AT lMadrid ; Si no has usado el movil y quieres salir al Este
                 Zero fUsarMovil
                 MESSAGE "No crees que deberías atender al móvil?"
                 DONE
