@@ -37,6 +37,7 @@
 		{"symbol":"_VOC_VIEJO", "Value":4},
 		{"symbol":"_VOC_GRAND", "Value":3},
 		{"symbol":"_VOC_PEQUE", "Value":2},
+		{"symbol":"_VOC_TIRAR", "Value":35},
 		{"symbol":"_VOC_DORMI", "Value":34},
 		{"symbol":"_VOC_USAR", "Value":33},
 		{"symbol":"_VOC_JUGAR", "Value":32},
@@ -112,6 +113,8 @@
 		{"symbol":"LCOCHE", "Value":2},
 		{"symbol":"LMADRID", "Value":1},
 		{"symbol":"LINTRO", "Value":0},
+		{"symbol":"FCOGERGNOMO", "Value":71},
+		{"symbol":"FCOGERFELPUDO", "Value":70},
 		{"symbol":"FEXAMINARMACETA", "Value":69},
 		{"symbol":"FNOUSARMOVIL", "Value":68},
 		{"symbol":"FUSARMOVIL", "Value":67},
@@ -249,6 +252,7 @@
 		{"VocWord":"SUBIR", "Value":10,"VocType":0 },
 		{"VocWord":"SUR", "Value":3,"VocType":2 },
 		{"VocWord":"SV", "Value":26,"VocType":0 },
+		{"VocWord":"TIRAR", "Value":35,"VocType":0 },
 		{"VocWord":"TODAS", "Value":20,"VocType":2 },
 		{"VocWord":"TODO", "Value":20,"VocType":2 },
 		{"VocWord":"TODOS", "Value":20,"VocType":2 },
@@ -446,34 +450,62 @@
 	},
 	{
 		"Value":12,
-		"Text":"Es un gnomo rechoncho, con sonrisa picaresca y una mirada intensa. Suena algo suelto dentro."
+		"Text":"Es un gnomo rechoncho, con sonrisa picaresca y una mirada intensa."
 	},
 	{
 		"Value":13,
-		"Text":"A tu alrededor puedes ver en el suelo una vieja maceta con lo que debió ser una planta, un felpudo y un gnomo de jardín."
+		"Text":"Lo miras con atención y lo agitas en el aire. Suena algo suelto dentro."
 	},
 	{
 		"Value":14,
-		"Text":"Debajo del felpudo no hay nada a excepción de un cienpies que sale por patas al haber sido descubierto."
+		"Text":"A tu alrededor puedes ver en el suelo una vieja maceta con lo que debió ser una planta, un felpudo y un gnomo de jardín."
 	},
 	{
 		"Value":15,
-		"Text":"No puedes entrar en la casa. No tienes llaves."
+		"Text":"Debajo del felpudo no hay nada a excepción de un cienpies que sale por patas al haber sido descubierto."
 	},
 	{
 		"Value":16,
-		"Text":"No crees que deberías atender al móvil?"
+		"Text":"La llave de la casa no va a aparecer sola. Sigue buscando."
 	},
 	{
 		"Value":17,
-		"Text":"No puedes entrar en la leñera. La puerta está cerrada. Necesitas una llave."
+		"Text":"Tiras la maceta contra el suelo y no se rompe. De qué estará hecha?"
 	},
 	{
 		"Value":18,
-		"Text":"No puedes entrar en el garage. La puerta está cerrada.Necesitas una llave."
+		"Text":"Dejas la maceta en su sitio. Que buen hijo eres, si te viera tu madre."
 	},
 	{
 		"Value":19,
+		"Text":"Dejas el felpudo en su sitio."
+	},
+	{
+		"Value":20,
+		"Text":" al tirar el gnomo contra el suelo y saltar en mil pedazos."
+	},
+	{
+		"Value":21,
+		"Text":"No puedes entrar en la casa. No tienes llaves."
+	},
+	{
+		"Value":22,
+		"Text":"No crees que deberías atender al móvil?"
+	},
+	{
+		"Value":23,
+		"Text":"Cojonudo! Te has dejado el móvil en casa. No puedes volver porque vas con prisas."
+	},
+	{
+		"Value":24,
+		"Text":"No puedes entrar en la leñera. La puerta está cerrada. Necesitas una llave."
+	},
+	{
+		"Value":25,
+		"Text":"No puedes entrar en el garage. La puerta está cerrada.Necesitas una llave."
+	},
+	{
+		"Value":26,
 		"Text":"No puedes entrar la casa. La puerta está cerrada. Necesitas una llave."
 	}
 	],
@@ -1701,10 +1733,72 @@
 						"NumParams":1
 					},
 					{
+						"Opcode":9,
+						"Condact":"NOTCARR",
+						"Indirection1":0,
+						"Param1":8,
+						"NumParams":1
+					},
+					{
+						"Opcode":11,
+						"Condact":"ZERO",
+						"Indirection1":0,
+						"Param1":71,
+						"NumParams":1
+					},
+					{
+						"Opcode":47,
+						"Condact":"SET",
+						"Indirection1":0,
+						"Param1":71,
+						"NumParams":1
+					},
+					{
 						"Opcode":38,
 						"Condact":"MESSAGE",
 						"Indirection1":0,
 						"Param1":12,
+						"NumParams":1
+					},
+					{
+						"Opcode":22,
+						"Condact":"DONE",
+						"NumParams":0
+					}
+					]
+			},
+			{
+				"Entry":"EX GNOMO",
+				"Verb":30,
+				"Noun":108,
+				"condacts":
+					[
+					{
+						"Opcode":0,
+						"Condact":"AT",
+						"Indirection1":0,
+						"Param1":6,
+						"NumParams":1
+					},
+					{
+						"Opcode":8,
+						"Condact":"CARRIED",
+						"Indirection1":0,
+						"Param1":8,
+						"NumParams":1
+					},
+					{
+						"Opcode":12,
+						"Condact":"NOTZERO",
+						"Indirection1":0,
+						"Param1":71,
+						"NumParams":1
+					},
+					{
+						"Opcode":38,
+						"Condact":"MESSAGE",
+						"Indirection1":0,
+						"Param1":13,
 						"NumParams":1
 					},
 					{
@@ -1731,14 +1825,6 @@
 						"Opcode":55,
 						"Condact":"ISAT",
 						"Indirection1":0,
-						"Param1":5,
-						"Param2":252,
-						"NumParams":2
-					},
-					{
-						"Opcode":55,
-						"Condact":"ISAT",
-						"Indirection1":0,
 						"Param1":7,
 						"Param2":252,
 						"NumParams":2
@@ -1784,7 +1870,7 @@
 						"Opcode":38,
 						"Condact":"MESSAGE",
 						"Indirection1":0,
-						"Param1":13,
+						"Param1":14,
 						"NumParams":1
 					},
 					{
@@ -1808,10 +1894,230 @@
 						"NumParams":1
 					},
 					{
+						"Opcode":11,
+						"Condact":"ZERO",
+						"Indirection1":0,
+						"Param1":70,
+						"NumParams":1
+					},
+					{
+						"Opcode":47,
+						"Condact":"SET",
+						"Indirection1":0,
+						"Param1":70,
+						"NumParams":1
+					},
+					{
 						"Opcode":38,
 						"Condact":"MESSAGE",
 						"Indirection1":0,
-						"Param1":14,
+						"Param1":15,
+						"NumParams":1
+					},
+					{
+						"Opcode":22,
+						"Condact":"DONE",
+						"NumParams":0
+					}
+					]
+			},
+			{
+				"Entry":"COGER FELPU",
+				"Verb":20,
+				"Noun":106,
+				"condacts":
+					[
+					{
+						"Opcode":0,
+						"Condact":"AT",
+						"Indirection1":0,
+						"Param1":6,
+						"NumParams":1
+					},
+					{
+						"Opcode":12,
+						"Condact":"NOTZERO",
+						"Indirection1":0,
+						"Param1":70,
+						"NumParams":1
+					},
+					{
+						"Opcode":9,
+						"Condact":"NOTCARR",
+						"Indirection1":0,
+						"Param1":5,
+						"NumParams":1
+					},
+					{
+						"Opcode":38,
+						"Condact":"MESSAGE",
+						"Indirection1":0,
+						"Param1":16,
+						"NumParams":1
+					},
+					{
+						"Opcode":22,
+						"Condact":"DONE",
+						"NumParams":0
+					}
+					]
+			},
+			{
+				"Entry":"TIRAR MACET",
+				"Verb":35,
+				"Noun":107,
+				"condacts":
+					[
+					{
+						"Opcode":0,
+						"Condact":"AT",
+						"Indirection1":0,
+						"Param1":6,
+						"NumParams":1
+					},
+					{
+						"Opcode":8,
+						"Condact":"CARRIED",
+						"Indirection1":0,
+						"Param1":7,
+						"NumParams":1
+					},
+					{
+						"Opcode":38,
+						"Condact":"MESSAGE",
+						"Indirection1":0,
+						"Param1":17,
+						"NumParams":1
+					},
+					{
+						"Opcode":41,
+						"Condact":"DROP",
+						"Indirection1":0,
+						"Param1":7,
+						"NumParams":1
+					},
+					{
+						"Opcode":22,
+						"Condact":"DONE",
+						"NumParams":0
+					}
+					]
+			},
+			{
+				"Entry":"DEJAR MACET",
+				"Verb":21,
+				"Noun":107,
+				"condacts":
+					[
+					{
+						"Opcode":0,
+						"Condact":"AT",
+						"Indirection1":0,
+						"Param1":6,
+						"NumParams":1
+					},
+					{
+						"Opcode":8,
+						"Condact":"CARRIED",
+						"Indirection1":0,
+						"Param1":7,
+						"NumParams":1
+					},
+					{
+						"Opcode":38,
+						"Condact":"MESSAGE",
+						"Indirection1":0,
+						"Param1":18,
+						"NumParams":1
+					},
+					{
+						"Opcode":41,
+						"Condact":"DROP",
+						"Indirection1":0,
+						"Param1":7,
+						"NumParams":1
+					},
+					{
+						"Opcode":22,
+						"Condact":"DONE",
+						"NumParams":0
+					}
+					]
+			},
+			{
+				"Entry":"DEJAR FELPU",
+				"Verb":21,
+				"Noun":106,
+				"condacts":
+					[
+					{
+						"Opcode":0,
+						"Condact":"AT",
+						"Indirection1":0,
+						"Param1":6,
+						"NumParams":1
+					},
+					{
+						"Opcode":38,
+						"Condact":"MESSAGE",
+						"Indirection1":0,
+						"Param1":19,
+						"NumParams":1
+					},
+					{
+						"Opcode":22,
+						"Condact":"DONE",
+						"NumParams":0
+					}
+					]
+			},
+			{
+				"Entry":"TIRAR GNOMO",
+				"Verb":35,
+				"Noun":108,
+				"condacts":
+					[
+					{
+						"Opcode":0,
+						"Condact":"AT",
+						"Indirection1":0,
+						"Param1":6,
+						"NumParams":1
+					},
+					{
+						"Opcode":55,
+						"Condact":"ISAT",
+						"Indirection1":0,
+						"Param1":5,
+						"Param2":252,
+						"NumParams":2
+					},
+					{
+						"Opcode":44,
+						"Condact":"CREATE",
+						"Indirection1":0,
+						"Param1":5,
+						"NumParams":1
+					},
+					{
+						"Opcode":40,
+						"Condact":"GET",
+						"Indirection1":0,
+						"Param1":5,
+						"NumParams":1
+					},
+					{
+						"Opcode":38,
+						"Condact":"MESSAGE",
+						"Indirection1":0,
+						"Param1":20,
+						"NumParams":1
+					},
+					{
+						"Opcode":43,
+						"Condact":"DESTROY",
+						"Indirection1":0,
+						"Param1":8,
 						"NumParams":1
 					},
 					{
@@ -1838,7 +2144,7 @@
 						"Opcode":38,
 						"Condact":"MESSAGE",
 						"Indirection1":0,
-						"Param1":15,
+						"Param1":21,
 						"NumParams":1
 					},
 					{
@@ -1872,7 +2178,55 @@
 						"Opcode":38,
 						"Condact":"MESSAGE",
 						"Indirection1":0,
-						"Param1":16,
+						"Param1":22,
+						"NumParams":1
+					},
+					{
+						"Opcode":22,
+						"Condact":"DONE",
+						"NumParams":0
+					}
+					]
+			},
+			{
+				"Entry":"E _",
+				"Verb":4,
+				"Noun":255,
+				"condacts":
+					[
+					{
+						"Opcode":0,
+						"Condact":"AT",
+						"Indirection1":0,
+						"Param1":1,
+						"NumParams":1
+					},
+					{
+						"Opcode":12,
+						"Condact":"NOTZERO",
+						"Indirection1":0,
+						"Param1":67,
+						"NumParams":1
+					},
+					{
+						"Opcode":8,
+						"Condact":"CARRIED",
+						"Indirection1":0,
+						"Param1":0,
+						"NumParams":1
+					},
+					{
+						"Opcode":38,
+						"Condact":"MESSAGE",
+						"Indirection1":0,
+						"Param1":23,
+						"NumParams":1
+					},
+					{
+						"Opcode":43,
+						"Condact":"DESTROY",
+						"Indirection1":0,
+						"Param1":0,
 						"NumParams":1
 					},
 					{
@@ -1906,7 +2260,7 @@
 						"Opcode":38,
 						"Condact":"MESSAGE",
 						"Indirection1":0,
-						"Param1":17,
+						"Param1":24,
 						"NumParams":1
 					},
 					{
@@ -1940,7 +2294,7 @@
 						"Opcode":38,
 						"Condact":"MESSAGE",
 						"Indirection1":0,
-						"Param1":18,
+						"Param1":25,
 						"NumParams":1
 					},
 					{
@@ -1974,7 +2328,7 @@
 						"Opcode":38,
 						"Condact":"MESSAGE",
 						"Indirection1":0,
-						"Param1":19,
+						"Param1":26,
 						"NumParams":1
 					},
 					{
