@@ -63,6 +63,7 @@ _
 #define fExaminarMaceta     69
 #define fCogerFelpudo       70
 #define fCogerGnomo         71
+#define fCerillas           72
 
 ;localidades
 #define lIntro       0
@@ -73,6 +74,7 @@ _
 #define lGarage      5
 #define lPorche      6
 #define lDescansillo 7
+#define lPasillo1    8
 
 ;Objetos
 #define oMovil          0
@@ -84,6 +86,7 @@ _
 #define oFelpudo        6
 #define oMaceta         7
 #define oGnomo          8
+#define oCerillas       9
 
 ;------------------------------------------------------------------------------
 /VOC    ;Vocabulario
@@ -127,7 +130,12 @@ FELPUDO  106     noun
 MACETA   107     noun
 GNOMO    108     noun
 PORCHE   109     noun
-METALICA 110    noun
+METALICA 110     noun
+PUERTA   111     noun
+CAJON    112     noun
+CERILLAS 113     noun
+BODEGA   114     noun
+ESCALERAS 115    noun
 
 ;                       Verbos
 COGER   20      verb
@@ -159,6 +167,8 @@ USAR     33      verb
 DORMIR   34      verb
 TIRAR    35      verb
 ESCUCHAR 36      verb
+ENCENDER 37      verb
+ABRIR    38      verb
 
 ;                            Adjetivos
 PEQUE   2       adjective
@@ -278,7 +288,7 @@ LUEGO   2       conjugation
 /6 "un felpudo"
 /7 "una maceta"
 /8 "un Gnomo"
-
+/9 "una caja de cerillas"
 
 ;------------------------------------------------------------------------------
 /LTX    ;Location Texts
@@ -324,6 +334,7 @@ E lDescansillo
 /6      252     1       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    FELPUDO     _
 /7      252     1       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    MACETA      _
 /8      252     1       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    GNOMO       _
+/9      252     1       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    CERILLAS    _
 
 ;------------------------------------------------------------------------------
 /PRO 0       ;Bucle principal de localidades
@@ -539,12 +550,55 @@ E lDescansillo
                 DONE
 
 ;USAR LLAVE
-ABRIR PUERTA	AT lPorche
+> ABRIR PUERTA	AT lPorche
                 CARRIED oLlavePorche
-            	MESSAGE "Abres la puerta con la llave y notas que la luz que viste desde el exterior se acaba de apagar. Te preparan una sorpresa? De esas de: "hacemos que nos estamos y luego gritamos todos a la vez: Bienvenido Marcos!!". Odias las putas sorpresas."
+            	MESSAGE "Ya estás dentro de la casa. Hace frío. Y apenas hay luz. Te has tropezado con la mesita de la entrada.#n- Hola? Hay alguien en casa?#n-No quiero bromitas porque sino me voy a cabrear y lo sabéis!#nNo responde nadie."
                 goto lDescansillo
                 DONE
 
+> MIRAR _       AT lDescansillo
+                MESSAGE "Hay poca luz. Puedes ver las escaleras que suben a las habitaciones en la planta superior, el baño de la planta de abajo, la entrada a la cocina y enfrente el salón. Y por supuesto, la mesita con la que has tropezado."
+                DONE
+
+> EXAMINAR MESITA AT lDescansillo
+                MESSAGE "Es una preciosa mesita de madera con patas forjadas de hierro. Tu madre la heredó de sus padres. Tiene un cajón semiabierto."
+                DONE
+
+> ABRIR CAJON   AT lDescansillo
+                ISAT oLlave1 252
+                ISAT oLlave2 252                
+                ISAT oCerillas 252                
+                MESSAGE "En el cajón de la mesita puedes ver las llaves del garage y de la leñera, además de unas cerillas. Lo coges todo!!!"   
+                CREATE oLlave1
+                GET oLlave1
+                CREATE oLlave2
+                GET oLlave2
+                CREATE oCerillas
+                GET oCerillas
+                ZERO fCerillas
+                SET fCerillas
+                LET fCerillas 15
+	            MESSAGE "Tienes una caja con 15 cerillas."
+                DONE            
+
+> EXAMINAR CERILLAS AT lDescansillo
+                CARRIED oCerillas
+                MESSAGE "Es una caja de cerillas de palo largo, típicas para encender los fogones de la cocina y velas. Contiene 15 cerillas."
+                DONE
+
+> USAR CERILLA AT lDescansillo
+                MINUS fCerillas 1
+                MESSAGE "Las cerillas funcionan y ves bastante mejor. Pero ojo, se gastan. Te quedan:"
+                PRINT fCerillas
+                DONE
+
+> BAJAR BODEGA    AT lDescansillo
+                MESSAGE "Necesitas la llave de la bodega para poder entrar."
+                DONE
+
+> SUBIR ESCALERAS  AT lDescansillo
+                GT fCerillas 10
+                GOTO lPasillo1                
 
 > E     _      AT lPorche ; Si no has usado el movil y quieres salir al Este
                 MESSAGE "No puedes entrar en la casa. No tienes llaves."
