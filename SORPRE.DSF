@@ -74,7 +74,13 @@ _
 #define lGarage      5
 #define lPorche      6
 #define lDescansillo 7
-#define lPasillo1    8
+#define lBodega      8
+#define lAseo        9
+#define lCocina      10
+#define lSalon       11
+#define lEscaleras   12
+#define lAlmacen     13
+#define lPasillo1    16
 
 ;Objetos
 #define oMovil          0
@@ -300,6 +306,11 @@ LUEGO   2       conjugation
 /5 "Lograste entrar en el garage. Que fácil es todo cuando tienes las llaves"
 /6 "Estás en el porche de la casa. Pero recuerdas que cuando tus padres salían a pasear por el bosque, solían esconderla en algún sitio. Lo recuerdas? Al Este está la puerta principal."
 /7 "Estás en el descasillo de la casa. Entra un poco de luz del exterior de modo que puedes ver una mesita pegada a la pared. La puerta se cierra tras de tí de un portazo. Ya no se abre. Estás encerrado."
+/8 "Estás en la bodega."
+/9 "Estás en el aseo."
+/10 "Estás en la cocina." 
+/11 "Estás en el Salon."
+/12 "Estás en las escaleras."
 ;------------------------------------------------------------------------------
 /CON    ;Conexiones
 /0
@@ -318,7 +329,22 @@ N lExtcasa
 /6
 O lExtcasa
 /7
-E lDescansillo
+N lAseo
+S lBodega
+E lSalon
+SUBIR lEscaleras
+/8
+N lDescansillo
+/9
+S lDescansillo
+/10
+N lSalon
+E lAlmacen
+O lDescansillo
+/11
+S lCocina
+/12
+E lPasillo1
 
 
 ;------------------------------------------------------------------------------
@@ -460,7 +486,9 @@ E lDescansillo
                 NOTZERO fNoUsarMovil
                 NOTCARR oMovil ; No hemos cogido el movil
                 MESSAGE "Nada en este mundo va a romper tu momento de paz y tranquilidad. Cuando te levantes, seguro que te hechas una partida al nuevo juego de MSX, Venganza"
-                END
+                ;END ; Podemos acabar la partid con esto comando o podemos usar el siguiente
+                GOTO 0 ; vamos a la localización 0
+                RESTART ; Y recargamos todo, gráficos, descripcion de la LOCalizacion, etc
 
 > EXAMINAR MACETA AT lPorche
                 NOTCARR oMaceta
@@ -487,6 +515,8 @@ E lDescansillo
                 NOTCARR oGnomo
                 ZERO fCogerGnomo
                 SET fCogerGnomo
+                ISAT oGnomo 252
+                CREATE oGnomo
 	            MESSAGE "Es un gnomo rechoncho, con sonrisa picaresca y una mirada intensa."
                 DONE
 
@@ -596,12 +626,28 @@ E lDescansillo
                 MESSAGE "Necesitas la llave de la bodega para poder entrar."
                 DONE
 
-> SUBIR ESCALERAS  AT lDescansillo
-                GT fCerillas 10
-                GOTO lPasillo1                
+> SUBIR     _  AT lDescansillo
+                Zero fCerillas
+                NOTCARR oCerillas                
+                MESSAGE "Las escaleras están muy oscuras. Necesitas algo para iluminar."
+                DONE
 
-> E     _      AT lPorche ; Si no has usado el movil y quieres salir al Este
+> SUBIR     _  AT lDescansillo
+                CARRIED oCerillas
+                ;PRINT fCerillas ; A modo de DEBUG para saber que valor tiene fCerillas
+                GT fCerillas 10
+                GOTO lEscaleras
+                RESTART
+                DONE
+
+> E     _      AT lPorche 
                 MESSAGE "No puedes entrar en la casa. No tienes llaves."
+                DONE
+
+> E     _      AT lPorche 
+                CARRIED oLlavePorche
+            	MESSAGE "Ya estás dentro de la casa. Hace frío. Y apenas hay luz. Te has tropezado con la mesita de la entrada.#n- Hola? Hay alguien en casa?#n-No quiero bromitas porque sino me voy a cabrear y lo sabéis!#nNo responde nadie."
+                goto lDescansillo
                 DONE
 
 > E     _      AT lMadrid ; Si no has usado el movil y quieres salir al Este
@@ -615,7 +661,13 @@ E lDescansillo
                 MESSAGE "Cojonudo! Te has dejado el móvil en casa. No puedes volver porque vas con prisas."
                 DESTROY oMovil
                 GOTO lCoche
+                RESTART
                 DONE
+
+> E     _     AT lCoche
+              GOTO lExtcasa
+              RESTART
+              DONE
 
 > N     _      AT lExtcasa
                 Zero fPuertaLenera
