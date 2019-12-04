@@ -64,6 +64,9 @@ _
 #define fCogerFelpudo       70
 #define fCogerGnomo         71
 #define fCerillas           72
+#define fLuz                73
+#define fCajon              74
+#define fMesita             75
 
 ;localidades
 #define lIntro       0
@@ -142,6 +145,7 @@ CAJON    112     noun
 CERILLAS 113     noun
 BODEGA   114     noun
 ESCALERAS 115    noun
+LLAVE     116    noun
 
 ;                       Verbos
 COGER   20      verb
@@ -175,6 +179,7 @@ TIRAR    35      verb
 ESCUCHAR 36      verb
 ENCENDER 37      verb
 ABRIR    38      verb
+PRENDER  39      verb
 
 ;                            Adjetivos
 PEQUE   2       adjective
@@ -290,7 +295,7 @@ LUEGO   2       conjugation
 /2 "una llave 2"
 /3 "una bateria de coche"
 /4 "unas pinzas de coche"
-/5 "una llave 0"
+/5 "una llave de la entrada principal"
 /6 "un felpudo"
 /7 "una maceta"
 /8 "un Gnomo"
@@ -298,14 +303,14 @@ LUEGO   2       conjugation
 
 ;------------------------------------------------------------------------------
 /LTX    ;Location Texts
-/0 "Es sábado, son las 08:00AM y aún sigues en la cama. Semi despierto y sin ganas de levantarte. Madrugas mucho durante la semana y no te apetece mucho abandonar el calorcito que sientes bajo el plumón."
+/0 "Es sábado, son las 08:00AM y aún sigues en la cama. Semi despierto y sin ganas de levantarte. Madrugas mucho durante la semana y no te apetece mucho abandonar el calorcito que sientes bajo el plumón.#n"
 /1 "Te giras en la cama con la firme intención de dormir un poquito más. Suena el teléfono móvil. Alguien ya decidió por ti que te debes despertar del todo. Tienes a tu lado la mesita de noche."
 /2 "Sales de casa y coges tu coche rumbo a la sierra de gredos desde Madrid. Es un paseito, pero el viaje se hace ameno escuchando un poco de música. Vete al Este"
 /3 "Estás en el exterior de la casa. Desde aquí puedes ir al Norte, Sur y Este"
 /4 "Estás en la leñera. Puedes entrar o volver al Sur"
 /5 "Lograste entrar en el garage. Que fácil es todo cuando tienes las llaves"
 /6 "Estás en el porche de la casa. Pero recuerdas que cuando tus padres salían a pasear por el bosque, solían esconderla en algún sitio. Lo recuerdas? Al Este está la puerta principal."
-/7 "Estás en el descasillo de la casa. Entra un poco de luz del exterior de modo que puedes ver una mesita pegada a la pared. La puerta se cierra tras de tí de un portazo. Ya no se abre. Estás encerrado."
+/7 "Entra un poco de luz del exterior de modo que puedes ver una mesita pegada a la pared. La puerta se cierra tras de tí de un portazo. Ya no se abre. Estás encerrado."
 /8 "Estás en la bodega."
 /9 "Estás en el aseo."
 /10 "Estás en la cocina." 
@@ -330,7 +335,8 @@ N lExtcasa
 O lExtcasa
 /7
 N lAseo
-S lBodega
+BAJAR lBodega
+S lCocina
 E lSalon
 SUBIR lEscaleras
 /8
@@ -338,14 +344,13 @@ N lDescansillo
 /9
 S lDescansillo
 /10
-N lSalon
 E lAlmacen
-O lDescansillo
+N lDescansillo
 /11
-S lCocina
+E lDescansillo
 /12
 E lPasillo1
-
+BAJAR lDescansillo
 
 ;------------------------------------------------------------------------------
 /OBJ    ;Objetos
@@ -446,7 +451,17 @@ E lPasillo1
 ;------------------------------------------------------------------------------
 /PRO 4 ; Antiguo proceso 2 del PAW
 
+> _       _     NOTZERO fLuz
+                MINUS fLuz 1
+                ZERO fLuz
+                MESSAGE "la cerilla se ha consumido"
+
 /PRO 5 ; Interpretamos los comando como en la antigua tabla de respuestas
+
+> USAR PINZAS    AT lMadrid
+                GOTO lDescansillo
+                RESTART
+                DONE
 
 > EXAMINA MESITA AT lMadrid
                 MESSAGE "La mesita de noche está limpia y perfecta."
@@ -579,11 +594,15 @@ E lPasillo1
                 MESSAGE "Igual no es el momento de escuchar esta música, pero..."
                 DONE
 
-;USAR LLAVE
+
+> USAR LLAVE
+                SYNONYM ABRIR PUERTA
+
 > ABRIR PUERTA	AT lPorche
                 CARRIED oLlavePorche
             	MESSAGE "Ya estás dentro de la casa. Hace frío. Y apenas hay luz. Te has tropezado con la mesita de la entrada.#n- Hola? Hay alguien en casa?#n-No quiero bromitas porque sino me voy a cabrear y lo sabéis!#nNo responde nadie."
                 goto lDescansillo
+                RESTART
                 DONE
 
 > MIRAR _       AT lDescansillo
@@ -591,7 +610,21 @@ E lPasillo1
                 DONE
 
 > EXAMINAR MESITA AT lDescansillo
+                ZERO fMesita
+                SET fMesita
                 MESSAGE "Es una preciosa mesita de madera con patas forjadas de hierro. Tu madre la heredó de sus padres. Tiene un cajón semiabierto."
+                DONE
+
+> EXAMINAR MESITA AT lDescansillo
+                NOTZERO fMesita
+                ZERO fCajon
+                MESSAGE "La mesita sigue siendo preciosa. Abres el cajón y seguimos?"
+                DONE
+
+> EXAMINAR MESITA AT lDescansillo
+                NOTZERO fMesita
+                NOTZERO fCajon
+                MESSAGE "La mesita sigue siendo preciosa. Seguimos?"
                 DONE
 
 > ABRIR CAJON   AT lDescansillo
@@ -608,36 +641,86 @@ E lPasillo1
                 ZERO fCerillas
                 SET fCerillas
                 LET fCerillas 15
+                ZERO fCajon
+                SET fCajon
 	            MESSAGE "Tienes una caja con 15 cerillas."
                 DONE            
+
+> ABRIR CAJON AT lDescansillo
+                NOTZERO fCajon
+                MESSAGE "Ya no hay nada interesante en la mesita."
+                DONE
 
 > EXAMINAR CERILLAS AT lDescansillo
                 CARRIED oCerillas
                 MESSAGE "Es una caja de cerillas de palo largo, típicas para encender los fogones de la cocina y velas. Contiene 15 cerillas."
                 DONE
 
-> USAR CERILLA AT lDescansillo
+> ENCENDER CERILLA
+                SYNONYM USAR CERILLA
+
+> PRENDER CERILLA
+                SYNONYM USAR CERILLA
+
+> USAR CERILLA AT _
+                NOTEQ fCerillas 0
+                LET fLuz 2
                 MINUS fCerillas 1
-                MESSAGE "Las cerillas funcionan y ves bastante mejor. Pero ojo, se gastan. Te quedan:"
+                MESSAGE "Las cerillas funcionan y ves bastante mejor. Pero ojo, se gastan.#nTe quedan:"
                 PRINT fCerillas
                 DONE
 
-> BAJAR BODEGA    AT lDescansillo
+> BAJAR BODEGA AT lDescansillo
                 MESSAGE "Necesitas la llave de la bodega para poder entrar."
                 DONE
 
 > SUBIR     _  AT lDescansillo
-                Zero fCerillas
-                NOTCARR oCerillas                
+                ZERO fLuz
+                SET fDark
                 MESSAGE "Las escaleras están muy oscuras. Necesitas algo para iluminar."
                 DONE
 
 > SUBIR     _  AT lDescansillo
+                CLEAR fDark
+                NOTZERO fLuz
+                NOTZERO fCerillas
                 CARRIED oCerillas
-                ;PRINT fCerillas ; A modo de DEBUG para saber que valor tiene fCerillas
-                GT fCerillas 10
+                MESSAGE "Puedes ver porque has encendido una cerilla."
                 GOTO lEscaleras
                 RESTART
+                DONE
+
+;> SUBIR     _  AT lDescansillo
+;                ;ZERO fCerillas
+;                ;NOTCARR oCerillas
+;                ZERO fLuz
+;                SET fDark
+;                MESSAGE "Las escaleras están muy oscuras. Necesitas algo para iluminar."
+;                DONE
+
+;> SUBIR     _  AT lDescansillo
+;                NOTZERO fLuz
+;                ;CARRIED oCerillas
+;                ;PRINT fCerillas ; A modo de DEBUG para saber que valor tiene fCerillas
+;                GT fCerillas 10
+;                GOTO lEscaleras
+;                RESTART
+;                DONE
+
+> BAJAR     _ AT lEscaleras
+                CLEAR fDark
+                GOTO lDescansillo
+                RESTART
+                DONE
+
+> E     _      AT lEscaleras 
+                ZERO fLuz
+                SET fDark
+                MESSAGE "No puedes moverte si vas a ciegas. Utiliza algo para iluminarte."
+                DONE
+
+> E     _      AT lPorche 
+                MESSAGE "No puedes entrar en la casa. No tienes llaves."
                 DONE
 
 > E     _      AT lPorche 
@@ -660,12 +743,15 @@ E lPasillo1
                 CARRIED oMovil
                 MESSAGE "Cojonudo! Te has dejado el móvil en casa. No puedes volver porque vas con prisas."
                 DESTROY oMovil
+                INKEY
+                CLS
                 GOTO lCoche
                 RESTART
                 DONE
 
 > E     _     AT lCoche
               GOTO lExtcasa
+              CLS
               RESTART
               DONE
 
@@ -731,7 +817,7 @@ E lPasillo1
 
 > _       _     WINDOW  0               ; Window para imágenes
                 WINAT   0       0
-                WINSIZE 14      127     ;
+                WINSIZE 14      127     ; 14 filas de alto * 8 pixels por fila = 112 pixels
                 PICTURE 0
                 DISPLAY 0
 
