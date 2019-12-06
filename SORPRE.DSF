@@ -132,20 +132,20 @@ MESITA   99      noun
 MOVIL    100     noun
 LLAV1    101     noun
 LLAV2    102     noun
-BATERIA  103     noun
-PINZAS   104     noun
-LLAV0    105     noun
-FELPUDO  106     noun
-MACETA   107     noun
-GNOMO    108     noun
-PORCHE   109     noun
-METALICA 110     noun
-PUERTA   111     noun
-CAJON    112     noun
-CERILLAS 113     noun
-BODEGA   114     noun
-ESCALERAS 115    noun
-LLAVE     116    noun
+LLAV0    103     noun
+FELPUDO  104     noun
+MACETA   105     noun
+GNOMO    106     noun
+PORCHE   107     noun
+METALICA 108     noun
+PUERTA   109     noun
+CAJON    110     noun
+CERILLAS 111     noun
+BODEGA   112     noun
+ESCALERAS 113    noun
+LLAVE     114    noun
+BATERIA  115     noun
+PINZAS   116     noun
 
 ;                       Verbos
 COGER   20      verb
