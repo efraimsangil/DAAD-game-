@@ -83,7 +83,11 @@ _
 #define lSalon       11
 #define lEscaleras   12
 #define lAlmacen     13
+#define lPatio       14
+#define lSecret2     15
 #define lPasillo1    16
+#define lPasillo2    17
+#define lPasillo3    18
 
 ;Objetos
 #define oMovil          0
@@ -316,6 +320,13 @@ LUEGO   2       conjugation
 /10 "Estás en la cocina." 
 /11 "Estás en el Salon."
 /12 "Estás en las escaleras."
+/13 "Estás en el almacén."
+/14 "Estás en el patio."
+/15 "Estás en una habitación secreta."
+/16 "Estás en el primer tramo del pasillo."
+/17 "Estás en el segundo tramo del pasillo."
+/18 "Estás en el tercer tramo del pasillo."
+
 ;------------------------------------------------------------------------------
 /CON    ;Conexiones
 /0
@@ -347,10 +358,27 @@ S lDescansillo
 E lAlmacen
 N lDescansillo
 /11
-E lDescansillo
+O lDescansillo
+E lPatio
+S lSecret2
 /12
 E lPasillo1
 BAJAR lDescansillo
+/13
+E lCocina
+/14
+O lSalon
+/15
+N lSalon
+/16
+O lEscaleras
+E lPasillo2
+/17
+O lPasillo1
+E lPasillo3
+/18
+O lPasillo2
+
 
 ;------------------------------------------------------------------------------
 /OBJ    ;Objetos
@@ -575,10 +603,6 @@ BAJAR lDescansillo
                 DROP oMaceta
                 DONE
 
-;> DEJAR FELPUDO AT lPorche
-;            	MESSAGE "Dejas el felpudo en su sitio."
-;                DONE
-
 > TIRAR GNOMO AT lPorche
                 ISAT oLlavePorche 252
                 CREATE oLlavePorche
@@ -694,33 +718,106 @@ BAJAR lDescansillo
                 RESTART
                 DONE
 
-;> SUBIR     _  AT lDescansillo
-;                ;ZERO fCerillas
-;                ;NOTCARR oCerillas
-;                ZERO fLuz
-;                SET fDark
-;                MESSAGE "Las escaleras están muy oscuras. Necesitas algo para iluminar."
-;                DONE
-
-;> SUBIR     _  AT lDescansillo
-;                NOTZERO fLuz
-;                ;CARRIED oCerillas
-;                ;PRINT fCerillas ; A modo de DEBUG para saber que valor tiene fCerillas
-;                GT fCerillas 10
-;                GOTO lEscaleras
-;                RESTART
-;                DONE
-
 > BAJAR     _ AT lEscaleras
                 CLEAR fDark
                 GOTO lDescansillo
-                MESSAGE ""
+                MESSAGE "Has vuelto al descansillo."
                 DONE
 
 > E     _      AT lEscaleras 
                 ZERO fLuz
                 SET fDark
                 MESSAGE "No puedes moverte si vas a ciegas. Utiliza algo para iluminarte."
+                DONE
+
+> E     _      AT lEscaleras
+                CLEAR fDark
+                NOTZERO fLuz
+                NOTZERO fCerillas
+                CARRIED oCerillas
+                MESSAGE "Con algo que genere luz, siempre será mucho mejor desplazarse por esta planta."
+                GOTO lPasillo1
+                RESTART
+                DONE
+
+> E     _      AT lPasillo1 
+                ZERO fLuz
+                SET fDark
+                MESSAGE "No puedes moverte si vas a ciegas. Utiliza algo para iluminarte."
+                DONE
+
+> E     _      AT lPasillo1
+                CLEAR fDark
+                NOTZERO fLuz
+                NOTZERO fCerillas
+                CARRIED oCerillas
+                MESSAGE "Con algo que genere luz, siempre será mucho mejor desplazarse por esta planta."
+                GOTO lPasillo2
+                RESTART
+                DONE
+
+> O     _      AT lPasillo1 
+                ZERO fLuz
+                SET fDark
+                MESSAGE "No puedes moverte si vas a ciegas. Utiliza algo para iluminarte."
+                DONE
+
+> O     _      AT lPasillo1
+                CLEAR fDark
+                NOTZERO fLuz
+                NOTZERO fCerillas
+                CARRIED oCerillas
+                MESSAGE "Con algo que genere luz, siempre será mucho mejor desplazarse por esta planta."
+                GOTO lEscaleras
+                RESTART
+                DONE
+
+> E     _      AT lPasillo2
+                ZERO fLuz
+                SET fDark
+                MESSAGE "No puedes moverte si vas a ciegas. Utiliza algo para iluminarte."
+                DONE
+
+> E     _      AT lPasillo2
+                CLEAR fDark
+                NOTZERO fLuz
+                NOTZERO fCerillas
+                CARRIED oCerillas
+                MESSAGE "Con algo que genere luz, siempre será mucho mejor desplazarse por esta planta."
+                GOTO lPasillo3
+                RESTART
+                DONE
+
+> O     _      AT lPasillo2
+                ZERO fLuz
+                SET fDark
+                MESSAGE "No puedes moverte si vas a ciegas. Utiliza algo para iluminarte."
+                DONE
+
+> O     _      AT lPasillo2
+                CLEAR fDark
+                NOTZERO fLuz
+                NOTZERO fCerillas
+                CARRIED oCerillas
+                MESSAGE "Con algo que genere luz, siempre será mucho mejor desplazarse por esta planta."
+                GOTO lPasillo1
+                RESTART
+                DONE
+
+> O     _      AT lPasillo3
+                ZERO fLuz
+                SET fDark
+                MESSAGE "No puedes moverte si vas a ciegas. Utiliza algo para iluminarte."
+                DONE
+
+> O     _      AT lPasillo3
+                CLEAR fDark
+                NOTZERO fLuz
+                NOTZERO fCerillas
+                CARRIED oCerillas
+                MESSAGE "Con algo que genere luz, siempre será mucho mejor desplazarse por esta planta."
+                GOTO lPasillo2
+                RESTART
                 DONE
 
 > E     _      AT lPorche 
