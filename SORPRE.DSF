@@ -1,14 +1,14 @@
 ;------------------------------------------------------------------------------------------
-;√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë
-;√ë√ë√ë√ë√ë                                                                                  √ë√ë√ë√ë√ë
-;√ë√ë√ë√ë√ë Este es el fichero de inicio de la librer√≠a para DAAD Reborn Compiler en espa√±ol √ë√ë√ë√ë√ë
-;√ë√ë√ë√ë√ë                                                                                  √ë√ë√ë√ë√ë
-;√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë√ë
+;————————————————————————————————————————————————————————————————————————————————————————————
+;—————                                                                                  —————
+;————— Este es el fichero de inicio de la librerÌa para DAAD Reborn Compiler en espaÒol —————
+;—————                                                                                  —————
+;————————————————————————————————————————————————————————————————————————————————————————————
 
-; Por favor no quites las e√±es en el recuadro justo encima, est√°n ah√≠ para que notes f√°cil-
-; mente si abres el fichero con una codificaci√≥n que no es la correcta (ISO-8859-1 o Win1252)
+; Por favor no quites las eÒes en el recuadro justo encima, est·n ahÌ para que notes f·cil-
+; mente si abres el fichero con una codificaciÛn que no es la correcta (ISO-8859-1 o Win1252)
 
-/CTL    ;Secci√≥n de control
+/CTL    ;SecciÛn de control
 _
 ;#extern "MLV_MSX.BIN"
 ;#classic
@@ -89,13 +89,13 @@ _
 #define oMovil          0
 #define oLlave1         1
 #define oLlave2         2
-#define oLlavePorche    3
-#define oFelpudo        4
-#define oMaceta         5
-#define oGnomo          6
-#define oCerillas       7
-#define oBateriaCoche   8
-#define oPinzasCoche    9
+#define oBateriaCoche   3
+#define oPinzasCoche    4
+#define oLlavePorche    5
+#define oFelpudo        6
+#define oMaceta         7
+#define oGnomo          8
+#define oCerillas       9
 
 ;------------------------------------------------------------------------------
 /VOC    ;Vocabulario
@@ -132,20 +132,20 @@ MESITA   99      noun
 MOVIL    100     noun
 LLAV1    101     noun
 LLAV2    102     noun
-LLAV0    103     noun
-FELPUDO  104     noun
-MACETA   105     noun
-GNOMO    106     noun
-PORCHE   107     noun
-METALICA 108     noun
-PUERTA   109     noun
-CAJON    110     noun
-CERILLAS 111     noun
-BODEGA   112     noun
-ESCALERAS 113    noun
-LLAVE     114    noun
-BATERIA  115     noun
-PINZAS   116     noun
+BATERIA  103     noun
+PINZAS   104     noun
+LLAV0    105     noun
+FELPUDO  106     noun
+MACETA   107     noun
+GNOMO    108     noun
+PORCHE   109     noun
+METALICA 110     noun
+PUERTA   111     noun
+CAJON    112     noun
+CERILLAS 113     noun
+BODEGA   114     noun
+ESCALERAS 115    noun
+LLAVE     116    noun
 
 ;                       Verbos
 COGER   20      verb
@@ -218,20 +218,20 @@ LUEGO   2       conjugation
 
 ;------------------------------------------------------------------------------
 /STX    ;Mensajes del sistema
-/0 "Est√° demasiado oscuro para ver nada."
-/1 "Tambi√©n puedo ver:"
+/0 "Est· demasiado oscuro para ver nada."
+/1 "TambiÈn puedo ver:"
 /2 "#n"
 /3 "#n"
 /4 "#n"
 /5 "#n"
 /6 "No he entendido nada."
-/7 "No puedo ir en esa direcci√≥n."
+/7 "No puedo ir en esa direcciÛn."
 /8 "No puedo hacer eso."
 /9 "Llevo:#n"
 /10 "Llevo puesto:#n"
 /11 "";*Libre
-/12 "¬øSeguro?"
-/13 "¬øQuieres intentarlo de nuevo?"
+/12 "øSeguro?"
+/13 "øQuieres intentarlo de nuevo?"
 /14 ""  ;*Libre
 /15 "Vale."
 /16 "Pulsa una tecla para continuar."
@@ -244,13 +244,13 @@ LUEGO   2       conjugation
 /23 "No llevo eso puesto."
 /24 "No puedo. Tengo puesto _."
 /25 "Ya tengo _."
-/26 "Aqu√≠ no hay nada de eso."
-/27 "No puedo llevar nada m√°s."
+/26 "AquÌ no hay nada de eso."
+/27 "No puedo llevar nada m·s."
 /28 "No tengo eso.#n"
 /29 "Ya llevo puesto _.#n"
-/30 "S";Un solo car√°cter en may√∫sculas. Inicial de S√≠
-/31 "N"  ;Un solo car√°cter en may√∫sculas. Inicial de No
-/32 "Hay m√°s..."
+/30 "S";Un solo car·cter en may˙sculas. Inicial de SÌ
+/31 "N"  ;Un solo car·cter en may˙sculas. Inicial de No
+/32 "Hay m·s..."
 /33 ">"
 /34 "" ;*Libre
 /35 "#nEl tiempo pasa..."
@@ -260,10 +260,10 @@ LUEGO   2       conjugation
 /39 "He dejado _."
 /40 "No puedo ponerme _."
 /41 "No puedo quitarme _."
-/42 "No puedo quitarme _.  No puedo llevar nada m√°s en las manos."
-/43 "@ pesa demasiado para m√≠."
-/44 "@ est√° en"
-/45 "@ no est√° en"
+/42 "No puedo quitarme _.  No puedo llevar nada m·s en las manos."
+/43 "@ pesa demasiado para mÌ."
+/44 "@ est· en"
+/45 "@ no est· en"
 /46 ", "
 /47 " y "
 /48 ".#n"
@@ -277,10 +277,10 @@ LUEGO   2       conjugation
 /56 "Unidad no preparada. Pulsa una tecla para volver a intentarlo."
 /57 "Error de entrada/salida."
 /58 "El disco o el directorio puede estar lleno."
-/59 "Nombre de fichero no v√°lido."
+/59 "Nombre de fichero no v·lido."
 /60 "Nombre del fichero:"
 /61 "Pon en marcha la cinta."
-/62 "¬øCinta o disco?"
+/62 "øCinta o disco?"
 
 
 ;------------------------------------------------------------------------------
@@ -303,19 +303,19 @@ LUEGO   2       conjugation
 
 ;------------------------------------------------------------------------------
 /LTX    ;Location Texts
-/0 "Es s√°bado, son las 08:00AM y a√∫n sigues en la cama. Semi despierto y sin ganas de levantarte. Madrugas mucho durante la semana y no te apetece mucho abandonar el calorcito que sientes bajo el plum√≥n.#n"
-/1 "Te giras en la cama con la firme intenci√≥n de dormir un poquito m√°s. Suena el tel√©fono m√≥vil. Alguien ya decidi√≥ por ti que te debes despertar del todo. Tienes a tu lado la mesita de noche."
-/2 "Sales de casa y coges tu coche rumbo a la sierra de gredos desde Madrid. Es un paseito, pero el viaje se hace ameno escuchando un poco de m√∫sica. Vete al Este"
-/3 "Est√°s en el exterior de la casa. Desde aqu√≠ puedes ir al Norte, Sur y Este"
-/4 "Est√°s en la le√±era. Puedes entrar o volver al Sur"
-/5 "Lograste entrar en el garage. Que f√°cil es todo cuando tienes las llaves"
-/6 "Est√°s en el porche de la casa. Pero recuerdas que cuando tus padres sal√≠an a pasear por el bosque, sol√≠an esconderla en alg√∫n sitio. Lo recuerdas? Al Este est√° la puerta principal."
-/7 "Entra un poco de luz del exterior de modo que puedes ver una mesita pegada a la pared. La puerta se cierra tras de t√≠ de un portazo. Ya no se abre. Est√°s encerrado."
-/8 "Est√°s en la bodega."
-/9 "Est√°s en el aseo."
-/10 "Est√°s en la cocina." 
-/11 "Est√°s en el Salon."
-/12 "Est√°s en las escaleras."
+/0 "Es s·bado, son las 08:00AM y a˙n sigues en la cama. Semi despierto y sin ganas de levantarte. Madrugas mucho durante la semana y no te apetece mucho abandonar el calorcito que sientes bajo el plumÛn.#n"
+/1 "Te giras en la cama con la firme intenciÛn de dormir un poquito m·s. Suena el telÈfono mÛvil. Alguien ya decidiÛ por ti que te debes despertar del todo. Tienes a tu lado la mesita de noche."
+/2 "Sales de casa y coges tu coche rumbo a la sierra de gredos desde Madrid. Es un paseito, pero el viaje se hace ameno escuchando un poco de m˙sica. Vete al Este"
+/3 "Est·s en el exterior de la casa. Desde aquÌ puedes ir al Norte, Sur y Este"
+/4 "Est·s en la leÒera. Puedes entrar o volver al Sur"
+/5 "Lograste entrar en el garage. Que f·cil es todo cuando tienes las llaves"
+/6 "Est·s en el porche de la casa. Pero recuerdas que cuando tus padres salÌan a pasear por el bosque, solÌan esconderla en alg˙n sitio. Lo recuerdas?"
+/7 "Est·s en el descansillo."
+/8 "Est·s en la bodega."
+/9 "Est·s en el aseo."
+/10 "Est·s en la cocina." 
+/11 "Est·s en el Salon."
+/12 "Est·s en las escaleras."
 ;------------------------------------------------------------------------------
 /CON    ;Conexiones
 /0
@@ -359,27 +359,27 @@ BAJAR lDescansillo
 /0      252     1       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    MOVIL       _
 /1      252     1       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    LLAV1       _
 /2      252     1       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    LLAV2       _
-/3      252     1       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    LLAV0       _
-/4      252     1       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    FELPUDO     _
-/5      252     1       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    MACETA      _
-/6      252     1       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    GNOMO       _
-/7      252     1       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    CERILLAS    _
-/8      252     1       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    BATERIA     _
-/9      252     1       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    PINZAS      _
+/3      252     1       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    BATERIA     _
+/4      252     1       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    PINZAS      _
+/5      252     1       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    LLAV0       _
+/6      252     1       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    FELPUDO     _
+/7      252     1       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    MACETA      _
+/8      252     1       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    GNOMO       _
+/9      252     1       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    CERILLAS    _
 
 ;------------------------------------------------------------------------------
 /PRO 0       ;Bucle principal de localidades
 
 > _       _     AT      0               ; Empezamos una partida
-                PROCESS 6               ; El proceso de inicializaci√≥n
+                PROCESS 6               ; El proceso de inicializaciÛn
 
-> _       _     WINDOW  0               ; Ventana de gr√°ficos
+> _       _     WINDOW  0               ; Ventana de gr·ficos
                 CLEAR   fDarkF           ; Asume que hay luz
                 NOTZERO 0
                 ABSENT  0
                 SET     fDarkF           ; Oscuro
 
-> _       _     PICTURE @fPlayer        ; Si hay gr√°fico, c√°rgalo
+> _       _     PICTURE @fPlayer        ; Si hay gr·fico, c·rgalo
                 DISPLAY @fDarkF         ; Muestralo si no oscuro; si oscuro
                                         ; hace un CLS
 > _       _     WINDOW  1
@@ -392,7 +392,7 @@ BAJAR lDescansillo
 > _       _     PROCESS 3
 
 ; Ahora usamos el proceso 1 como el bucle principal del juego. Un retorno desde
-; aqu√≠ significa el fin del juego
+; aquÌ significa el fin del juego
 
 > _       _     PROCESS 1
 
@@ -401,11 +401,11 @@ BAJAR lDescansillo
 
 > _       _     PROCESS 4               ; Lo que en el PAW era el proceso 2
 
-> _       _     PARSE   0               ; Toma sentencia l√≥gica del buffer
-                PROCESS 2               ; Sentencia no v√°lida o timeout
+> _       _     PARSE   0               ; Toma sentencia lÛgica del buffer
+                PROCESS 2               ; Sentencia no v·lida o timeout
                 REDO
 
-> _       _     EQ      fTurns   255     ; El valo m√°ximo de un byte
+> _       _     EQ      fTurns   255     ; El valo m·ximo de un byte
                 PLUS    fTurnsHi   1
                 CLEAR   fTurns
                 SKIP    1
@@ -414,7 +414,7 @@ BAJAR lDescansillo
 
 > _       _     PROCESS 5               ; La antigua tabla de respuestas
                 ISDONE                  ; Ha hecho algo?
-                REDO                    ; S√≠¬≠: pedimos otra orden del jugador
+                REDO                    ; SÌ≠: pedimos otra orden del jugador
 
 > _       _     MOVE    fPlayer         ; No: intentamos mover al jugador
                 RESTART                 ; Lo movimos: salta al principio de PRO 0
@@ -437,14 +437,14 @@ BAJAR lDescansillo
 > _       _     SYSMESS 6               ; No te entiendo
 
 ;------------------------------------------------------------------------------
-/PRO 3 ; Antiguo proceso 1 del PAW. (N√≥tese que tanto la tabla de respuestas como los
+/PRO 3 ; Antiguo proceso 1 del PAW. (NÛtese que tanto la tabla de respuestas como los
 ; antiguos procesos 1 y 2 del PAW ahora pueden estar en cualquer parte; o no
-; existir en absoluto, ya que ya no hay nada autom√°tico al haberse implementado
+; existir en absoluto, ya que ya no hay nada autom·tico al haberse implementado
 ; todo en el propio lenguaje del DAAD)
 
 
 > _       _     NEWLINE
-                ZERO    fDarkF            ; No est√° oscuro
+                ZERO    fDarkF            ; No est· oscuro
                 LISTOBJ
 
 
@@ -464,37 +464,37 @@ BAJAR lDescansillo
                 DONE
 
 > EXAMINA MESITA AT lMadrid
-                MESSAGE "La mesita de noche est√° limpia y perfecta."
+                MESSAGE "La mesita de noche est· limpia y perfecta."
                 ISAT oMovil 252
-                MESSAGE "Hay un tel√©fono m√≥vil en ella."
+                MESSAGE "Hay un telÈfono mÛvil en ella."
                 CREATE oMovil
                 DONE
 
 > EXAMINA MESITA AT lMadrid
                 NOTCARR oMovil
-                MESSAGE "El tel√©fono sigue sonando"
+                MESSAGE "El telÈfono sigue sonando"
                 DONE  
 
 > EXAMINA MESITA AT lMadrid
                 DONE  
 
 > USAR  MOVIL AT lMadrid
-                CARRIED oMovil ; ¬ølleva m√≥vil?
-                MESSAGE "+Buenos d√≠as hijo. Qu√© tal est√°s?.#n-Hasta que me llamaste estaba como un rey, en cama, calentito y tratando de negociar con Morpheo una segunda ronda.#n+Dile a Morpheo que espere un momento. Escucha, vente a la caba√±a a pasar el d√≠a con nosotros, tenemos algo que contarte#n-Me apetece mucho, si... Pero no puede...#n+Hasta luego#n-Cojonudo, no he podido poner un excusa, tengo que ir."
+                CARRIED oMovil ; ølleva mÛvil?
+                MESSAGE "+Buenos dÌas hijo. QuÈ tal est·s?.#n-Hasta que me llamaste estaba como un rey, en cama, calentito y tratando de negociar con Morpheo una segunda ronda.#n+Dile a Morpheo que espere un momento. Escucha, vente a la cabaÒa a pasar el dÌa con nosotros, tenemos algo que contarte#n-Me apetece mucho, si... Pero no puede...#n+Hasta luego#n-Cojonudo, no he podido poner un excusa, tengo que ir."
                 SET fUsarMovil
                 DONE 
 
 > MIRAR   _    AT lMadrid ; Si ya has cogido el movil e insistes en mirar cosas
-                CARRIED oMovil ; ¬ølleva movil?
+                CARRIED oMovil ; ølleva movil?
                 NOTZERO fUsarMovil
-                MESSAGE "Aqu√≠ ya no tienes nada que hacer. Tira para el coche: Este"
+                MESSAGE "AquÌ ya no tienes nada que hacer. Tira para el coche: Este"
                 DONE
 
 > DORMIR  _    AT lMadrid
                 NOTCARR oMovil ; No hemos cogido el movil
                 ZERO fNoUsarMovil
                 SET fNoUsarMovil
-                MESSAGE "El m√≥vil sigue sonando. No piensas cogerlo?"             
+                MESSAGE "El mÛvil sigue sonando. No piensas cogerlo?"             
                 DONE
 
 > DORMIR  _    AT lMadrid
@@ -502,28 +502,28 @@ BAJAR lDescansillo
                 NOTCARR oMovil ; No hemos cogido el movil
                 MESSAGE "Nada en este mundo va a romper tu momento de paz y tranquilidad. Cuando te levantes, seguro que te hechas una partida al nuevo juego de MSX, Venganza"
                 ;END ; Podemos acabar la partid con esto comando o podemos usar el siguiente
-                GOTO 0 ; vamos a la localizaci√≥n 0
-                RESTART ; Y recargamos todo, gr√°ficos, descripcion de la LOCalizacion, etc
+                GOTO 0 ; vamos a la localizaciÛn 0
+                RESTART ; Y recargamos todo, gr·ficos, descripcion de la LOCalizacion, etc
 
 > EXAMINAR MACETA AT lPorche
                 NOTCARR oMaceta
-                MESSAGE "Igual es mejor coger la maceta para verla m√°s de cerca"
+                MESSAGE "Igual es mejor coger la maceta para verla m·s de cerca"
                 DONE
 
 > EXAMINAR MACETA AT lPorche
                 CARRIED oMaceta
                 ZERO fExaminarMaceta
                 SET fExaminarMaceta
-                MESSAGE "La maceta contiene a√∫n arena y una planta que est√° m√°s seca que la mojama."
+                MESSAGE "La maceta contiene a˙n arena y una planta que est· m·s seca que la mojama."
                 DONE
 
 > EXAMINAR MACETA AT lPorche
                 NOTZERO fExaminarMaceta                
-                MESSAGE "Yo creo que ya est√° bien de jugar con la maceta."
+                MESSAGE "Yo creo que ya est· bien de jugar con la maceta."
                 DONE
 
 > EXAMINAR FELPUDO AT lPorche
-	            MESSAGE "Es un cl√°sico felpudo de esparto con el mensaje WELCOME HOME."
+	            MESSAGE "Es un cl·sico felpudo de esparto con el mensaje WELCOME HOME."
                 DONE
 
 > EXAMINAR GNOMO AT lPorche
@@ -538,7 +538,7 @@ BAJAR lDescansillo
 > EXAMINAR GNOMO AT lPorche
                 CARRIED oGnomo
                 NOTZERO fCogerGnomo
-	            MESSAGE "Lo miras con atenci√≥n y lo agitas en el aire. Suena algo suelto dentro."
+	            MESSAGE "Lo miras con atenciÛn y lo agitas en el aire. Suena algo suelto dentro."
                 DONE
 
 > MIRAR     _ AT lPorche
@@ -548,13 +548,13 @@ BAJAR lDescansillo
                 CREATE oFelpudo
                 ISAT oGnomo 252
                 CREATE oGnomo
-                MESSAGE "A tu alrededor puedes ver en el suelo una vieja maceta con lo que debi√≥ ser una planta, un felpudo y un gnomo de jard√≠n."
+                MESSAGE "A tu alrededor puedes ver en el suelo una vieja maceta con lo que debiÛ ser una planta, un felpudo y un gnomo de jardÌn."
                 DONE
 
 > COGER FELPUDO AT lPorche
                 ZERO fCogerFelpudo
                 SET fCogerFelpudo
-	            MESSAGE "Debajo del felpudo no hay nada a excepci√≥n de un cienpies que sale por patas al haber sido descubierto."
+	            MESSAGE "Debajo del felpudo no hay nada a excepciÛn de un cienpies que sale por patas al haber sido descubierto. Prefiero dejar el felpudo en su sitio."
                 DONE
 
 > COGER FELPUDO AT lPorche
@@ -565,25 +565,25 @@ BAJAR lDescansillo
 
 > TIRAR MACETA AT lPorche
                 CARRIED oMaceta
-	            MESSAGE "Tiras la maceta contra el suelo y no se rompe. De qu√© estar√° hecha?"
+	            MESSAGE "Tiras la maceta contra el suelo y no se rompe. De quÈ estar· hecha?"
                 DROP oMaceta
                 DONE
 
 > DEJAR MACETA AT lPorche
                 CARRIED oMaceta
-	            MESSAGE "Dejas la maceta en su sitio. Que buen hijo eres, si te viera tu madre."
+	            MESSAGE "Dejas la maceta en su sitio. Que buen hijo eres, si te viera tu madre estarÌa super orgullosa."
                 DROP oMaceta
                 DONE
 
-> DEJAR FELPUDO AT lPorche
-            	MESSAGE "Dejas el felpudo en su sitio."
-                DONE
+;> DEJAR FELPUDO AT lPorche
+;            	MESSAGE "Dejas el felpudo en su sitio."
+;                DONE
 
 > TIRAR GNOMO AT lPorche
                 ISAT oLlavePorche 252
                 CREATE oLlavePorche
                 GET oLlavePorche
-            	MESSAGE " al tirar el gnomo contra el suelo y saltar en mil pedazos. Es una llave met√°lica. Me encanta ese grupo! Ahora bien, cuando se entere tu madre que has roto el gnomo... vas a flipar!!!. "
+            	MESSAGE " al tirar el gnomo contra el suelo y saltar en mil pedazos. Es una llave met·lica. Me encanta ese grupo! Ahora bien, cuando se entere tu madre que has roto el gnomo... vas a flipar!!!. "
                 DESTROY oGnomo
                 DONE	
 
@@ -591,34 +591,37 @@ BAJAR lDescansillo
 	            ;XPLAY "T110O5G16F#16G16A16G8O4G4B4O5D8D8C8C4C16O4B16O5C16D16C8O4D4A4O5C8C8"
                 ;XPLAY "T110O4B8B4O5G4.E16D8C#8C#8C#8G4.E16D8C#8C#8C#8G4.E16F#8D8O4B8"
                 ;XPLAY "T110O5G8E4.D32E32D4"
-                MESSAGE "Igual no es el momento de escuchar esta m√∫sica, pero..."
+                MESSAGE "Igual no es el momento de escuchar esta m˙sica, pero..."
                 DONE
 
+> EXAMINAR PUERTA at lPorche
+                MESSAGE "Es una puerta fuerte, hecha de madera maciza. Como todas las puertas, tiene una cerradura para introducir una llave y abrirla."
+                DONE
 
 > USAR LLAVE
                 SYNONYM ABRIR PUERTA
 
 > ABRIR PUERTA	AT lPorche
                 CARRIED oLlavePorche
-            	MESSAGE "Ya est√°s dentro de la casa. Hace fr√≠o. Y apenas hay luz. Te has tropezado con la mesita de la entrada.#n- Hola? Hay alguien en casa?#n-No quiero bromitas porque sino me voy a cabrear y lo sab√©is!#nNo responde nadie."
+            	MESSAGE "Ya est·s dentro de la casa. Hace frÌo. Y apenas hay luz. Te has tropezado con la mesita de la entrada.#n- Hola? Hay alguien en casa?#n-No quiero bromitas porque sino me voy a cabrear y lo sabÈis!#nNo responde nadie. La puerta se cierra tras de tÌ de un portazo. Ya no se abre. Est·s encerrado."
                 goto lDescansillo
                 RESTART
                 DONE
 
 > MIRAR _       AT lDescansillo
-                MESSAGE "Hay poca luz. Puedes ver las escaleras que suben a las habitaciones en la planta superior, el ba√±o de la planta de abajo, la entrada a la cocina y enfrente el sal√≥n. Y por supuesto, la mesita con la que has tropezado."
+                MESSAGE "Hay poca luz. Puedes ver las escaleras que suben a las habitaciones en la planta superior, el baÒo de la planta de abajo, la entrada a la cocina y enfrente el salÛn. Y por supuesto, la mesita con la que has tropezado."
                 DONE
 
 > EXAMINAR MESITA AT lDescansillo
                 ZERO fMesita
                 SET fMesita
-                MESSAGE "Es una preciosa mesita de madera con patas forjadas de hierro. Tu madre la hered√≥ de sus padres. Tiene un caj√≥n semiabierto."
+                MESSAGE "Es una preciosa mesita de madera con patas forjadas de hierro. Tu madre la heredÛ de sus padres. Tiene un cajÛn semiabierto."
                 DONE
 
 > EXAMINAR MESITA AT lDescansillo
                 NOTZERO fMesita
                 ZERO fCajon
-                MESSAGE "La mesita sigue siendo preciosa. Abres el caj√≥n y seguimos?"
+                MESSAGE "La mesita sigue siendo preciosa. Abres el cajÛn y seguimos?"
                 DONE
 
 > EXAMINAR MESITA AT lDescansillo
@@ -631,7 +634,7 @@ BAJAR lDescansillo
                 ISAT oLlave1 252
                 ISAT oLlave2 252                
                 ISAT oCerillas 252                
-                MESSAGE "En el caj√≥n de la mesita puedes ver las llaves del garage y de la le√±era, adem√°s de unas cerillas. Lo coges todo!!!"   
+                MESSAGE "En el cajÛn de la mesita puedes ver las llaves del garage y de la leÒera, adem·s de unas cerillas. Lo coges todo!!!#n"   
                 CREATE oLlave1
                 GET oLlave1
                 CREATE oLlave2
@@ -653,7 +656,7 @@ BAJAR lDescansillo
 
 > EXAMINAR CERILLAS AT lDescansillo
                 CARRIED oCerillas
-                MESSAGE "Es una caja de cerillas de palo largo, t√≠picas para encender los fogones de la cocina y velas. Contiene 15 cerillas."
+                MESSAGE "Es una caja de cerillas de palo largo, tÌpicas para encender los fogones de la cocina y velas. Contiene 15 cerillas."
                 DONE
 
 > ENCENDER CERILLA
@@ -662,7 +665,8 @@ BAJAR lDescansillo
 > PRENDER CERILLA
                 SYNONYM USAR CERILLA
 
-> USAR CERILLA AT _
+> USAR CERILLA 
+                CARRIED oCerillas
                 NOTEQ fCerillas 0
                 LET fLuz 2
                 MINUS fCerillas 1
@@ -677,7 +681,7 @@ BAJAR lDescansillo
 > SUBIR     _  AT lDescansillo
                 ZERO fLuz
                 SET fDark
-                MESSAGE "Las escaleras est√°n muy oscuras. Necesitas algo para iluminar."
+                MESSAGE "Las escaleras est·n muy oscuras. Necesitas algo para iluminar."
                 DONE
 
 > SUBIR     _  AT lDescansillo
@@ -695,7 +699,7 @@ BAJAR lDescansillo
 ;                ;NOTCARR oCerillas
 ;                ZERO fLuz
 ;                SET fDark
-;                MESSAGE "Las escaleras est√°n muy oscuras. Necesitas algo para iluminar."
+;                MESSAGE "Las escaleras est·n muy oscuras. Necesitas algo para iluminar."
 ;                DONE
 
 ;> SUBIR     _  AT lDescansillo
@@ -710,7 +714,7 @@ BAJAR lDescansillo
 > BAJAR     _ AT lEscaleras
                 CLEAR fDark
                 GOTO lDescansillo
-                RESTART
+                MESSAGE ""
                 DONE
 
 > E     _      AT lEscaleras 
@@ -729,19 +733,19 @@ BAJAR lDescansillo
 
 > E     _      AT lPorche 
                 CARRIED oLlavePorche
-            	MESSAGE "Ya est√°s dentro de la casa. Hace fr√≠o. Y apenas hay luz. Te has tropezado con la mesita de la entrada.#n- Hola? Hay alguien en casa?#n-No quiero bromitas porque sino me voy a cabrear y lo sab√©is!#nNo responde nadie."
+            	MESSAGE "Ya est·s dentro de la casa. Hace frÌo. Y apenas hay luz. Te has tropezado con la mesita de la entrada.#n- Hola? Hay alguien en casa?#n-No quiero bromitas porque sino me voy a cabrear y lo sabÈis!#nNo responde nadie."
                 goto lDescansillo
                 DONE
 
 > E     _      AT lMadrid ; Si no has usado el movil y quieres salir al Este
                 Zero fUsarMovil
-                MESSAGE "No crees que deber√≠as atender al m√≥vil?"
+                MESSAGE "No crees que deberÌas atender al mÛvil?"
                 DONE
 
 > E     _      AT lMadrid ; Si no has usado el movil y quieres salir al Este
                 NOTZERO fUsarMovil
                 CARRIED oMovil
-                MESSAGE "Cojonudo! Te has dejado el m√≥vil en casa. No puedes volver porque vas con prisas."
+                MESSAGE "Cojonudo! Te has dejado el mÛvil en casa. No puedes volver porque vas con prisas."
                 DESTROY oMovil
                 INKEY
                 CLS
@@ -757,17 +761,17 @@ BAJAR lDescansillo
 
 > N     _      AT lExtcasa
                 Zero fPuertaLenera
-                MESSAGE "No puedes entrar en la le√±era. La puerta est√° cerrada. Necesitas una llave."
+                MESSAGE "No puedes entrar en la leÒera. La puerta est· cerrada. Necesitas una llave."
                 DONE
 
 > S     _      AT lExtcasa
                 Zero fPuertaGarage
-                MESSAGE "No puedes entrar en el garage. La puerta est√° cerrada.Necesitas una llave."
+                MESSAGE "No puedes entrar en el garage. La puerta est· cerrada.Necesitas una llave."
                 DONE
 
 > E     _      AT lPorche
                 Zero fPuertaPorche
-                MESSAGE "No puedes entrar la casa. La puerta est√° cerrada. Necesitas una llave."
+                MESSAGE "No puedes entrar la casa. La puerta est· cerrada. Necesitas una llave."
                 DONE
 
 > I       _     SYSMESS 9
@@ -813,9 +817,9 @@ BAJAR lDescansillo
 
 > MIRAR   _     RESTART
 
-/PRO 6 ; Inicializaci√≥n
+/PRO 6 ; InicializaciÛn
 
-> _       _     WINDOW  0               ; Window para im√°genes
+> _       _     WINDOW  0               ; Window para im·genes
                 WINAT   0       0
                 WINSIZE 14      127     ; 14 filas de alto * 8 pixels por fila = 112 pixels
                 PICTURE 0
@@ -823,9 +827,9 @@ BAJAR lDescansillo
 
 > _       _     WINDOW  1               ; Window para los textos
                 WINAT   14      0
-                WINSIZE 25      127     ; Tama√±o m√°ximo
+                WINSIZE 25      127     ; TamaÒo m·ximo
                 CLS
-                DESC    0               ; Introducci√≥n
+                DESC    0               ; IntroducciÛn
                 ANYKEY
                 CLS
                 SET     255             ; Pone a cero todas las banderas

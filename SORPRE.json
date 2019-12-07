@@ -570,7 +570,7 @@
 	},
 	{
 		"Value":16,
-		"Text":"Debajo del felpudo no hay nada a excepción de un cienpies que sale por patas al haber sido descubierto."
+		"Text":"Debajo del felpudo no hay nada a excepción de un cienpies que sale por patas al haber sido descubierto. Prefiero dejar el felpudo en su sitio."
 	},
 	{
 		"Value":17,
@@ -582,19 +582,19 @@
 	},
 	{
 		"Value":19,
-		"Text":"Dejas la maceta en su sitio. Que buen hijo eres, si te viera tu madre."
+		"Text":"Dejas la maceta en su sitio. Que buen hijo eres, si te viera tu madre estaría super orgullosa."
 	},
 	{
 		"Value":20,
-		"Text":"Dejas el felpudo en su sitio."
-	},
-	{
-		"Value":21,
 		"Text":" al tirar el gnomo contra el suelo y saltar en mil pedazos. Es una llave metálica. Me encanta ese grupo! Ahora bien, cuando se entere tu madre que has roto el gnomo... vas a flipar!!!. "
 	},
 	{
-		"Value":22,
+		"Value":21,
 		"Text":"Igual no es el momento de escuchar esta música, pero..."
+	},
+	{
+		"Value":22,
+		"Text":"Es una puerta fuerte, hecha de madera maciza. Como todas las puertas, tiene una cerradura para introducir una llave y abrirla."
 	},
 	{
 		"Value":23,
@@ -618,7 +618,7 @@
 	},
 	{
 		"Value":28,
-		"Text":"En el cajón de la mesita puedes ver las llaves del garage y de la leñera, además de unas cerillas. Lo coges todo!!!"
+		"Text":"En el cajón de la mesita puedes ver las llaves del garage y de la leñera, además de unas cerillas. Lo coges todo!!!#n"
 	},
 	{
 		"Value":29,
@@ -960,11 +960,11 @@
 	},
 	{
 		"Value":6,
-		"Text":"Estás en el porche de la casa. Pero recuerdas que cuando tus padres salían a pasear por el bosque, solían esconderla en algún sitio. Lo recuerdas? Al Este está la puerta principal."
+		"Text":"Estás en el porche de la casa. Pero recuerdas que cuando tus padres salían a pasear por el bosque, solían esconderla en algún sitio. Lo recuerdas?"
 	},
 	{
 		"Value":7,
-		"Text":"Entra un poco de luz del exterior de modo que puedes ver una mesita pegada a la pared. La puerta se cierra tras de tí de un portazo. Ya no se abre. Estás encerrado."
+		"Text":"La puerta se cierra tras de tí de un portazo. Ya no se abre. Estás encerrado."
 	},
 	{
 		"Value":8,
@@ -2332,33 +2332,6 @@
 					]
 			},
 			{
-				"Entry":"DEJAR FELPU",
-				"Verb":21,
-				"Noun":106,
-				"condacts":
-					[
-					{
-						"Opcode":0,
-						"Condact":"AT",
-						"Indirection1":0,
-						"Param1":6,
-						"NumParams":1
-					},
-					{
-						"Opcode":38,
-						"Condact":"MESSAGE",
-						"Indirection1":0,
-						"Param1":20,
-						"NumParams":1
-					},
-					{
-						"Opcode":22,
-						"Condact":"DONE",
-						"NumParams":0
-					}
-					]
-			},
-			{
 				"Entry":"TIRAR GNOMO",
 				"Verb":35,
 				"Noun":108,
@@ -2397,7 +2370,7 @@
 						"Opcode":38,
 						"Condact":"MESSAGE",
 						"Indirection1":0,
-						"Param1":21,
+						"Param1":20,
 						"NumParams":1
 					},
 					{
@@ -2418,6 +2391,33 @@
 				"Entry":"ESCUC METAL",
 				"Verb":36,
 				"Noun":110,
+				"condacts":
+					[
+					{
+						"Opcode":0,
+						"Condact":"AT",
+						"Indirection1":0,
+						"Param1":6,
+						"NumParams":1
+					},
+					{
+						"Opcode":38,
+						"Condact":"MESSAGE",
+						"Indirection1":0,
+						"Param1":21,
+						"NumParams":1
+					},
+					{
+						"Opcode":22,
+						"Condact":"DONE",
+						"NumParams":0
+					}
+					]
+			},
+			{
+				"Entry":"EX PUERT",
+				"Verb":30,
+				"Noun":111,
 				"condacts":
 					[
 					{
@@ -2896,10 +2896,10 @@
 				"condacts":
 					[
 					{
-						"Opcode":0,
-						"Condact":"AT",
+						"Opcode":8,
+						"Condact":"CARRIED",
 						"Indirection1":0,
-						"Param1":255,
+						"Param1":9,
 						"NumParams":1
 					},
 					{
@@ -3380,6 +3380,11 @@
 						"Indirection1":0,
 						"Param1":3,
 						"NumParams":1
+					},
+					{
+						"Opcode":29,
+						"Condact":"CLS",
+						"NumParams":0
 					},
 					{
 						"Opcode":117,
