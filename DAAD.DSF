@@ -67,6 +67,8 @@ _
 #define fLuz                73
 #define fCajon              74
 #define fMesita             75
+#define fTablon             76
+
 
 ;localidades
 #define lIntro       0
@@ -100,6 +102,10 @@ _
 #define oMaceta         7
 #define oGnomo          8
 #define oCerillas       9
+#define oTablon         10
+#define oSecretKey1     11
+#define oLlaveCaja      12
+#define oLinterna       13
 
 ;------------------------------------------------------------------------------
 /VOC    ;Vocabulario
@@ -150,6 +156,16 @@ CERILLAS 113     noun
 BODEGA   114     noun
 ESCALERAS 115    noun
 LLAVE     116    noun
+TABLON    117    noun
+CAJA      118    noun
+TARJETA   119    noun
+LLAV3     120    noun
+SKEY1     121    noun
+KCAJA     122    noun
+LINTERNA  123    noun
+MUEBLE    124    noun
+FREGADERO 125    noun
+LAVADORA  125    noun
 
 ;                       Verbos
 COGER   20      verb
@@ -184,6 +200,7 @@ ESCUCHAR 36      verb
 ENCENDER 37      verb
 ABRIR    38      verb
 PRENDER  39      verb
+MOVER    40      verb
 
 ;                            Adjetivos
 PEQUE   2       adjective
@@ -295,8 +312,8 @@ LUEGO   2       conjugation
 ;------------------------------------------------------------------------------
 /OTX    ;Object Texts
 /0 "un telefono movil"
-/1 "una llave 1"
-/2 "una llave 2"
+/1 "llave de la leñera"
+/2 "llave del garage"
 /3 "una bateria de coche"
 /4 "unas pinzas de coche"
 /5 "una llave de la entrada principal"
@@ -304,6 +321,10 @@ LUEGO   2       conjugation
 /7 "una maceta"
 /8 "un Gnomo"
 /9 "una caja de cerillas"
+/10 "una tarjeta de seguridad"
+/11 "una llave dorada"
+/12 "llave de una caja pequeña"
+/13 "una linterna"
 
 ;------------------------------------------------------------------------------
 /LTX    ;Location Texts
@@ -319,13 +340,13 @@ LUEGO   2       conjugation
 /9 "Estás en el aseo."
 /10 "Estás en la cocina." 
 /11 "Estás en el Salon."
-/12 "Estás en las escaleras."
+/12 "Estás en las escaleras. Puedes subir a la primera planta o bajar al descansillo."
 /13 "Estás en el almacén."
 /14 "Estás en el patio."
 /15 "Estás en una habitación secreta."
-/16 "Estás en el primer tramo del pasillo."
-/17 "Estás en el segundo tramo del pasillo."
-/18 "Estás en el tercer tramo del pasillo."
+/16 "Estás en el primer tramo del pasillo. Es un pasillo largo. Salidas: N E BAJAR"
+/17 "Estás en el segundo tramo del pasillo. Salidas: N E O"
+/18 "Estás en el tercer tramo del pasillo. Salidas: N O"
 
 ;------------------------------------------------------------------------------
 /CON    ;Conexiones
@@ -362,23 +383,22 @@ O lDescansillo
 E lPatio
 S lSecret2
 /12
-E lPasillo1
+SUBIR lPasillo1
 BAJAR lDescansillo
 /13
-E lCocina
+O lCocina
 /14
 O lSalon
 /15
 N lSalon
 /16
-O lEscaleras
+BAJAR lEscaleras
 E lPasillo2
 /17
 O lPasillo1
 E lPasillo3
 /18
 O lPasillo2
-
 
 ;------------------------------------------------------------------------------
 /OBJ    ;Objetos
@@ -394,6 +414,10 @@ O lPasillo2
 /7      252     1       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    MACETA      _
 /8      252     1       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    GNOMO       _
 /9      252     1       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    CERILLAS    _
+/10     252     1       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    TABLON      _
+/11     252     1       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    SKEY1       _
+/12     252     1       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    KCAJA       _
+/13     252     1       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    LINTERNA    _
 
 ;------------------------------------------------------------------------------
 /PRO 0       ;Bucle principal de localidades
@@ -403,8 +427,8 @@ O lPasillo2
 
 > _       _     WINDOW  0               ; Ventana de gráficos
                 CLEAR   fDarkF           ; Asume que hay luz
-                NOTZERO 0
-                ABSENT  0
+                NOTZERO fDark
+                ABSENT  oLinterna
                 SET     fDarkF           ; Oscuro
 
 > _       _     PICTURE @fPlayer        ; Si hay gráfico, cárgalo
@@ -469,7 +493,12 @@ O lPasillo2
 ; antiguos procesos 1 y 2 del PAW ahora pueden estar en cualquer parte; o no
 ; existir en absoluto, ya que ya no hay nada automático al haberse implementado
 ; todo en el propio lenguaje del DAAD)
+; Esta tabla se ejecuta tras describir las localidades, por lo cual es ideal para describir 
+; cosas de las localidades que no sean fijas
 
+;> _       _       AT lEscalera2
+;                NOTZERO fAntor
+;                MESSAGE "Cierta porción de la pared se ha movido dando acceso a otra sala hacia el oeste."
 
 > _       _     NEWLINE
                 ZERO    fDarkF            ; No está oscuro
@@ -526,7 +555,7 @@ O lPasillo2
                 DONE
 
 > DORMIR  _    AT lMadrid
-                NOTZERO fNoUsarMovil
+                NOTZERO fNoUsarMovil ; No hemos usado el movil
                 NOTCARR oMovil ; No hemos cogido el movil
                 MESSAGE "Nada en este mundo va a romper tu momento de paz y tranquilidad. Cuando te levantes, seguro que te hechas una partida al nuevo juego de MSX, Venganza"
                 ;END ; Podemos acabar la partid con esto comando o podemos usar el siguiente
@@ -534,19 +563,19 @@ O lPasillo2
                 RESTART ; Y recargamos todo, gráficos, descripcion de la LOCalizacion, etc
 
 > EXAMINAR MACETA AT lPorche
-                NOTCARR oMaceta
+                NOTCARR oMaceta ; No ha cogido la maceta
                 MESSAGE "Igual es mejor coger la maceta para verla más de cerca"
                 DONE
 
 > EXAMINAR MACETA AT lPorche
-                CARRIED oMaceta
-                ZERO fExaminarMaceta
+                CARRIED oMaceta ; Ha cogido la maceta
+                ZERO fExaminarMaceta ; Activo un flag para controlar que YA examinó la maceta
                 SET fExaminarMaceta
                 MESSAGE "La maceta contiene aún arena y una planta que está más seca que la mojama."
                 DONE
 
 > EXAMINAR MACETA AT lPorche
-                NOTZERO fExaminarMaceta                
+                NOTZERO fExaminarMaceta 
                 MESSAGE "Yo creo que ya está bien de jugar con la maceta."
                 DONE
 
@@ -632,8 +661,10 @@ O lPasillo2
                 RESTART
                 DONE
 
+; Ya estamos dentro de la casa y no podemos salir al exterior
+
 > MIRAR _       AT lDescansillo
-                MESSAGE "Hay poca luz. Puedes ver las escaleras que suben a las habitaciones en la planta superior, el baño de la planta de abajo, la entrada a la cocina y enfrente el salón. Y por supuesto, la mesita con la que has tropezado."
+                MESSAGE "Hay poca luz. Puedes ver las escaleras que suben a las habitaciones de la planta superior, el baño de la planta de abajo (N), la entrada a la cocina (S) y enfrente el salón (E). Y por supuesto, la mesita con la que has tropezado."
                 DONE
 
 > EXAMINAR MESITA AT lDescansillo
@@ -702,43 +733,202 @@ O lPasillo2
                 MESSAGE "Necesitas la llave de la bodega para poder entrar."
                 DONE
 
-> SUBIR     _  AT lDescansillo
+> S         _  AT lDescansillo ; No podemos entrar en la cocina sin LUZ
                 ZERO fLuz
                 SET fDark
-                MESSAGE "Las escaleras están muy oscuras. Necesitas algo para iluminar."
+                MESSAGE "La cocina está muy oscura. Sin luz no se puede entrar."
                 DONE
 
-> SUBIR     _  AT lDescansillo
+> S         _  AT lDescansillo ; Tenemos LUZ y nos metemos en la cocina
                 CLEAR fDark
                 NOTZERO fLuz
                 NOTZERO fCerillas
                 CARRIED oCerillas
-                MESSAGE "Puedes ver porque has encendido una cerilla."
-                GOTO lEscaleras
+                GOTO lCocina
                 RESTART
                 DONE
 
-> BAJAR     _ AT lEscaleras
+> MIRAR     _ AT lCocina
                 CLEAR fDark
-                GOTO lDescansillo
-                MESSAGE "Has vuelto al descansillo."
+                NOTZERO fLuz
+                NOTZERO fCerillas
+                CARRIED oCerillas
+                MESSAGE "Puedes ver el fregadero, un mueble con cajones y la vieja lavadora que con 35 años, aún sigue dando servicio. Ya no se fabrican como antes."
                 DONE
 
-> E     _      AT lEscaleras 
+> EXAMINAR FREGADERO AT lCocina
+                MESSAGE "No hay nada que ver en el fregadero. Está vacio."
+                DONE
+
+> EXAMINAR MUEBLE AT lCocina
+                MESSAGE "Es un típico mueble de cocina con varios cajones."
+                DONE
+
+> EXAMINAR CAJONES AT lCocina
+                MESSAGE "Puedes ver unas pilas, unas velas y las llaves del patio.#nQue curioso, no hay cuchillos."
+                DONE
+
+> EXAMINAR LAVADORA AT lCocina
+                MESSAGE "Dentro encuentras un cuchillo grande de carnicero.#n¿Pero que puñetas hace eso ahí dentro?"
+                DONE
+
+> E         _  AT lCocina ; No podemos entrar en el almacén sin LUZ
+                ZERO fLuz
+                SET fDark
+                MESSAGE "El almacén está muy oscura. Sin luz no se puede entrar."
+                DONE
+
+> E         _  AT lCocina ; Tenemos LUZ y nos metemos en el almacén
+                CLEAR fDark
+                NOTZERO fLuz
+                NOTZERO fCerillas
+                CARRIED oCerillas
+                GOTO lAlmacen
+                RESTART
+                MESSAGE ""
+                DONE
+
+
+> ABRIR MUEBLE AT lAlmacen
+                ISAT oLinterna 252
+                CREATE oLinterna
+                GET oLinterna
+                DONE
+
+> SUBIR     _  AT lDescansillo
+                ZERO fLuz
+                SET fDark
+                ZERO fTablon
+                NOTCARR oLinterna
+                MESSAGE "Las escaleras están muy oscuras. Necesitas algo para iluminar."
+                DONE
+
+> SUBIR     _  AT lDescansillo
+                NOTZERO fTablon                
+                MESSAGE "Metes el pie accidentalmente en el escalón al que quitaste el tablón y ;tropiezas malamente. Caes rodando las escaleras y te partes el cuello. Has muerto."
+                INKEY
+                GOTO 0 ; vamos a la localización 0
+                RESTART ; Y recargamos todo, gráficos, descripcion de la LOCalizacion, etc
+                DONE
+
+> SUBIR     _  AT lEscaleras
+                ZERO fLuz
+                SET fDark                
+                NOTZERO fTablon                
+                MESSAGE "Metes el pie accidentalmente en el escalón al que quitaste el tablón y ;tropiezas malamente. Caes rodando las escaleras y te partes el cuello. Has muerto."
+                GOTO 0 ; vamos a la localización 0
+                RESTART ; Y recargamos todo, gráficos, descripcion de la LOCalizacion, etc
+                DONE
+
+> SUBIR     _  AT lDescansillo
+                ZERO fTablon
+                CLEAR fDark
+                NOTZERO fLuz
+                NOTZERO fCerillas
+                CARRIED oCerillas
+                GOTO lEscaleras
+                ;RESTART
+                MESSAGE "#nNotas un pequeño crujido bajo tus pies. Siempre ha habido un tablón suelto en esa escalera y nadie se preocupó de arreglarlo."
+                DONE
+
+> SUBIR     _  AT lEscaleras
                 ZERO fLuz
                 SET fDark
                 MESSAGE "No puedes moverte si vas a ciegas. Utiliza algo para iluminarte."
                 DONE
 
-> E     _      AT lEscaleras
+> SUBIR     _  AT lEscaleras
                 CLEAR fDark
                 NOTZERO fLuz
                 NOTZERO fCerillas
                 CARRIED oCerillas
-                MESSAGE "Con algo que genere luz, siempre será mucho mejor desplazarse por esta planta."
+                ZERO fTablon
+                MESSAGE "Menos mal que llevas algo de luz. Toda la planta superior está a oscuras."
                 GOTO lPasillo1
                 RESTART
                 DONE
+
+> EXAMINAR ESCALERAS AT lEscaleras
+                CLEAR fDark
+                NOTZERO fLuz
+                NOTZERO fCerillas
+                CARRIED oCerillas
+                MESSAGE "Sientes curiosidad por examinar la escalera con más detalle."
+                ISAT oTablon 252
+                MESSAGE "Hay un tablón que parece tener cierta holgura y se mueve un poco."
+                CREATE oTablon
+                DONE
+
+> EXAMINAR TABLON AT lEscaleras
+                CLEAR fDark
+                NOTZERO fLuz
+                MESSAGE "Efectivamente está un poco suelto. Creo que podría moverlo."
+                DONE
+
+> EXAMINAR TABLON AT lEscaleras
+                NOTZERO fTablon
+                MESSAGE "El escalón está abierto, no has puesto el tablón en su sitio."
+                DONE
+
+> MOVER TABLON AT lEscaleras
+                ZERO fTablon
+                SET fTablon
+                MESSAGE "Mueves el tablón y lo desplazas hacia un lado. Puedes ver una caja de metal dentro."
+                DONE
+
+> MOVER TABLON AT lEscaleras
+                NOTZERO fTablon                
+                MESSAGE "El tablón no se mueve más"
+                                
+
+> EXAMINAR CAJA AT lEscaleras
+                MESSAGE "La caja tiene un candado de seguridad. Necesitas una llave."
+                DONE
+
+> COGER CAJA AT lEscaleras
+                MESSAGE "La caja está pegada dentro del hueco del escalón, no se puede coger."
+                DONE
+
+> ABRIR CAJA AT lEscaleras
+                NOTCARR oLlaveCaja
+                MESSAGE "No tienes la llave. No puedes abrirla."
+                DONE
+
+> ABRIR CAJA AT lEscaleras
+                CARRIED oLlaveCaja
+                ISAT oSecretKey1 252
+                CREATE oSecretKey1
+                MESSAGE "Has conseguido abrir la caja." 
+                GET oSecretKey1
+                MESSAGE ""¿Que abrirá esa tarjeta de seguridad?""
+                DONE
+
+> PONER TABLON AT lEscaleras
+                NOTZERO fTablon
+                CLEAR fTablon
+                MESSAGE "Has puesto el tablón en su sitio."
+                DONE                
+
+> PONER TABLON AT lEscaleras
+                ZERO fTablon
+                MESSAGE "Has puesto el tablón en su sitio."
+                DONE      
+
+> BAJAR     _  AT lEscaleras
+                CLEAR fDark
+                ZERO oTablon
+                GOTO lDescansillo
+                MESSAGE "Has vuelto al descansillo."
+                DONE
+
+;> BAJAR     _  AT lPasillo1
+;                ZERO fLuz
+;                SET fDark                
+;                NOTZERO fTablon                
+;                MESSAGE "Metes el pie accidentalmente en el escalón al que quitaste el tablón y tropiezas malamente. Caes rodando las escaleras y te partes el cuello. Has muerto."
+;                GOTO 0 ; vamos a la localización 0
+;                RESTART ; Y recargamos todo, gráficos, descripcion de la LOCalizacion, etc
+;                DONE
 
 > E     _      AT lPasillo1 
                 ZERO fLuz
@@ -751,23 +941,21 @@ O lPasillo2
                 NOTZERO fLuz
                 NOTZERO fCerillas
                 CARRIED oCerillas
-                MESSAGE "Con algo que genere luz, siempre será mucho mejor desplazarse por esta planta."
                 GOTO lPasillo2
                 RESTART
                 DONE
 
-> O     _      AT lPasillo1 
+> BAJAR     _  AT lPasillo1 
                 ZERO fLuz
                 SET fDark
                 MESSAGE "No puedes moverte si vas a ciegas. Utiliza algo para iluminarte."
                 DONE
 
-> O     _      AT lPasillo1
+> BAJAR     _  AT lPasillo1
                 CLEAR fDark
                 NOTZERO fLuz
                 NOTZERO fCerillas
                 CARRIED oCerillas
-                MESSAGE "Con algo que genere luz, siempre será mucho mejor desplazarse por esta planta."
                 GOTO lEscaleras
                 RESTART
                 DONE
