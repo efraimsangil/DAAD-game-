@@ -563,10 +563,11 @@ O lPasillo2
 > DORMIR  _    AT lMadrid
                 NOTZERO fNoUsarMovil ; No hemos usado el movil
                 NOTCARR oMovil ; No hemos cogido el movil
-                MESSAGE "Nada en este mundo va a romper tu momento de paz y tranquilidad. Cuando te levantes, seguro que te hechas una partida al nuevo juego de MSX, Venganza"
+                MESSAGE "Nada en este mundo va a romper tu momento de paz y tranquilidad. Cuando te levantes, seguro que te hechas una partida al nuevo juego de MSX, Venganza#n"
                 ;END ; Podemos acabar la partid con esto comando o podemos usar el siguiente
-                GOTO 0 ; vamos a la localización 0
-                RESTART ; Y recargamos todo, gráficos, descripcion de la LOCalizacion, etc
+                END
+                ;GOTO 0 ; vamos a la localización 0
+                ;RESTART ; Y recargamos todo, gráficos, descripcion de la LOCalizacion, etc
 
 > EXAMINAR MACETA AT lPorche
                 NOTCARR oMaceta ; No ha cogido la maceta
