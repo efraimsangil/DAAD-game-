@@ -201,6 +201,7 @@ ENCENDER 37      verb
 ABRIR    38      verb
 PRENDER  39      verb
 MOVER    40      verb
+GOLPEAR  41      verb
 
 ;                            Adjetivos
 PEQUE   2       adjective
@@ -328,20 +329,20 @@ LUEGO   2       conjugation
 
 ;------------------------------------------------------------------------------
 /LTX    ;Location Texts
-/0 "Es sábado, son las 08:00AM y aún sigues en la cama. Semi despierto y sin ganas de levantarte. Madrugas mucho durante la semana y no te apetece mucho abandonar el calorcito que sientes bajo el plumón.#n"
-/1 "Te giras en la cama con la firme intención de dormir un poquito más. Suena el teléfono móvil. Alguien ya decidió por ti que te debes despertar del todo. Tienes a tu lado la mesita de noche."
+/0 "Es sábado, son las 08:00AM y aún sigues en la cama. Semi despierto y sin ganas de levantarte. Madrugas mucho durante la semana y no te apetece mucho abandonar el calorcito que sientes bajo el plumón.#n#n"
+/1 "Te giras en la cama con la firme intención de dormir un poquito más pero, suena el teléfono móvil. Alguien ya decidió por ti que te debes despertar del todo. Tienes a tu lado la mesita de noche."
 /2 "Sales de casa y coges tu coche rumbo a la sierra de gredos desde Madrid. Es un paseito, pero el viaje se hace ameno escuchando un poco de música. Vete al Este"
 /3 "Estás en el exterior de la casa. Desde aquí puedes ir al Norte, Sur y Este"
 /4 "Estás en la leñera. Puedes entrar o volver al Sur"
 /5 "Lograste entrar en el garage. Que fácil es todo cuando tienes las llaves"
-/6 "Estás en el porche de la casa. Pero recuerdas que cuando tus padres salían a pasear por el bosque, solían esconderla en algún sitio. Lo recuerdas?"
+/6 "Un par de potentes luces iluminan el porche. Nunca te gustaron esas luces porque atraín muchos insectos las noches de verano y era imposible estar en el porche sin sufrir el feroz ataque de un mosquito sediento de sangre."
 /7 "Estás en el descansillo."
 /8 "Estás en la bodega."
 /9 "Estás en el aseo."
 /10 "Estás en la cocina." 
 /11 "Estás en el Salon."
 /12 "Estás en las escaleras. Puedes subir a la primera planta o bajar al descansillo."
-/13 "Estás en el almacén."
+/13 "Estás en el almacén. Ves una estantería casi vacía."
 /14 "Estás en el patio."
 /15 "Estás en una habitación secreta."
 /16 "Estás en el primer tramo del pasillo. Es un pasillo largo. Salidas: N E BAJAR"
@@ -537,9 +538,14 @@ O lPasillo2
 
 > USAR  MOVIL AT lMadrid
                 CARRIED oMovil ; ¿lleva móvil?
-                MESSAGE "+Buenos días hijo. Qué tal estás?.#n-Hasta que me llamaste estaba como un rey, en cama, calentito y tratando de negociar con Morpheo una segunda ronda.#n+Dile a Morpheo que espere un momento. Escucha, vente a la cabaña a pasar el día con nosotros, tenemos algo que contarte#n-Me apetece mucho, si... Pero no puede...#n+Hasta luego#n-Cojonudo, no he podido poner un excusa, tengo que ir."
+                MESSAGE "+Buenos días hijo. Qué tal estás?.#n-Hasta que me llamaste estaba como un rey, en cama, calentito y tratando de negociar con Morpheo una segunda ronda.#n+Dile a Morpheo que espere un momento. Escucha, vente a la cabaña a pasar el día con nosotros, tenemos algo que contarte#n-Me apetece mucho, si... Pero no puede...#n+Hasta luego#n-Estupendo, no he podido poner un excusa, tengo que ir a ver mis padres."
                 SET fUsarMovil
                 DONE 
+
+> USAR MOVIL AT lMadrid
+                NOTZERO fUsarMovil 
+                MESSAGE "Tu padre ya ha colgado. Es mejor que muevas el culo y te vayas a por el coche."
+                DONE
 
 > MIRAR   _    AT lMadrid ; Si ya has cogido el movil e insistes en mirar cosas
                 CARRIED oMovil ; ¿lleva movil?
@@ -584,17 +590,20 @@ O lPasillo2
                 DONE
 
 > EXAMINAR GNOMO AT lPorche
-                NOTCARR oGnomo
-                ZERO fCogerGnomo
-                SET fCogerGnomo
-                ISAT oGnomo 252
-                CREATE oGnomo
-	            MESSAGE "Es un gnomo rechoncho, con sonrisa picaresca y una mirada intensa."
+                NOTCARR oGnomo ; No ha cogido el gnomo
+                MESSAGE "Es un gnomo rechoncho, con sonrisa picaresca y una mirada intensa."
                 DONE
+                ;NOTCARR oGnomo
+                ;ZERO fCogerGnomo
+                ;SET fCogerGnomo
+                ;ISAT oGnomo 252
+                ;CREATE oGnomo
+	            ;MESSAGE "Es un gnomo rechoncho, con sonrisa picaresca y una mirada intensa."
+                ;DONE
 
 > EXAMINAR GNOMO AT lPorche
                 CARRIED oGnomo
-                NOTZERO fCogerGnomo
+                ;NOTZERO fCogerGnomo
 	            MESSAGE "Lo miras con atención y lo agitas en el aire. Suena algo suelto dentro."
                 DONE
 
@@ -648,7 +657,11 @@ O lPasillo2
                 DONE
 
 > EXAMINAR PUERTA at lPorche
-                MESSAGE "Es una puerta fuerte, hecha de madera maciza. Como todas las puertas, tiene una cerradura para introducir una llave y abrirla."
+                MESSAGE "Es una puerta fuerte, hecha de madera maciza. Como todas las puertas, tiene una cerradura para introducir una llave. Ahora recuerdas que siempre quisiste que arreglaran el timbre en casa, porque cuando todo el mundo está en las habitaciones, nadie escuchaba nada."
+                DONE
+
+> GOLPEAR PUERTA at lPorche
+                MESSAGE "Nadie responde a tu llamada. Prueba otra cosa."
                 DONE
 
 > USAR LLAVE
@@ -788,7 +801,6 @@ O lPasillo2
                 MESSAGE ""
                 DONE
 
-
 > ABRIR MUEBLE AT lAlmacen
                 ISAT oLinterna 252
                 CREATE oLinterna
@@ -878,8 +890,7 @@ O lPasillo2
 
 > MOVER TABLON AT lEscaleras
                 NOTZERO fTablon                
-                MESSAGE "El tablón no se mueve más"
-                                
+                MESSAGE "El tablón no se mueve más"                           
 
 > EXAMINAR CAJA AT lEscaleras
                 MESSAGE "La caja tiene un candado de seguridad. Necesitas una llave."
@@ -1008,12 +1019,9 @@ O lPasillo2
                 RESTART
                 DONE
 
-> E     _      AT lPorche 
-                MESSAGE "No puedes entrar en la casa. No tienes llaves."
-                DONE
-
-> E     _      AT lPorche 
-                MESSAGE "No puedes entrar en la casa. No tienes llaves."
+> E     _      AT lPorche
+                Zero fPuertaPorche
+                MESSAGE "No puedes entrar la casa. La puerta está cerrada y necesitas la llave. Pero recuerdas que cuando tus padres salían a pasear por el bosque, solían esconder una llave en algún sitio. Lo recuerdas?"
                 DONE
 
 > E     _      AT lPorche 
@@ -1030,7 +1038,7 @@ O lPasillo2
 > E     _      AT lMadrid ; Si no has usado el movil y quieres salir al Este
                 NOTZERO fUsarMovil
                 CARRIED oMovil
-                MESSAGE "Cojonudo! Te has dejado el móvil en casa. No puedes volver porque vas con prisas."
+                MESSAGE "Muy bien! Te has dejado el móvil en casa. No puedes volver porque vas con prisas."
                 DESTROY oMovil
                 INKEY
                 CLS
@@ -1039,8 +1047,8 @@ O lPasillo2
                 DONE
 
 > E     _     AT lCoche
-              GOTO lExtcasa
               CLS
+              GOTO lExtcasa
               RESTART
               DONE
 
@@ -1054,10 +1062,7 @@ O lPasillo2
                 MESSAGE "No puedes entrar en el garage. La puerta está cerrada.Necesitas una llave."
                 DONE
 
-> E     _      AT lPorche
-                Zero fPuertaPorche
-                MESSAGE "No puedes entrar la casa. La puerta está cerrada. Necesitas una llave."
-                DONE
+
 
 > I       _     SYSMESS 9
                 LISTAT  CARRIED
