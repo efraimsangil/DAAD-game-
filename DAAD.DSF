@@ -65,9 +65,11 @@ _
 #define fCogerGnomo         71
 #define fCerillas           72
 #define fLuz                73
-#define fCajon              74
-#define fMesita             75
-#define fTablon             76
+#define fLuz2               74
+#define fCajon              75
+#define fMesita             76
+#define fTablon             77
+#define fUsarInterruptor    78
 
 
 ;localidades
@@ -106,6 +108,7 @@ _
 #define oSecretKey1     11
 #define oLlaveCaja      12
 #define oLinterna       13
+#define oMechero        14
 
 ;------------------------------------------------------------------------------
 /VOC    ;Vocabulario
@@ -165,7 +168,11 @@ KCAJA     122    noun
 LINTERNA  123    noun
 MUEBLE    124    noun
 FREGADERO 125    noun
-LAVADORA  125    noun
+LAVADORA  126    noun
+TELEFONO  127    noun
+MECHERO   128    noun
+INTERRUPTOR 129     noun
+ASEO      130    noun
 
 ;                       Verbos
 COGER   20      verb
@@ -202,6 +209,8 @@ ABRIR    38      verb
 PRENDER  39      verb
 MOVER    40      verb
 GOLPEAR  41      verb
+LANZAR   42      verb
+ROMPER   43      verb
 
 ;                            Adjetivos
 PEQUE   2       adjective
@@ -241,16 +250,16 @@ LUEGO   2       conjugation
 ;------------------------------------------------------------------------------
 /STX    ;Mensajes del sistema
 /0 "Está demasiado oscuro para ver nada."
-/1 "También puedo ver:"
+/1 "También puedes ver:"
 /2 "#n"
 /3 "#n"
 /4 "#n"
 /5 "#n"
 /6 "No he entendido nada."
-/7 "No puedo ir en esa dirección."
-/8 "No puedo hacer eso."
+/7 "No puedes ir en esa dirección."
+/8 "No puedes hacer eso."
 /9 "Llevo:#n"
-/10 "Llevo puesto:#n"
+/10 "Llevas puesto:#n"
 /11 "";*Libre
 /12 "¿Seguro?"
 /13 "¿Quieres intentarlo de nuevo?"
@@ -263,34 +272,34 @@ LUEGO   2       conjugation
 /20 "" ; *.
 /21 "" ; *Ha resuelto un
 /22 "" ; *%
-/23 "No llevo eso puesto."
-/24 "No puedo. Tengo puesto _."
-/25 "Ya tengo _."
+/23 "No llevas eso puesto."
+/24 "No puedes. Tienes puesto _."
+/25 "Ya tienes _."
 /26 "Aquí no hay nada de eso."
-/27 "No puedo llevar nada más."
-/28 "No tengo eso.#n"
-/29 "Ya llevo puesto _.#n"
+/27 "No puedes llevar nada más."
+/28 "No tienes eso.#n"
+/29 "Ya llevas puesto _.#n"
 /30 "S";Un solo carácter en mayúsculas. Inicial de Sí
 /31 "N"  ;Un solo carácter en mayúsculas. Inicial de No
 /32 "Hay más..."
 /33 ">"
 /34 "" ;*Libre
 /35 "#nEl tiempo pasa..."
-/36 "He cogido _."
-/37 "Me he puesto _."
-/38 "Me he quitado _."
-/39 "He dejado _."
-/40 "No puedo ponerme _."
-/41 "No puedo quitarme _."
-/42 "No puedo quitarme _.  No puedo llevar nada más en las manos."
-/43 "@ pesa demasiado para mí."
+/36 "Has cogido _."
+/37 "Te has puesto _."
+/38 "Te has quitado _."
+/39 "Has dejado _."
+/40 "No puedes ponerte _."
+/41 "No puedes quitarte _."
+/42 "No puedes quitarte _.  No puedo llevar nada más en las manos."
+/43 "@ pesa demasiado para tí."
 /44 "@ está en"
 /45 "@ no está en"
 /46 ", "
 /47 " y "
 /48 ".#n"
-/49 "No tengo _."
-/50 "No llevo puesto _."
+/49 "No tienes _."
+/50 "No llevas puesto _."
 /51 ".#n"
 /52 "No hay nada de eso en"
 /53 "Nada.#n"
@@ -312,10 +321,10 @@ LUEGO   2       conjugation
 
 ;------------------------------------------------------------------------------
 /OTX    ;Object Texts
-/0 "un telefono movil"
+/0 "un teléfono móvil"
 /1 "llave de la leñera"
 /2 "llave del garage"
-/3 "una bateria de coche"
+/3 "una batería de coche"
 /4 "unas pinzas de coche"
 /5 "una llave de la entrada principal"
 /6 "un felpudo"
@@ -326,20 +335,21 @@ LUEGO   2       conjugation
 /11 "una llave dorada"
 /12 "llave de una caja pequeña"
 /13 "una linterna"
+/14 "un mechero"
 
 ;------------------------------------------------------------------------------
 /LTX    ;Location Texts
-/0 "Es sábado, son las 08:00AM y aún sigues en la cama. Semi despierto y sin ganas de levantarte. Madrugas mucho durante la semana y no te apetece mucho abandonar el calorcito que sientes bajo el plumón.#n#n"
+/0 "Marcos es un tipo serio, con carácter, muy trabajador y responsable. Sus amigos lo ven como un soltero amargado, que no echa un polvo desde ni se sabe y por eso tiene ese mal genio.#n#n Está de fin de semana, en casa, tranquilo. No tiene planes excepto disfrutar de las pequeñas cosas de sus 48 horas de libertad condicional. Así denomina el, los fines de semana.#n#n Es sábado, son las 08:00AM y aún sigues en la cama. Semi despierto y sin ganas de levantarte. Madrugas mucho durante la semana y no te apetece mucho abandonar el calorcito que sientes bajo el plumón.#n#n"
 /1 "Te giras en la cama con la firme intención de dormir un poquito más pero, suena el teléfono móvil. Alguien ya decidió por ti que te debes despertar del todo. Tienes a tu lado la mesita de noche."
-/2 "Sales de casa y coges tu coche rumbo a la sierra de gredos desde Madrid. Es un paseito, pero el viaje se hace ameno escuchando un poco de música. Vete al Este"
-/3 "Estás en el exterior de la casa. Desde aquí puedes ir al Norte, Sur y Este"
-/4 "Estás en la leñera. Puedes entrar o volver al Sur"
+/2 "Coges tu coche rumbo a la sierra de gredos desde Madrid. Es un paseito, pero el viaje se hace ameno escuchando un poco de música. Te desvías hacia una carretera comarcal. Al final de la misma, hay una salida a la derecha que lleva directamente a la cabaña de tus padres. El camino tiene una preciosa arboleda a los lados de modo que hace un efecto tunel que siempre te ha dado respeto cuando eras un niño. Cuando se levantaba niebla, tu imaginación echaba a volar. Salidas: Este"
+/3 "Estás en el exterior de la cabaña. La verdad es que tus padres hicieron una preciosa reforma a la misma. Tiene dos plantas, y desde el aquí, puede ver al Norte la leñera, al Sur el garage y al Este tienes el porche, es decir, la entrada principal."
+/4 "Estás en la leñera. Puedes Entrar o volver al Sur"
 /5 "Lograste entrar en el garage. Que fácil es todo cuando tienes las llaves"
-/6 "Un par de potentes luces iluminan el porche. Nunca te gustaron esas luces porque atraín muchos insectos las noches de verano y era imposible estar en el porche sin sufrir el feroz ataque de un mosquito sediento de sangre."
+/6 "Un par de potentes luces iluminan el porche. Nunca te gustaron esas luces porque atraín muchos insectos las noches de verano y era imposible estar allí sin sufrir el feroz ataque de un mosquito sediento de sangre. Frente a ti está la puerta principal de la cabaña."
 /7 "Estás en el descansillo."
 /8 "Estás en la bodega."
-/9 "Estás en el aseo."
-/10 "Estás en la cocina." 
+/9 "Estás en el aseo. No hay apenas luz y no logras ver nada. Tienes un interruptor a la derecha. Quizás, si lo usas para encender la luz..."
+/10 "Estás en la cocina. Es una preciosidad y además es enorme. Tiene un toque vintage muy chulo, todo de madera. Puedes ver el fregadero, algunos muebles, un almacén para la comida y cacharros, la vieja lavadora que con más de 35 años, aún sigue dando servicio. Ya no se fabrican como antes. Jodida obsolescencia programada. Ah! Tienes acceso al almacén en el Este. Salidas: N E" 
 /11 "Estás en el Salon."
 /12 "Estás en las escaleras. Puedes subir a la primera planta o bajar al descansillo."
 /13 "Estás en el almacén. Ves una estantería casi vacía."
@@ -419,6 +429,7 @@ O lPasillo2
 /11     252     1       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    SKEY1       _
 /12     252     1       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    KCAJA       _
 /13     252     1       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    LINTERNA    _
+/14     252     1       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    MECHERO     _
 
 ;------------------------------------------------------------------------------
 /PRO 0       ;Bucle principal de localidades
@@ -452,6 +463,8 @@ O lPasillo2
 ;------------------------------------------------------------------------------
 /PRO 1
 
+> _       _     INK     2               ; Color blanco para el texto narrado
+
 > _       _     PROCESS 4               ; Lo que en el PAW era el proceso 2
 
 > _       _     PARSE   0               ; Toma sentencia lógica del buffer
@@ -464,6 +477,8 @@ O lPasillo2
                 SKIP    1
 
 > _       _     PLUS    fTurns   1
+
+> _       _     INK     15              ; Color verde para la entrada de acciones
 
 > _       _     PROCESS 5               ; La antigua tabla de respuestas
                 ISDONE                  ; Ha hecho algo?
@@ -514,6 +529,11 @@ O lPasillo2
                 ZERO fLuz
                 MESSAGE "la cerilla se ha consumido"
 
+> _       _     NOTZERO fLuz2
+                MINUS fLuz2 1
+                ZERO fLuz2
+                MESSAGE "la cerilla se ha consumido"
+
 /PRO 5 ; Interpretamos los comando como en la antigua tabla de respuestas
 
 > USAR PINZAS    AT lMadrid
@@ -521,11 +541,18 @@ O lPasillo2
                 RESTART
                 DONE
 
-> EXAMINA MESITA AT lMadrid
-                MESSAGE "La mesita de noche está limpia y perfecta."
+; Meter un COGER MOVIL pero controlar que NO ha aparecido NOAT o algo asi, de modo que le suelte el mensaje de... "Pero dónde está móvil! Estoy un poco dormido. Debería echar un vistazo a la mesita."
+
+> COGER MOVIL AT lMadrid            
                 ISAT oMovil 252
-                MESSAGE "Hay un teléfono móvil en ella."
+                MESSAGE "Estás muy adormilado. Mejor echa un vistazo a la mesita de noche."
+                DONE
+
+> EXAMINA MESITA AT lMadrid
+                ISAT oMovil 252
                 CREATE oMovil
+                MESSAGE "Es una mesita de noche sencilla, minimalista. Como tu sueles decir, una tabla con cuatro patas. Ahora bien, está muy limpia y sin rayaduras o arañazos.#n"
+                MESSAGE "Hay un teléfono móvil en ella y no deja de sonar."
                 DONE
 
 > EXAMINA MESITA AT lMadrid
@@ -536,15 +563,19 @@ O lPasillo2
 > EXAMINA MESITA AT lMadrid
                 DONE  
 
-> USAR  MOVIL AT lMadrid
+> USAR TELEFONO
+                SYNONYM USAR MOVIL
+
+> USAR MOVIL AT lMadrid
                 CARRIED oMovil ; ¿lleva móvil?
-                MESSAGE "+Buenos días hijo. Qué tal estás?.#n-Hasta que me llamaste estaba como un rey, en cama, calentito y tratando de negociar con Morpheo una segunda ronda.#n+Dile a Morpheo que espere un momento. Escucha, vente a la cabaña a pasar el día con nosotros, tenemos algo que contarte#n-Me apetece mucho, si... Pero no puede...#n+Hasta luego#n-Estupendo, no he podido poner un excusa, tengo que ir a ver mis padres."
+                ZERO fUsarMovil
                 SET fUsarMovil
+                MESSAGE "+Buenos días hijo. Qué tal estás?.#n-Hasta que me llamaste estaba como un rey, en cama, calentito y tratando de negociar con Morpheo una segunda ronda.#n+Dile a Morpheo que espere un momento. Escucha, vente a la cabaña a pasar el día con nosotros, tenemos algo que contarte#n-Me apetece mucho, si... Pero no puede...#n+Hasta luego#n-Estupendo, no he podido poner un excusa, tengo que ir a ver mis padres."
                 DONE 
 
 > USAR MOVIL AT lMadrid
                 NOTZERO fUsarMovil 
-                MESSAGE "Tu padre ya ha colgado. Es mejor que muevas el culo y te vayas a por el coche."
+                MESSAGE "Tu padre ya ha colgado. Es mejor que muevas el culo y te vayas a por el coche (Este)."
                 DONE
 
 > MIRAR   _    AT lMadrid ; Si ya has cogido el movil e insistes en mirar cosas
@@ -604,7 +635,6 @@ O lPasillo2
 
 > EXAMINAR GNOMO AT lPorche
                 CARRIED oGnomo
-                ;NOTZERO fCogerGnomo
 	            MESSAGE "Lo miras con atención y lo agitas en el aire. Suena algo suelto dentro."
                 DONE
 
@@ -616,6 +646,10 @@ O lPasillo2
                 ISAT oGnomo 252
                 CREATE oGnomo
                 MESSAGE "A tu alrededor puedes ver en el suelo una vieja maceta con lo que debió ser una planta, un felpudo y un gnomo de jardín."
+                DONE
+
+> COGER TODO AT lPorche
+	            MESSAGE "Igual es mejor que vayas poco a poco. No puedes coger tantas cosas a la vez."
                 DONE
 
 > COGER FELPUDO AT lPorche
@@ -642,6 +676,17 @@ O lPasillo2
                 DROP oMaceta
                 DONE
 
+> LANZAR GNOMO
+                SYNONYM TIRAR GNOMO
+
+> ROMPER GNOMO AT lPorche
+                MESSAGE "Está duro como una piedra. Es de arcilla. Y si lo tiras al suelo?"
+                DONE
+
+> ABRIR GNOMO AT lPorche
+                MESSAGE "Bajo los pies del gnomo hubo una apertura en su momento. Ahora hay yeso y no hay forma de quitarlo sin romper el gnomo."
+                DONE
+
 > TIRAR GNOMO AT lPorche
                 ISAT oLlavePorche 252
                 CREATE oLlavePorche
@@ -651,10 +696,17 @@ O lPasillo2
                 DONE	
 
 > ESCUCHAR METALICA at lPorche
-	            ;XPLAY "T110O5G16F#16G16A16G8O4G4B4O5D8D8C8C4C16O4B16O5C16D16C8O4D4A4O5C8C8"
-                ;XPLAY "T110O4B8B4O5G4.E16D8C#8C#8C#8G4.E16D8C#8C#8C#8G4.E16F#8D8O4B8"
-                ;XPLAY "T110O5G8E4.D32E32D4"
-                MESSAGE "Igual no es el momento de escuchar esta música, pero..."
+	            XPLAY "T110O5G16F#16G16A16G8O4G4B4O5D8D8C8C4C16O4B16O5C16D16C8O4D4A4O5C8C8"
+                XPLAY "T110O4B8B4O5G4.E16D8C#8C#8C#8G4.E16D8C#8C#8C#8G4.E16F#8D8O4B8"
+                XPLAY "T110O5G8E4.D32E32D4"
+                MESSAGE "Creo que me he confundido de música, perdón... intenta abrir la puerta y olvidemos este asunto."
+                DONE
+
+> ESCUCHAR METALICA at lCoche
+	            XPLAY "T110O5G16F#16G16A16G8O4G4B4O5D8D8C8C4C16O4B16O5C16D16C8O4D4A4O5C8C8"
+                XPLAY "T110O4B8B4O5G4.E16D8C#8C#8C#8G4.E16D8C#8C#8C#8G4.E16F#8D8O4B8"
+                XPLAY "T110O5G8E4.D32E32D4"
+                MESSAGE "Creo que me he confundido de música, perdón... sigue al Este y olvidemos este asunto."
                 DONE
 
 > EXAMINAR PUERTA at lPorche
@@ -666,11 +718,16 @@ O lPasillo2
                 DONE
 
 > USAR LLAVE
-                SYNONYM ABRIR PUERTA
+                SYNONYM ABRIR PUERT
+
+> ABRIR PUERTA  AT lPorche
+                NOTCARR oLlavePorche
+                MESSAGE "No puedes entrar la casa. La puerta está cerrada y necesitas la llave. Pero te viene a la memoria que, cuando tus padres salían a pasear por el bosque, solían esconder una llave en algún sitio. Lo recuerdas?"
+                DONE
 
 > ABRIR PUERTA	AT lPorche
                 CARRIED oLlavePorche
-            	MESSAGE "Ya estás dentro de la casa. Hace frío. Y apenas hay luz. Te has tropezado con la mesita de la entrada.#n- Hola? Hay alguien en casa?#n-No quiero bromitas porque sino me voy a cabrear y lo sabéis!#nNo responde nadie. La puerta se cierra tras de tí de un portazo. Ya no se abre. Estás encerrado."
+            	MESSAGE "Ya estás dentro de la casa. Hace frío. Y apenas hay luz. Te has tropezado con la mesita de la entrada.#n- Hola? Hay alguien en casa?#n-No quiero bromitas porque sino me voy a cabrear y lo sabéis!#nNo responde nadie. La puerta se cierra tras de tí de un portazo. Ya no se abre. Está atascada.#n"
                 goto lDescansillo
                 RESTART
                 DONE
@@ -678,7 +735,7 @@ O lPasillo2
 ; Ya estamos dentro de la casa y no podemos salir al exterior
 
 > MIRAR _       AT lDescansillo
-                MESSAGE "Hay poca luz. Puedes ver las escaleras que suben a las habitaciones de la planta superior, el baño de la planta de abajo (N), la entrada a la cocina (S) y enfrente el salón (E). Y por supuesto, la mesita con la que has tropezado."
+                MESSAGE "Hay poca luz. Puedes ver las escaleras que suben a las habitaciones de la planta superior, el baño de la planta de abajo, la entrada a la cocina y enfrente el salón. Y por supuesto, la mesita con la que has tropezado. #n#nSalidas: N S E SUBIR"
                 DONE
 
 > EXAMINAR MESITA AT lDescansillo
@@ -729,10 +786,10 @@ O lPasillo2
                 DONE
 
 > ENCENDER CERILLA
-                SYNONYM USAR CERILLA
+                SYNONYM USAR CERIL
 
 > PRENDER CERILLA
-                SYNONYM USAR CERILLA
+                SYNONYM USAR CERIL
 
 > USAR CERILLA 
                 CARRIED oCerillas
@@ -750,7 +807,7 @@ O lPasillo2
 > S         _  AT lDescansillo ; No podemos entrar en la cocina sin LUZ
                 ZERO fLuz
                 SET fDark
-                MESSAGE "La cocina está muy oscura. Sin luz no se puede entrar."
+                MESSAGE "La cocina está muy oscura. Sin luz no es buena idea entrar. Necesito algo para iluminar."
                 DONE
 
 > S         _  AT lDescansillo ; Tenemos LUZ y nos metemos en la cocina
@@ -760,6 +817,39 @@ O lPasillo2
                 CARRIED oCerillas
                 GOTO lCocina
                 RESTART
+                DONE
+
+> USAR INTERRUPTOR AT lAseo
+                ZERO fUsarInterruptor
+                SET fUsarInterruptor
+                ISAT oMechero 252
+                CREATE oMechero
+                MESSAGE "Pulsas el interruptor de la luz y ves un mechero en el suelo pero la luz comienza a parpadear con rapidez y la bombilla salta por los aires. Te has sobresaltado un poco, la verdad."
+                DONE
+
+> USAR INTERRUPTOR AT lAseo
+                NOTZERO fUsarInterruptor
+                MESSAGE "Obviamente no funciona. Hasta dónde llegan tus conocimientos de electricidad? Si no hay bombilla... no puede haber luz."
+                DONE
+
+> COGER MECHERO AT lAseo
+                NOTZERO fUsarInterruptor
+                GET oMechero
+                MESSAGE "aún a pesar del susto y con sumo cuidado para no cortarte con los cristales de la bombilla.#nAl cogerlo has sentido como si algo te tocara la mano, algo muy frío. Se te ponen los pelos como escarpias. Ahora SI que te has asustado. Te acojona pensar lo que podrás encontrarte si usas el mechero."
+                DONE
+
+> USAR MECHERO AT lAseo
+	            MESSAGE "No debiste hacer eso. Lo que pareció ser un niño en sus buenos momentos, te lanza con fuerza contra el lavabo y oyes un fuerte CRACK en tu cabeza. Caes al suelo como un muñeco. Lo último que pasa por tu mente es el sonido de tu sangre gorgotear. Has muerto."
+                END
+
+> EXAMINAR ASEO AT lAseo
+	            CARRIED oMechero               
+            	MESSAGE "No se ve nada. Y no puedes encender la luz, ya que no hay bombilla. Olvídate del aseo y sal de aquí."
+                DONE
+
+> EXAMINAR ASEO AT lAseo
+                NOTCARR oMechero
+                MESSAGE "No se ve nada. Y no puedes encender la luz, ya que no hay bombilla. Pero tocas un mechero en el suelo."
                 DONE
 
 > MIRAR     _ AT lCocina
@@ -1021,8 +1111,8 @@ O lPasillo2
                 DONE
 
 > E     _      AT lPorche
-                Zero fPuertaPorche
-                MESSAGE "No puedes entrar la casa. La puerta está cerrada y necesitas la llave. Pero recuerdas que cuando tus padres salían a pasear por el bosque, solían esconder una llave en algún sitio. Lo recuerdas?"
+                NOTCARR oLlavePorche
+                MESSAGE "No puedes entrar la casa. La puerta está cerrada y necesitas la llave. Pero recuerdas que cuando tus padres salían a pasear por el bosque, solían esconder una llave en algún sitio."
                 DONE
 
 > E     _      AT lPorche 
@@ -1039,7 +1129,7 @@ O lPasillo2
 > E     _      AT lMadrid ; Si no has usado el movil y quieres salir al Este
                 NOTZERO fUsarMovil
                 CARRIED oMovil
-                MESSAGE "Muy bien! Te has dejado el móvil en casa. No puedes volver porque vas con prisas."
+                MESSAGE "Te duchas y vistes con rapidez, sabes que a tu padre no le gusta que le hagan esperar. Coges las llaves del coche cierras la puerta de casa y vas directo al garage."
                 DESTROY oMovil
                 INKEY
                 CLS
@@ -1062,8 +1152,6 @@ O lPasillo2
                 Zero fPuertaGarage
                 MESSAGE "No puedes entrar en el garage. La puerta está cerrada.Necesitas una llave."
                 DONE
-
-
 
 > I       _     SYSMESS 9
                 LISTAT  CARRIED

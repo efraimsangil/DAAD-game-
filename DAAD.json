@@ -7,8 +7,8 @@
 	[
 		{"symbol":"NUM_LOCATIONS", "Value":19},
 		{"symbol":"LAST_LOCATION", "Value":18},
-		{"symbol":"NUM_OBJECTS", "Value":14},
-		{"symbol":"LAST_OBJECT", "Value":13},
+		{"symbol":"NUM_OBJECTS", "Value":15},
+		{"symbol":"LAST_OBJECT", "Value":14},
 		{"symbol":"_VOC_LUEGO", "Value":2},
 		{"symbol":"_VOC_ENTON", "Value":2},
 		{"symbol":"_VOC_Y", "Value":2},
@@ -37,6 +37,9 @@
 		{"symbol":"_VOC_VIEJO", "Value":4},
 		{"symbol":"_VOC_GRAND", "Value":3},
 		{"symbol":"_VOC_PEQUE", "Value":2},
+		{"symbol":"_VOC_ROMPE", "Value":43},
+		{"symbol":"_VOC_LANZA", "Value":42},
+		{"symbol":"_VOC_GOLPE", "Value":41},
 		{"symbol":"_VOC_MOVER", "Value":40},
 		{"symbol":"_VOC_PREND", "Value":39},
 		{"symbol":"_VOC_ABRIR", "Value":38},
@@ -68,7 +71,11 @@
 		{"symbol":"_VOC_SOLTA", "Value":21},
 		{"symbol":"_VOC_DEJAR", "Value":21},
 		{"symbol":"_VOC_COGER", "Value":20},
-		{"symbol":"_VOC_LAVAD", "Value":125},
+		{"symbol":"_VOC_ASEO", "Value":130},
+		{"symbol":"_VOC_INTER", "Value":129},
+		{"symbol":"_VOC_MECHE", "Value":128},
+		{"symbol":"_VOC_TELEF", "Value":127},
+		{"symbol":"_VOC_LAVAD", "Value":126},
 		{"symbol":"_VOC_FREGA", "Value":125},
 		{"symbol":"_VOC_MUEBL", "Value":124},
 		{"symbol":"_VOC_LINTE", "Value":123},
@@ -119,6 +126,7 @@
 		{"symbol":"_VOC_S", "Value":3},
 		{"symbol":"_VOC_NORTE", "Value":2},
 		{"symbol":"_VOC_N", "Value":2},
+		{"symbol":"OMECHERO", "Value":14},
 		{"symbol":"OLINTERNA", "Value":13},
 		{"symbol":"OLLAVECAJA", "Value":12},
 		{"symbol":"OSECRETKEY1", "Value":11},
@@ -152,9 +160,11 @@
 		{"symbol":"LCOCHE", "Value":2},
 		{"symbol":"LMADRID", "Value":1},
 		{"symbol":"LINTRO", "Value":0},
-		{"symbol":"FTABLON", "Value":76},
-		{"symbol":"FMESITA", "Value":75},
-		{"symbol":"FCAJON", "Value":74},
+		{"symbol":"FUSARINTERRUPTOR", "Value":78},
+		{"symbol":"FTABLON", "Value":77},
+		{"symbol":"FMESITA", "Value":76},
+		{"symbol":"FCAJON", "Value":75},
+		{"symbol":"FLUZ2", "Value":74},
 		{"symbol":"FLUZ", "Value":73},
 		{"symbol":"FCERILLAS", "Value":72},
 		{"symbol":"FCOGERGNOMO", "Value":71},
@@ -222,6 +232,7 @@
 		{"VocWord":"ABRIR", "Value":38,"VocType":0 },
 		{"VocWord":"AR", "Value":10,"VocType":2 },
 		{"VocWord":"ARRIB", "Value":10,"VocType":2 },
+		{"VocWord":"ASEO", "Value":130,"VocType":2 },
 		{"VocWord":"BAJAR", "Value":11,"VocType":0 },
 		{"VocWord":"BAJO", "Value":7,"VocType":4 },
 		{"VocWord":"BATER", "Value":103,"VocType":2 },
@@ -255,16 +266,19 @@
 		{"VocWord":"FIN", "Value":25,"VocType":0 },
 		{"VocWord":"FREGA", "Value":125,"VocType":2 },
 		{"VocWord":"GNOMO", "Value":108,"VocType":2 },
+		{"VocWord":"GOLPE", "Value":41,"VocType":0 },
 		{"VocWord":"GRAND", "Value":3,"VocType":3 },
 		{"VocWord":"HABLA", "Value":31,"VocType":0 },
 		{"VocWord":"I", "Value":14,"VocType":2 },
+		{"VocWord":"INTER", "Value":129,"VocType":2 },
 		{"VocWord":"INVEN", "Value":14,"VocType":2 },
 		{"VocWord":"JUGAR", "Value":32,"VocType":0 },
 		{"VocWord":"JUNTO", "Value":8,"VocType":4 },
 		{"VocWord":"KCAJA", "Value":122,"VocType":2 },
+		{"VocWord":"LANZA", "Value":42,"VocType":0 },
 		{"VocWord":"LARGA", "Value":9,"VocType":3 },
 		{"VocWord":"LARGO", "Value":9,"VocType":3 },
-		{"VocWord":"LAVAD", "Value":125,"VocType":2 },
+		{"VocWord":"LAVAD", "Value":126,"VocType":2 },
 		{"VocWord":"LD", "Value":27,"VocType":0 },
 		{"VocWord":"LENTA", "Value":3,"VocType":1 },
 		{"VocWord":"LINTE", "Value":123,"VocType":2 },
@@ -277,6 +291,7 @@
 		{"VocWord":"LUEGO", "Value":2,"VocType":5 },
 		{"VocWord":"M", "Value":24,"VocType":0 },
 		{"VocWord":"MACET", "Value":107,"VocType":2 },
+		{"VocWord":"MECHE", "Value":128,"VocType":2 },
 		{"VocWord":"MENOS", "Value":13,"VocType":4 },
 		{"VocWord":"MESIT", "Value":99,"VocType":2 },
 		{"VocWord":"METAL", "Value":110,"VocType":2 },
@@ -306,6 +321,7 @@
 		{"VocWord":"RAMSA", "Value":28,"VocType":0 },
 		{"VocWord":"RAPID", "Value":2,"VocType":1 },
 		{"VocWord":"REDES", "Value":24,"VocType":0 },
+		{"VocWord":"ROMPE", "Value":43,"VocType":0 },
 		{"VocWord":"S", "Value":3,"VocType":2 },
 		{"VocWord":"SAVE", "Value":26,"VocType":0 },
 		{"VocWord":"SE", "Value":8,"VocType":2 },
@@ -317,6 +333,7 @@
 		{"VocWord":"SV", "Value":26,"VocType":0 },
 		{"VocWord":"TABLO", "Value":117,"VocType":2 },
 		{"VocWord":"TARJE", "Value":119,"VocType":2 },
+		{"VocWord":"TELEF", "Value":127,"VocType":2 },
 		{"VocWord":"TIRAR", "Value":35,"VocType":0 },
 		{"VocWord":"TODAS", "Value":20,"VocType":2 },
 		{"VocWord":"TODO", "Value":20,"VocType":2 },
@@ -462,6 +479,16 @@
 	{
 		"Value":13,
 		"Noun":123,
+		"Adjective":255,
+		"Container":0,
+		"Wearable":0,
+		"Flags":0,
+		"Weight":1,
+		"InitialyAt":252
+	},
+	{
+		"Value":14,
+		"Noun":128,
 		"Adjective":255,
 		"Container":0,
 		"Wearable":0,
@@ -635,263 +662,315 @@
 	},
 	{
 		"Value":2,
-		"Text":"La mesita de noche está limpia y perfecta."
+		"Text":"Estás muy adormilado. Mejor echa un vistazo a la mesita de noche."
 	},
 	{
 		"Value":3,
-		"Text":"Hay un teléfono móvil en ella."
+		"Text":"Es una mesita de noche sencilla, minimalista. Como tu sueles decir, una tabla con cuatro patas. Ahora bien, está muy limpia y sin rayaduras o arañazos.#n"
 	},
 	{
 		"Value":4,
-		"Text":"El teléfono sigue sonando"
+		"Text":"Hay un teléfono móvil en ella y no deja de sonar."
 	},
 	{
 		"Value":5,
-		"Text":"+Buenos días hijo. Qué tal estás?.#n-Hasta que me llamaste estaba como un rey, en cama, calentito y tratando de negociar con Morpheo una segunda ronda.#n+Dile a Morpheo que espere un momento. Escucha, vente a la cabaña a pasar el día con nosotros, tenemos algo que contarte#n-Me apetece mucho, si... Pero no puede...#n+Hasta luego#n-Cojonudo, no he podido poner un excusa, tengo que ir."
+		"Text":"El teléfono sigue sonando"
 	},
 	{
 		"Value":6,
-		"Text":"Aquí ya no tienes nada que hacer. Tira para el coche: Este"
+		"Text":"+Buenos días hijo. Qué tal estás?.#n-Hasta que me llamaste estaba como un rey, en cama, calentito y tratando de negociar con Morpheo una segunda ronda.#n+Dile a Morpheo que espere un momento. Escucha, vente a la cabaña a pasar el día con nosotros, tenemos algo que contarte#n-Me apetece mucho, si... Pero no puede...#n+Hasta luego#n-Estupendo, no he podido poner un excusa, tengo que ir a ver mis padres."
 	},
 	{
 		"Value":7,
-		"Text":"El móvil sigue sonando. No piensas cogerlo?"
+		"Text":"Tu padre ya ha colgado. Es mejor que muevas el culo y te vayas a por el coche (Este)."
 	},
 	{
 		"Value":8,
-		"Text":"Nada en este mundo va a romper tu momento de paz y tranquilidad. Cuando te levantes, seguro que te hechas una partida al nuevo juego de MSX, Venganza"
+		"Text":"Aquí ya no tienes nada que hacer. Tira para el coche: Este"
 	},
 	{
 		"Value":9,
-		"Text":"Igual es mejor coger la maceta para verla más de cerca"
+		"Text":"El móvil sigue sonando. No piensas cogerlo?"
 	},
 	{
 		"Value":10,
-		"Text":"La maceta contiene aún arena y una planta que está más seca que la mojama."
+		"Text":"Nada en este mundo va a romper tu momento de paz y tranquilidad. Cuando te levantes, seguro que te hechas una partida al nuevo juego de MSX, Venganza#n"
 	},
 	{
 		"Value":11,
-		"Text":"Yo creo que ya está bien de jugar con la maceta."
+		"Text":"Igual es mejor coger la maceta para verla más de cerca"
 	},
 	{
 		"Value":12,
-		"Text":"Es un clásico felpudo de esparto con el mensaje WELCOME HOME."
+		"Text":"La maceta contiene aún arena y una planta que está más seca que la mojama."
 	},
 	{
 		"Value":13,
-		"Text":"Es un gnomo rechoncho, con sonrisa picaresca y una mirada intensa."
+		"Text":"Yo creo que ya está bien de jugar con la maceta."
 	},
 	{
 		"Value":14,
-		"Text":"Lo miras con atención y lo agitas en el aire. Suena algo suelto dentro."
+		"Text":"Es un clásico felpudo de esparto con el mensaje WELCOME HOME."
 	},
 	{
 		"Value":15,
-		"Text":"A tu alrededor puedes ver en el suelo una vieja maceta con lo que debió ser una planta, un felpudo y un gnomo de jardín."
+		"Text":"Es un gnomo rechoncho, con sonrisa picaresca y una mirada intensa."
 	},
 	{
 		"Value":16,
-		"Text":"Debajo del felpudo no hay nada a excepción de un cienpies que sale por patas al haber sido descubierto. Prefiero dejar el felpudo en su sitio."
+		"Text":"Lo miras con atención y lo agitas en el aire. Suena algo suelto dentro."
 	},
 	{
 		"Value":17,
-		"Text":"La llave de la casa no va a aparecer sola. Sigue buscando."
+		"Text":"A tu alrededor puedes ver en el suelo una vieja maceta con lo que debió ser una planta, un felpudo y un gnomo de jardín."
 	},
 	{
 		"Value":18,
-		"Text":"Tiras la maceta contra el suelo y no se rompe. De qué estará hecha?"
+		"Text":"Igual es mejor que vayas poco a poco. No puedes coger tantas cosas a la vez."
 	},
 	{
 		"Value":19,
-		"Text":"Dejas la maceta en su sitio. Que buen hijo eres, si te viera tu madre estaría super orgullosa."
+		"Text":"Debajo del felpudo no hay nada a excepción de un cienpies que sale por patas al haber sido descubierto. Prefiero dejar el felpudo en su sitio."
 	},
 	{
 		"Value":20,
-		"Text":" al tirar el gnomo contra el suelo y saltar en mil pedazos. Es una llave metálica. Me encanta ese grupo! Ahora bien, cuando se entere tu madre que has roto el gnomo... vas a flipar!!!. "
+		"Text":"La llave de la casa no va a aparecer sola. Sigue buscando."
 	},
 	{
 		"Value":21,
-		"Text":"Igual no es el momento de escuchar esta música, pero..."
+		"Text":"Tiras la maceta contra el suelo y no se rompe. De qué estará hecha?"
 	},
 	{
 		"Value":22,
-		"Text":"Es una puerta fuerte, hecha de madera maciza. Como todas las puertas, tiene una cerradura para introducir una llave y abrirla."
+		"Text":"Dejas la maceta en su sitio. Que buen hijo eres, si te viera tu madre estaría super orgullosa."
 	},
 	{
 		"Value":23,
-		"Text":"Ya estás dentro de la casa. Hace frío. Y apenas hay luz. Te has tropezado con la mesita de la entrada.#n- Hola? Hay alguien en casa?#n-No quiero bromitas porque sino me voy a cabrear y lo sabéis!#nNo responde nadie. La puerta se cierra tras de tí de un portazo. Ya no se abre. Estás encerrado."
+		"Text":"Está duro como una piedra. Es de arcilla. Y si lo tiras al suelo?"
 	},
 	{
 		"Value":24,
-		"Text":"Hay poca luz. Puedes ver las escaleras que suben a las habitaciones de la planta superior, el baño de la planta de abajo (N), la entrada a la cocina (S) y enfrente el salón (E). Y por supuesto, la mesita con la que has tropezado."
+		"Text":"Bajo los pies del gnomo hubo una apertura en su momento. Ahora hay yeso y no hay forma de quitarlo sin romper el gnomo."
 	},
 	{
 		"Value":25,
-		"Text":"Es una preciosa mesita de madera con patas forjadas de hierro. Tu madre la heredó de sus padres. Tiene un cajón semiabierto."
+		"Text":" al tirar el gnomo contra el suelo y saltar en mil pedazos. Es una llave metálica. Me encanta ese grupo! Ahora bien, cuando se entere tu madre que has roto el gnomo... vas a flipar!!!. "
 	},
 	{
 		"Value":26,
-		"Text":"La mesita sigue siendo preciosa. Abres el cajón y seguimos?"
+		"Text":"Creo que me he confundido de música, perdón... intenta abrir la puerta y olvidemos este asunto."
 	},
 	{
 		"Value":27,
-		"Text":"La mesita sigue siendo preciosa. Seguimos?"
+		"Text":"Creo que me he confundido de música, perdón... sigue al Este y olvidemos este asunto."
 	},
 	{
 		"Value":28,
-		"Text":"En el cajón de la mesita puedes ver las llaves del garage y de la leñera, además de unas cerillas. Lo coges todo!!!#n"
+		"Text":"Es una puerta fuerte, hecha de madera maciza. Como todas las puertas, tiene una cerradura para introducir una llave. Ahora recuerdas que siempre quisiste que arreglaran el timbre en casa, porque cuando todo el mundo está en las habitaciones, nadie escuchaba nada."
 	},
 	{
 		"Value":29,
-		"Text":"Tienes una caja con 15 cerillas."
+		"Text":"Nadie responde a tu llamada. Prueba otra cosa."
 	},
 	{
 		"Value":30,
-		"Text":"Ya no hay nada interesante en la mesita."
+		"Text":"No puedes entrar la casa. La puerta está cerrada y necesitas la llave. Pero te viene a la memoria que, cuando tus padres salían a pasear por el bosque, solían esconder una llave en algún sitio. Lo recuerdas?"
 	},
 	{
 		"Value":31,
-		"Text":"Es una caja de cerillas de palo largo, típicas para encender los fogones de la cocina y velas. Contiene 15 cerillas."
+		"Text":"Ya estás dentro de la casa. Hace frío. Y apenas hay luz. Te has tropezado con la mesita de la entrada.#n- Hola? Hay alguien en casa?#n-No quiero bromitas porque sino me voy a cabrear y lo sabéis!#nNo responde nadie. La puerta se cierra tras de tí de un portazo. Ya no se abre. Está atascada.#n"
 	},
 	{
 		"Value":32,
-		"Text":"Las cerillas funcionan y ves bastante mejor. Pero ojo, se gastan.#nTe quedan:"
+		"Text":"Hay poca luz. Puedes ver las escaleras que suben a las habitaciones de la planta superior, el baño de la planta de abajo, la entrada a la cocina y enfrente el salón. Y por supuesto, la mesita con la que has tropezado. #n#nSalidas: N S E SUBIR"
 	},
 	{
 		"Value":33,
-		"Text":"Necesitas la llave de la bodega para poder entrar."
+		"Text":"Es una preciosa mesita de madera con patas forjadas de hierro. Tu madre la heredó de sus padres. Tiene un cajón semiabierto."
 	},
 	{
 		"Value":34,
-		"Text":"La cocina está muy oscura. Sin luz no se puede entrar."
+		"Text":"La mesita sigue siendo preciosa. Abres el cajón y seguimos?"
 	},
 	{
 		"Value":35,
-		"Text":"Puedes ver el fregadero, un mueble con cajones y la vieja lavadora que con 35 años, aún sigue dando servicio. Ya no se fabrican como antes."
+		"Text":"La mesita sigue siendo preciosa. Seguimos?"
 	},
 	{
 		"Value":36,
-		"Text":"No hay nada que ver en el fregadero. Está vacio."
+		"Text":"En el cajón de la mesita puedes ver las llaves del garage y de la leñera, además de unas cerillas. Lo coges todo!!!#n"
 	},
 	{
 		"Value":37,
-		"Text":"Es un típico mueble de cocina con varios cajones."
+		"Text":"Tienes una caja con 15 cerillas."
 	},
 	{
 		"Value":38,
-		"Text":"Puedes ver unas pilas, unas velas y las llaves del patio.#nQue curioso, no hay cuchillos."
+		"Text":"Ya no hay nada interesante en la mesita."
 	},
 	{
 		"Value":39,
-		"Text":"Dentro encuentras un cuchillo grande de carnicero.#n¿Pero que puñetas hace eso ahí dentro?"
+		"Text":"Es una caja de cerillas de palo largo, típicas para encender los fogones de la cocina y velas. Contiene 15 cerillas."
 	},
 	{
 		"Value":40,
-		"Text":"El almacén está muy oscura. Sin luz no se puede entrar."
+		"Text":"Las cerillas funcionan y ves bastante mejor. Pero ojo, se gastan.#nTe quedan:"
 	},
 	{
 		"Value":41,
-		"Text":"Las escaleras están muy oscuras. Necesitas algo para iluminar."
+		"Text":"Necesitas la llave de la bodega para poder entrar."
 	},
 	{
 		"Value":42,
-		"Text":"Metes el pie accidentalmente en el escalón al que quitaste el tablón y ;tropiezas malamente. Caes rodando las escaleras y te partes el cuello. Has muerto."
+		"Text":"La cocina está muy oscura. Sin luz no es buena idea entrar. Necesito algo para iluminar."
 	},
 	{
 		"Value":43,
-		"Text":"#nNotas un pequeño crujido bajo tus pies. Siempre ha habido un tablón suelto en esa escalera y nadie se preocupó de arreglarlo."
+		"Text":"Pulsas el interruptor de la luz y ves un mechero en el suelo pero la luz comienza a parpadear con rapidez y la bombilla salta por los aires. Te has sobresaltado un poco, la verdad."
 	},
 	{
 		"Value":44,
-		"Text":"No puedes moverte si vas a ciegas. Utiliza algo para iluminarte."
+		"Text":"Obviamente no funciona. Hasta dónde llegan tus conocimientos de electricidad? Si no hay bombilla... no puede haber luz."
 	},
 	{
 		"Value":45,
-		"Text":"Menos mal que llevas algo de luz. Toda la planta superior está a oscuras."
+		"Text":"aún a pesar del susto y con sumo cuidado para no cortarte con los cristales de la bombilla.#nAl cogerlo has sentido como si algo te tocara la mano, algo muy frío. Se te ponen los pelos como escarpias. Ahora SI que te has asustado. Te acojona pensar lo que podrás encontrarte si usas el mechero."
 	},
 	{
 		"Value":46,
-		"Text":"Sientes curiosidad por examinar la escalera con más detalle."
+		"Text":"No debiste hacer eso. Lo que pareció ser un niño en sus buenos momentos, te lanza con fuerza contra el lavabo y oyes un fuerte CRACK en tu cabeza. Caes al suelo como un muñeco. Lo último que pasa por tu mente es el sonido de tu sangre gorgotear. Has muerto."
 	},
 	{
 		"Value":47,
-		"Text":"Hay un tablón que parece tener cierta holgura y se mueve un poco."
+		"Text":"No se ve nada. Y no puedes encender la luz, ya que no hay bombilla. Olvídate del aseo y sal de aquí."
 	},
 	{
 		"Value":48,
-		"Text":"Efectivamente está un poco suelto. Creo que podría moverlo."
+		"Text":"No se ve nada. Y no puedes encender la luz, ya que no hay bombilla. Pero tocas un mechero en el suelo."
 	},
 	{
 		"Value":49,
-		"Text":"El escalón está abierto, no has puesto el tablón en su sitio."
+		"Text":"Puedes ver el fregadero, un mueble con cajones y la vieja lavadora que con 35 años, aún sigue dando servicio. Ya no se fabrican como antes."
 	},
 	{
 		"Value":50,
-		"Text":"Mueves el tablón y lo desplazas hacia un lado. Puedes ver una caja de metal dentro."
+		"Text":"No hay nada que ver en el fregadero. Está vacio."
 	},
 	{
 		"Value":51,
-		"Text":"El tablón no se mueve más"
+		"Text":"Es un típico mueble de cocina con varios cajones."
 	},
 	{
 		"Value":52,
-		"Text":"La caja tiene un candado de seguridad. Necesitas una llave."
+		"Text":"Puedes ver unas pilas, unas velas y las llaves del patio.#nQue curioso, no hay cuchillos."
 	},
 	{
 		"Value":53,
-		"Text":"La caja está pegada dentro del hueco del escalón, no se puede coger."
+		"Text":"Dentro encuentras un cuchillo grande de carnicero.#n¿Pero que puñetas hace eso ahí dentro?"
 	},
 	{
 		"Value":54,
-		"Text":"No tienes la llave. No puedes abrirla."
+		"Text":"El almacén está muy oscura. Sin luz no se puede entrar."
 	},
 	{
 		"Value":55,
-		"Text":"Has conseguido abrir la caja."
+		"Text":"Las escaleras están muy oscuras. Necesitas algo para iluminar."
 	},
 	{
 		"Value":56,
-		"Text":"\"¿Que abrirá esa tarjeta de seguridad?\""
+		"Text":"Metes el pie accidentalmente en el escalón al que quitaste el tablón y ;tropiezas malamente. Caes rodando las escaleras y te partes el cuello. Has muerto."
 	},
 	{
 		"Value":57,
-		"Text":"Has puesto el tablón en su sitio."
+		"Text":"#nNotas un pequeño crujido bajo tus pies. Siempre ha habido un tablón suelto en esa escalera y nadie se preocupó de arreglarlo."
 	},
 	{
 		"Value":58,
-		"Text":"Has vuelto al descansillo."
+		"Text":"No puedes moverte si vas a ciegas. Utiliza algo para iluminarte."
 	},
 	{
 		"Value":59,
-		"Text":"Con algo que genere luz, siempre será mucho mejor desplazarse por esta planta."
+		"Text":"Menos mal que llevas algo de luz. Toda la planta superior está a oscuras."
 	},
 	{
 		"Value":60,
-		"Text":"No puedes entrar en la casa. No tienes llaves."
+		"Text":"Sientes curiosidad por examinar la escalera con más detalle."
 	},
 	{
 		"Value":61,
-		"Text":"Ya estás dentro de la casa. Hace frío. Y apenas hay luz. Te has tropezado con la mesita de la entrada.#n- Hola? Hay alguien en casa?#n-No quiero bromitas porque sino me voy a cabrear y lo sabéis!#nNo responde nadie."
+		"Text":"Hay un tablón que parece tener cierta holgura y se mueve un poco."
 	},
 	{
 		"Value":62,
-		"Text":"No crees que deberías atender al móvil?"
+		"Text":"Efectivamente está un poco suelto. Creo que podría moverlo."
 	},
 	{
 		"Value":63,
-		"Text":"Cojonudo! Te has dejado el móvil en casa. No puedes volver porque vas con prisas."
+		"Text":"El escalón está abierto, no has puesto el tablón en su sitio."
 	},
 	{
 		"Value":64,
-		"Text":"No puedes entrar en la leñera. La puerta está cerrada. Necesitas una llave."
+		"Text":"Mueves el tablón y lo desplazas hacia un lado. Puedes ver una caja de metal dentro."
 	},
 	{
 		"Value":65,
-		"Text":"No puedes entrar en el garage. La puerta está cerrada.Necesitas una llave."
+		"Text":"El tablón no se mueve más"
 	},
 	{
 		"Value":66,
-		"Text":"No puedes entrar la casa. La puerta está cerrada. Necesitas una llave."
+		"Text":"La caja tiene un candado de seguridad. Necesitas una llave."
+	},
+	{
+		"Value":67,
+		"Text":"La caja está pegada dentro del hueco del escalón, no se puede coger."
+	},
+	{
+		"Value":68,
+		"Text":"No tienes la llave. No puedes abrirla."
+	},
+	{
+		"Value":69,
+		"Text":"Has conseguido abrir la caja."
+	},
+	{
+		"Value":70,
+		"Text":"\"¿Que abrirá esa tarjeta de seguridad?\""
+	},
+	{
+		"Value":71,
+		"Text":"Has puesto el tablón en su sitio."
+	},
+	{
+		"Value":72,
+		"Text":"Has vuelto al descansillo."
+	},
+	{
+		"Value":73,
+		"Text":"Con algo que genere luz, siempre será mucho mejor desplazarse por esta planta."
+	},
+	{
+		"Value":74,
+		"Text":"No puedes entrar la casa. La puerta está cerrada y necesitas la llave. Pero recuerdas que cuando tus padres salían a pasear por el bosque, solían esconder una llave en algún sitio."
+	},
+	{
+		"Value":75,
+		"Text":"Ya estás dentro de la casa. Hace frío. Y apenas hay luz. Te has tropezado con la mesita de la entrada.#n- Hola? Hay alguien en casa?#n-No quiero bromitas porque sino me voy a cabrear y lo sabéis!#nNo responde nadie."
+	},
+	{
+		"Value":76,
+		"Text":"No crees que deberías atender al móvil?"
+	},
+	{
+		"Value":77,
+		"Text":"Te duchas y vistes con rapidez, sabes que a tu padre no le gusta que le hagan esperar. Coges las llaves del coche cierras la puerta de casa y vas directo al garage."
+	},
+	{
+		"Value":78,
+		"Text":"No puedes entrar en la leñera. La puerta está cerrada. Necesitas una llave."
+	},
+	{
+		"Value":79,
+		"Text":"No puedes entrar en el garage. La puerta está cerrada.Necesitas una llave."
 	}
 	],
 "sysmess":
@@ -902,7 +981,7 @@
 	},
 	{
 		"Value":1,
-		"Text":"También puedo ver:"
+		"Text":"También puedes ver:"
 	},
 	{
 		"Value":2,
@@ -926,11 +1005,11 @@
 	},
 	{
 		"Value":7,
-		"Text":"No puedo ir en esa dirección."
+		"Text":"No puedes ir en esa dirección."
 	},
 	{
 		"Value":8,
-		"Text":"No puedo hacer eso."
+		"Text":"No puedes hacer eso."
 	},
 	{
 		"Value":9,
@@ -938,7 +1017,7 @@
 	},
 	{
 		"Value":10,
-		"Text":"Llevo puesto:#n"
+		"Text":"Llevas puesto:#n"
 	},
 	{
 		"Value":11,
@@ -990,15 +1069,15 @@
 	},
 	{
 		"Value":23,
-		"Text":"No llevo eso puesto."
+		"Text":"No llevas eso puesto."
 	},
 	{
 		"Value":24,
-		"Text":"No puedo. Tengo puesto _."
+		"Text":"No puedes. Tienes puesto _."
 	},
 	{
 		"Value":25,
-		"Text":"Ya tengo _."
+		"Text":"Ya tienes _."
 	},
 	{
 		"Value":26,
@@ -1006,15 +1085,15 @@
 	},
 	{
 		"Value":27,
-		"Text":"No puedo llevar nada más."
+		"Text":"No puedes llevar nada más."
 	},
 	{
 		"Value":28,
-		"Text":"No tengo eso.#n"
+		"Text":"No tienes eso.#n"
 	},
 	{
 		"Value":29,
-		"Text":"Ya llevo puesto _.#n"
+		"Text":"Ya llevas puesto _.#n"
 	},
 	{
 		"Value":30,
@@ -1042,35 +1121,35 @@
 	},
 	{
 		"Value":36,
-		"Text":"He cogido _."
+		"Text":"Has cogido _."
 	},
 	{
 		"Value":37,
-		"Text":"Me he puesto _."
+		"Text":"Te has puesto _."
 	},
 	{
 		"Value":38,
-		"Text":"Me he quitado _."
+		"Text":"Te has quitado _."
 	},
 	{
 		"Value":39,
-		"Text":"He dejado _."
+		"Text":"Has dejado _."
 	},
 	{
 		"Value":40,
-		"Text":"No puedo ponerme _."
+		"Text":"No puedes ponerte _."
 	},
 	{
 		"Value":41,
-		"Text":"No puedo quitarme _."
+		"Text":"No puedes quitarte _."
 	},
 	{
 		"Value":42,
-		"Text":"No puedo quitarme _.  No puedo llevar nada más en las manos."
+		"Text":"No puedes quitarte _.  No puedo llevar nada más en las manos."
 	},
 	{
 		"Value":43,
-		"Text":"@ pesa demasiado para mí."
+		"Text":"@ pesa demasiado para tí."
 	},
 	{
 		"Value":44,
@@ -1094,11 +1173,11 @@
 	},
 	{
 		"Value":49,
-		"Text":"No tengo _."
+		"Text":"No tienes _."
 	},
 	{
 		"Value":50,
-		"Text":"No llevo puesto _."
+		"Text":"No llevas puesto _."
 	},
 	{
 		"Value":51,
@@ -1153,23 +1232,23 @@
 	[
 	{
 		"Value":0,
-		"Text":"Es sábado, son las 08:00AM y aún sigues en la cama. Semi despierto y sin ganas de levantarte. Madrugas mucho durante la semana y no te apetece mucho abandonar el calorcito que sientes bajo el plumón.#n"
+		"Text":"Marcos es un tipo serio, con carácter, muy trabajador y responsable. Sus amigos lo ven como un soltero amargado, que no echa un polvo desde ni se sabe y por eso tiene ese mal genio.#n#n Está de fin de semana, en casa, tranquilo. No tiene planes excepto disfrutar de las pequeñas cosas de sus 48 horas de libertad condicional. Así denomina el, los fines de semana.#n#n Es sábado, son las 08:00AM y aún sigues en la cama. Semi despierto y sin ganas de levantarte. Madrugas mucho durante la semana y no te apetece mucho abandonar el calorcito que sientes bajo el plumón.#n#n"
 	},
 	{
 		"Value":1,
-		"Text":"Te giras en la cama con la firme intención de dormir un poquito más. Suena el teléfono móvil. Alguien ya decidió por ti que te debes despertar del todo. Tienes a tu lado la mesita de noche."
+		"Text":"Te giras en la cama con la firme intención de dormir un poquito más pero, suena el teléfono móvil. Alguien ya decidió por ti que te debes despertar del todo. Tienes a tu lado la mesita de noche."
 	},
 	{
 		"Value":2,
-		"Text":"Sales de casa y coges tu coche rumbo a la sierra de gredos desde Madrid. Es un paseito, pero el viaje se hace ameno escuchando un poco de música. Vete al Este"
+		"Text":"Coges tu coche rumbo a la sierra de gredos desde Madrid. Es un paseito, pero el viaje se hace ameno escuchando un poco de música. Te desvías hacia una carretera comarcal. Al final de la misma, hay una salida a la derecha que lleva directamente a la cabaña de tus padres. El camino tiene una preciosa arboleda a los lados de modo que hace un efecto tunel que siempre te ha dado respeto cuando eras un niño. Cuando se levantaba niebla, tu imaginación echaba a volar. Salidas: Este"
 	},
 	{
 		"Value":3,
-		"Text":"Estás en el exterior de la casa. Desde aquí puedes ir al Norte, Sur y Este"
+		"Text":"Estás en el exterior de la cabaña. La verdad es que tus padres hicieron una preciosa reforma a la misma. Tiene dos plantas, y desde el aquí, puede ver al Norte la leñera, al Sur el garage y al Este tienes el porche, es decir, la entrada principal."
 	},
 	{
 		"Value":4,
-		"Text":"Estás en la leñera. Puedes entrar o volver al Sur"
+		"Text":"Estás en la leñera. Puedes Entrar o volver al Sur"
 	},
 	{
 		"Value":5,
@@ -1177,7 +1256,7 @@
 	},
 	{
 		"Value":6,
-		"Text":"Estás en el porche de la casa. Pero recuerdas que cuando tus padres salían a pasear por el bosque, solían esconderla en algún sitio. Lo recuerdas?"
+		"Text":"Un par de potentes luces iluminan el porche. Nunca te gustaron esas luces porque atraín muchos insectos las noches de verano y era imposible estar allí sin sufrir el feroz ataque de un mosquito sediento de sangre. Frente a ti está la puerta principal de la cabaña."
 	},
 	{
 		"Value":7,
@@ -1189,11 +1268,11 @@
 	},
 	{
 		"Value":9,
-		"Text":"Estás en el aseo."
+		"Text":"Estás en el aseo. No hay apenas luz y no logras ver nada. Tienes un interruptor a la derecha. Quizás, si lo usas para encender la luz..."
 	},
 	{
 		"Value":10,
-		"Text":"Estás en la cocina."
+		"Text":"Estás en la cocina. Es una preciosidad y además es enorme. Tiene un toque vintage muy chulo, todo de madera. Puedes ver el fregadero, algunos muebles, un almacén para la comida y cacharros, la vieja lavadora que con más de 35 años, aún sigue dando servicio. Ya no se fabrican como antes. Jodida obsolescencia programada. Ah! Tienes acceso al almacén en el Este. Salidas: N E"
 	},
 	{
 		"Value":11,
@@ -1205,7 +1284,7 @@
 	},
 	{
 		"Value":13,
-		"Text":"Estás en el almacén."
+		"Text":"Estás en el almacén. Ves una estantería casi vacía."
 	},
 	{
 		"Value":14,
@@ -1232,7 +1311,7 @@
 	[
 	{
 		"Value":0,
-		"Text":"un telefono movil"
+		"Text":"un teléfono móvil"
 	},
 	{
 		"Value":1,
@@ -1244,7 +1323,7 @@
 	},
 	{
 		"Value":3,
-		"Text":"una bateria de coche"
+		"Text":"una batería de coche"
 	},
 	{
 		"Value":4,
@@ -1285,10 +1364,29 @@
 	{
 		"Value":13,
 		"Text":"una linterna"
+	},
+	{
+		"Value":14,
+		"Text":"un mechero"
 	}
 	],
 "xmessages":
 	[
+	],
+"other_strings":
+	[
+	{
+		"Value":0,
+		"Text":"T110O5G16F#16G16A16G8O4G4B4O5D8D8C8C4C16O4B16O5C16D16C8O4D4A4O5C8C8"
+	},
+	{
+		"Value":1,
+		"Text":"T110O4B8B4O5G4.E16D8C#8C#8C#8G4.E16D8C#8C#8C#8G4.E16F#8D8O4B8"
+	},
+	{
+		"Value":2,
+		"Text":"T110O5G8E4.D32E32D4"
+	}
 	],
 "processes":
 	[
@@ -1477,6 +1575,21 @@
 				"condacts":
 					[
 					{
+						"Opcode":66,
+						"Condact":"INK",
+						"Indirection1":0,
+						"Param1":2,
+						"NumParams":1
+					}
+					]
+			},
+			{
+				"Entry":"_ _",
+				"Verb":255,
+				"Noun":255,
+				"condacts":
+					[
+					{
 						"Opcode":75,
 						"Condact":"PROCESS",
 						"Indirection1":0,
@@ -1563,6 +1676,21 @@
 						"Param1":31,
 						"Param2":1,
 						"NumParams":2
+					}
+					]
+			},
+			{
+				"Entry":"_ _",
+				"Verb":255,
+				"Noun":255,
+				"condacts":
+					[
+					{
+						"Opcode":66,
+						"Condact":"INK",
+						"Indirection1":0,
+						"Param1":15,
+						"NumParams":1
 					}
 					]
 			},
@@ -1785,6 +1913,43 @@
 						"NumParams":1
 					}
 					]
+			},
+			{
+				"Entry":"_ _",
+				"Verb":255,
+				"Noun":255,
+				"condacts":
+					[
+					{
+						"Opcode":12,
+						"Condact":"NOTZERO",
+						"Indirection1":0,
+						"Param1":74,
+						"NumParams":1
+					},
+					{
+						"Opcode":50,
+						"Condact":"MINUS",
+						"Indirection1":0,
+						"Param1":74,
+						"Param2":1,
+						"NumParams":2
+					},
+					{
+						"Opcode":11,
+						"Condact":"ZERO",
+						"Indirection1":0,
+						"Param1":74,
+						"NumParams":1
+					},
+					{
+						"Opcode":38,
+						"Condact":"MESSAGE",
+						"Indirection1":0,
+						"Param1":1,
+						"NumParams":1
+					}
+					]
 			}
 			]
 	},
@@ -1825,9 +1990,9 @@
 					]
 			},
 			{
-				"Entry":"EX MESIT",
-				"Verb":30,
-				"Noun":99,
+				"Entry":"COGER MOVIL",
+				"Verb":20,
+				"Noun":100,
 				"condacts":
 					[
 					{
@@ -1835,13 +2000,6 @@
 						"Condact":"AT",
 						"Indirection1":0,
 						"Param1":1,
-						"NumParams":1
-					},
-					{
-						"Opcode":38,
-						"Condact":"MESSAGE",
-						"Indirection1":0,
-						"Param1":2,
 						"NumParams":1
 					},
 					{
@@ -1856,14 +2014,7 @@
 						"Opcode":38,
 						"Condact":"MESSAGE",
 						"Indirection1":0,
-						"Param1":3,
-						"NumParams":1
-					},
-					{
-						"Opcode":44,
-						"Condact":"CREATE",
-						"Indirection1":0,
-						"Param1":0,
+						"Param1":2,
 						"NumParams":1
 					},
 					{
@@ -1887,10 +2038,25 @@
 						"NumParams":1
 					},
 					{
-						"Opcode":9,
-						"Condact":"NOTCARR",
+						"Opcode":55,
+						"Condact":"ISAT",
 						"Indirection1":0,
 						"Param1":0,
+						"Param2":252,
+						"NumParams":2
+					},
+					{
+						"Opcode":44,
+						"Condact":"CREATE",
+						"Indirection1":0,
+						"Param1":0,
+						"NumParams":1
+					},
+					{
+						"Opcode":38,
+						"Condact":"MESSAGE",
+						"Indirection1":0,
+						"Param1":3,
 						"NumParams":1
 					},
 					{
@@ -1921,9 +2087,59 @@
 						"NumParams":1
 					},
 					{
+						"Opcode":9,
+						"Condact":"NOTCARR",
+						"Indirection1":0,
+						"Param1":0,
+						"NumParams":1
+					},
+					{
+						"Opcode":38,
+						"Condact":"MESSAGE",
+						"Indirection1":0,
+						"Param1":5,
+						"NumParams":1
+					},
+					{
 						"Opcode":22,
 						"Condact":"DONE",
 						"NumParams":0
+					}
+					]
+			},
+			{
+				"Entry":"EX MESIT",
+				"Verb":30,
+				"Noun":99,
+				"condacts":
+					[
+					{
+						"Opcode":0,
+						"Condact":"AT",
+						"Indirection1":0,
+						"Param1":1,
+						"NumParams":1
+					},
+					{
+						"Opcode":22,
+						"Condact":"DONE",
+						"NumParams":0
+					}
+					]
+			},
+			{
+				"Entry":"USAR TELEF",
+				"Verb":33,
+				"Noun":127,
+				"condacts":
+					[
+					{
+						"Opcode":36,
+						"Condact":"SYNONYM",
+						"Indirection1":0,
+						"Param1":33,
+						"Param2":100,
+						"NumParams":2
 					}
 					]
 			},
@@ -1948,10 +2164,10 @@
 						"NumParams":1
 					},
 					{
-						"Opcode":38,
-						"Condact":"MESSAGE",
+						"Opcode":11,
+						"Condact":"ZERO",
 						"Indirection1":0,
-						"Param1":5,
+						"Param1":67,
 						"NumParams":1
 					},
 					{
@@ -1959,6 +2175,47 @@
 						"Condact":"SET",
 						"Indirection1":0,
 						"Param1":67,
+						"NumParams":1
+					},
+					{
+						"Opcode":38,
+						"Condact":"MESSAGE",
+						"Indirection1":0,
+						"Param1":6,
+						"NumParams":1
+					},
+					{
+						"Opcode":22,
+						"Condact":"DONE",
+						"NumParams":0
+					}
+					]
+			},
+			{
+				"Entry":"USAR MOVIL",
+				"Verb":33,
+				"Noun":100,
+				"condacts":
+					[
+					{
+						"Opcode":0,
+						"Condact":"AT",
+						"Indirection1":0,
+						"Param1":1,
+						"NumParams":1
+					},
+					{
+						"Opcode":12,
+						"Condact":"NOTZERO",
+						"Indirection1":0,
+						"Param1":67,
+						"NumParams":1
+					},
+					{
+						"Opcode":38,
+						"Condact":"MESSAGE",
+						"Indirection1":0,
+						"Param1":7,
 						"NumParams":1
 					},
 					{
@@ -1999,7 +2256,7 @@
 						"Opcode":38,
 						"Condact":"MESSAGE",
 						"Indirection1":0,
-						"Param1":6,
+						"Param1":8,
 						"NumParams":1
 					},
 					{
@@ -2047,7 +2304,7 @@
 						"Opcode":38,
 						"Condact":"MESSAGE",
 						"Indirection1":0,
-						"Param1":7,
+						"Param1":9,
 						"NumParams":1
 					},
 					{
@@ -2088,19 +2345,12 @@
 						"Opcode":38,
 						"Condact":"MESSAGE",
 						"Indirection1":0,
-						"Param1":8,
+						"Param1":10,
 						"NumParams":1
 					},
 					{
-						"Opcode":37,
-						"Condact":"GOTO",
-						"Indirection1":0,
-						"Param1":0,
-						"NumParams":1
-					},
-					{
-						"Opcode":117,
-						"Condact":"RESTART",
+						"Opcode":21,
+						"Condact":"END",
 						"NumParams":0
 					}
 					]
@@ -2129,7 +2379,7 @@
 						"Opcode":38,
 						"Condact":"MESSAGE",
 						"Indirection1":0,
-						"Param1":9,
+						"Param1":11,
 						"NumParams":1
 					},
 					{
@@ -2177,7 +2427,7 @@
 						"Opcode":38,
 						"Condact":"MESSAGE",
 						"Indirection1":0,
-						"Param1":10,
+						"Param1":12,
 						"NumParams":1
 					},
 					{
@@ -2211,7 +2461,7 @@
 						"Opcode":38,
 						"Condact":"MESSAGE",
 						"Indirection1":0,
-						"Param1":11,
+						"Param1":13,
 						"NumParams":1
 					},
 					{
@@ -2238,7 +2488,7 @@
 						"Opcode":38,
 						"Condact":"MESSAGE",
 						"Indirection1":0,
-						"Param1":12,
+						"Param1":14,
 						"NumParams":1
 					},
 					{
@@ -2269,39 +2519,10 @@
 						"NumParams":1
 					},
 					{
-						"Opcode":11,
-						"Condact":"ZERO",
-						"Indirection1":0,
-						"Param1":71,
-						"NumParams":1
-					},
-					{
-						"Opcode":47,
-						"Condact":"SET",
-						"Indirection1":0,
-						"Param1":71,
-						"NumParams":1
-					},
-					{
-						"Opcode":55,
-						"Condact":"ISAT",
-						"Indirection1":0,
-						"Param1":8,
-						"Param2":252,
-						"NumParams":2
-					},
-					{
-						"Opcode":44,
-						"Condact":"CREATE",
-						"Indirection1":0,
-						"Param1":8,
-						"NumParams":1
-					},
-					{
 						"Opcode":38,
 						"Condact":"MESSAGE",
 						"Indirection1":0,
-						"Param1":13,
+						"Param1":15,
 						"NumParams":1
 					},
 					{
@@ -2332,17 +2553,10 @@
 						"NumParams":1
 					},
 					{
-						"Opcode":12,
-						"Condact":"NOTZERO",
-						"Indirection1":0,
-						"Param1":71,
-						"NumParams":1
-					},
-					{
 						"Opcode":38,
 						"Condact":"MESSAGE",
 						"Indirection1":0,
-						"Param1":14,
+						"Param1":16,
 						"NumParams":1
 					},
 					{
@@ -2414,7 +2628,34 @@
 						"Opcode":38,
 						"Condact":"MESSAGE",
 						"Indirection1":0,
-						"Param1":15,
+						"Param1":17,
+						"NumParams":1
+					},
+					{
+						"Opcode":22,
+						"Condact":"DONE",
+						"NumParams":0
+					}
+					]
+			},
+			{
+				"Entry":"COGER TODO",
+				"Verb":20,
+				"Noun":20,
+				"condacts":
+					[
+					{
+						"Opcode":0,
+						"Condact":"AT",
+						"Indirection1":0,
+						"Param1":6,
+						"NumParams":1
+					},
+					{
+						"Opcode":38,
+						"Condact":"MESSAGE",
+						"Indirection1":0,
+						"Param1":18,
 						"NumParams":1
 					},
 					{
@@ -2455,7 +2696,7 @@
 						"Opcode":38,
 						"Condact":"MESSAGE",
 						"Indirection1":0,
-						"Param1":16,
+						"Param1":19,
 						"NumParams":1
 					},
 					{
@@ -2496,7 +2737,7 @@
 						"Opcode":38,
 						"Condact":"MESSAGE",
 						"Indirection1":0,
-						"Param1":17,
+						"Param1":20,
 						"NumParams":1
 					},
 					{
@@ -2530,7 +2771,7 @@
 						"Opcode":38,
 						"Condact":"MESSAGE",
 						"Indirection1":0,
-						"Param1":18,
+						"Param1":21,
 						"NumParams":1
 					},
 					{
@@ -2571,7 +2812,7 @@
 						"Opcode":38,
 						"Condact":"MESSAGE",
 						"Indirection1":0,
-						"Param1":19,
+						"Param1":22,
 						"NumParams":1
 					},
 					{
@@ -2579,6 +2820,76 @@
 						"Condact":"DROP",
 						"Indirection1":0,
 						"Param1":7,
+						"NumParams":1
+					},
+					{
+						"Opcode":22,
+						"Condact":"DONE",
+						"NumParams":0
+					}
+					]
+			},
+			{
+				"Entry":"LANZA GNOMO",
+				"Verb":42,
+				"Noun":108,
+				"condacts":
+					[
+					{
+						"Opcode":36,
+						"Condact":"SYNONYM",
+						"Indirection1":0,
+						"Param1":35,
+						"Param2":108,
+						"NumParams":2
+					}
+					]
+			},
+			{
+				"Entry":"ROMPE GNOMO",
+				"Verb":43,
+				"Noun":108,
+				"condacts":
+					[
+					{
+						"Opcode":0,
+						"Condact":"AT",
+						"Indirection1":0,
+						"Param1":6,
+						"NumParams":1
+					},
+					{
+						"Opcode":38,
+						"Condact":"MESSAGE",
+						"Indirection1":0,
+						"Param1":23,
+						"NumParams":1
+					},
+					{
+						"Opcode":22,
+						"Condact":"DONE",
+						"NumParams":0
+					}
+					]
+			},
+			{
+				"Entry":"ABRIR GNOMO",
+				"Verb":38,
+				"Noun":108,
+				"condacts":
+					[
+					{
+						"Opcode":0,
+						"Condact":"AT",
+						"Indirection1":0,
+						"Param1":6,
+						"NumParams":1
+					},
+					{
+						"Opcode":38,
+						"Condact":"MESSAGE",
+						"Indirection1":0,
+						"Param1":24,
 						"NumParams":1
 					},
 					{
@@ -2627,7 +2938,7 @@
 						"Opcode":38,
 						"Condact":"MESSAGE",
 						"Indirection1":0,
-						"Param1":20,
+						"Param1":25,
 						"NumParams":1
 					},
 					{
@@ -2658,10 +2969,79 @@
 						"NumParams":1
 					},
 					{
+						"Opcode":134,
+						"Condact":"XPLAY",
+						"Indirection1":0,
+						"Param1":0,
+						"NumParams":1
+					},
+					{
+						"Opcode":134,
+						"Condact":"XPLAY",
+						"Indirection1":0,
+						"Param1":1,
+						"NumParams":1
+					},
+					{
+						"Opcode":134,
+						"Condact":"XPLAY",
+						"Indirection1":0,
+						"Param1":2,
+						"NumParams":1
+					},
+					{
 						"Opcode":38,
 						"Condact":"MESSAGE",
 						"Indirection1":0,
-						"Param1":21,
+						"Param1":26,
+						"NumParams":1
+					},
+					{
+						"Opcode":22,
+						"Condact":"DONE",
+						"NumParams":0
+					}
+					]
+			},
+			{
+				"Entry":"ESCUC METAL",
+				"Verb":36,
+				"Noun":110,
+				"condacts":
+					[
+					{
+						"Opcode":0,
+						"Condact":"AT",
+						"Indirection1":0,
+						"Param1":2,
+						"NumParams":1
+					},
+					{
+						"Opcode":134,
+						"Condact":"XPLAY",
+						"Indirection1":0,
+						"Param1":0,
+						"NumParams":1
+					},
+					{
+						"Opcode":134,
+						"Condact":"XPLAY",
+						"Indirection1":0,
+						"Param1":1,
+						"NumParams":1
+					},
+					{
+						"Opcode":134,
+						"Condact":"XPLAY",
+						"Indirection1":0,
+						"Param1":2,
+						"NumParams":1
+					},
+					{
+						"Opcode":38,
+						"Condact":"MESSAGE",
+						"Indirection1":0,
+						"Param1":27,
 						"NumParams":1
 					},
 					{
@@ -2688,7 +3068,34 @@
 						"Opcode":38,
 						"Condact":"MESSAGE",
 						"Indirection1":0,
-						"Param1":22,
+						"Param1":28,
+						"NumParams":1
+					},
+					{
+						"Opcode":22,
+						"Condact":"DONE",
+						"NumParams":0
+					}
+					]
+			},
+			{
+				"Entry":"GOLPE PUERT",
+				"Verb":41,
+				"Noun":111,
+				"condacts":
+					[
+					{
+						"Opcode":0,
+						"Condact":"AT",
+						"Indirection1":0,
+						"Param1":6,
+						"NumParams":1
+					},
+					{
+						"Opcode":38,
+						"Condact":"MESSAGE",
+						"Indirection1":0,
+						"Param1":29,
 						"NumParams":1
 					},
 					{
@@ -2728,6 +3135,40 @@
 						"NumParams":1
 					},
 					{
+						"Opcode":9,
+						"Condact":"NOTCARR",
+						"Indirection1":0,
+						"Param1":5,
+						"NumParams":1
+					},
+					{
+						"Opcode":38,
+						"Condact":"MESSAGE",
+						"Indirection1":0,
+						"Param1":30,
+						"NumParams":1
+					},
+					{
+						"Opcode":22,
+						"Condact":"DONE",
+						"NumParams":0
+					}
+					]
+			},
+			{
+				"Entry":"ABRIR PUERT",
+				"Verb":38,
+				"Noun":111,
+				"condacts":
+					[
+					{
+						"Opcode":0,
+						"Condact":"AT",
+						"Indirection1":0,
+						"Param1":6,
+						"NumParams":1
+					},
+					{
 						"Opcode":8,
 						"Condact":"CARRIED",
 						"Indirection1":0,
@@ -2738,7 +3179,7 @@
 						"Opcode":38,
 						"Condact":"MESSAGE",
 						"Indirection1":0,
-						"Param1":23,
+						"Param1":31,
 						"NumParams":1
 					},
 					{
@@ -2777,7 +3218,7 @@
 						"Opcode":38,
 						"Condact":"MESSAGE",
 						"Indirection1":0,
-						"Param1":24,
+						"Param1":32,
 						"NumParams":1
 					},
 					{
@@ -2804,21 +3245,21 @@
 						"Opcode":11,
 						"Condact":"ZERO",
 						"Indirection1":0,
-						"Param1":75,
+						"Param1":76,
 						"NumParams":1
 					},
 					{
 						"Opcode":47,
 						"Condact":"SET",
 						"Indirection1":0,
-						"Param1":75,
+						"Param1":76,
 						"NumParams":1
 					},
 					{
 						"Opcode":38,
 						"Condact":"MESSAGE",
 						"Indirection1":0,
-						"Param1":25,
+						"Param1":33,
 						"NumParams":1
 					},
 					{
@@ -2845,21 +3286,21 @@
 						"Opcode":12,
 						"Condact":"NOTZERO",
 						"Indirection1":0,
-						"Param1":75,
+						"Param1":76,
 						"NumParams":1
 					},
 					{
 						"Opcode":11,
 						"Condact":"ZERO",
 						"Indirection1":0,
-						"Param1":74,
+						"Param1":75,
 						"NumParams":1
 					},
 					{
 						"Opcode":38,
 						"Condact":"MESSAGE",
 						"Indirection1":0,
-						"Param1":26,
+						"Param1":34,
 						"NumParams":1
 					},
 					{
@@ -2886,21 +3327,21 @@
 						"Opcode":12,
 						"Condact":"NOTZERO",
 						"Indirection1":0,
-						"Param1":75,
+						"Param1":76,
 						"NumParams":1
 					},
 					{
 						"Opcode":12,
 						"Condact":"NOTZERO",
 						"Indirection1":0,
-						"Param1":74,
+						"Param1":75,
 						"NumParams":1
 					},
 					{
 						"Opcode":38,
 						"Condact":"MESSAGE",
 						"Indirection1":0,
-						"Param1":27,
+						"Param1":35,
 						"NumParams":1
 					},
 					{
@@ -2951,7 +3392,7 @@
 						"Opcode":38,
 						"Condact":"MESSAGE",
 						"Indirection1":0,
-						"Param1":28,
+						"Param1":36,
 						"NumParams":1
 					},
 					{
@@ -3022,21 +3463,21 @@
 						"Opcode":11,
 						"Condact":"ZERO",
 						"Indirection1":0,
-						"Param1":74,
+						"Param1":75,
 						"NumParams":1
 					},
 					{
 						"Opcode":47,
 						"Condact":"SET",
 						"Indirection1":0,
-						"Param1":74,
+						"Param1":75,
 						"NumParams":1
 					},
 					{
 						"Opcode":38,
 						"Condact":"MESSAGE",
 						"Indirection1":0,
-						"Param1":29,
+						"Param1":37,
 						"NumParams":1
 					},
 					{
@@ -3063,14 +3504,14 @@
 						"Opcode":12,
 						"Condact":"NOTZERO",
 						"Indirection1":0,
-						"Param1":74,
+						"Param1":75,
 						"NumParams":1
 					},
 					{
 						"Opcode":38,
 						"Condact":"MESSAGE",
 						"Indirection1":0,
-						"Param1":30,
+						"Param1":38,
 						"NumParams":1
 					},
 					{
@@ -3104,7 +3545,7 @@
 						"Opcode":38,
 						"Condact":"MESSAGE",
 						"Indirection1":0,
-						"Param1":31,
+						"Param1":39,
 						"NumParams":1
 					},
 					{
@@ -3187,7 +3628,7 @@
 						"Opcode":38,
 						"Condact":"MESSAGE",
 						"Indirection1":0,
-						"Param1":32,
+						"Param1":40,
 						"NumParams":1
 					},
 					{
@@ -3221,7 +3662,7 @@
 						"Opcode":38,
 						"Condact":"MESSAGE",
 						"Indirection1":0,
-						"Param1":33,
+						"Param1":41,
 						"NumParams":1
 					},
 					{
@@ -3262,7 +3703,7 @@
 						"Opcode":38,
 						"Condact":"MESSAGE",
 						"Indirection1":0,
-						"Param1":34,
+						"Param1":42,
 						"NumParams":1
 					},
 					{
@@ -3333,6 +3774,232 @@
 					]
 			},
 			{
+				"Entry":"USAR INTER",
+				"Verb":33,
+				"Noun":129,
+				"condacts":
+					[
+					{
+						"Opcode":0,
+						"Condact":"AT",
+						"Indirection1":0,
+						"Param1":9,
+						"NumParams":1
+					},
+					{
+						"Opcode":11,
+						"Condact":"ZERO",
+						"Indirection1":0,
+						"Param1":78,
+						"NumParams":1
+					},
+					{
+						"Opcode":47,
+						"Condact":"SET",
+						"Indirection1":0,
+						"Param1":78,
+						"NumParams":1
+					},
+					{
+						"Opcode":55,
+						"Condact":"ISAT",
+						"Indirection1":0,
+						"Param1":14,
+						"Param2":252,
+						"NumParams":2
+					},
+					{
+						"Opcode":44,
+						"Condact":"CREATE",
+						"Indirection1":0,
+						"Param1":14,
+						"NumParams":1
+					},
+					{
+						"Opcode":38,
+						"Condact":"MESSAGE",
+						"Indirection1":0,
+						"Param1":43,
+						"NumParams":1
+					},
+					{
+						"Opcode":22,
+						"Condact":"DONE",
+						"NumParams":0
+					}
+					]
+			},
+			{
+				"Entry":"USAR INTER",
+				"Verb":33,
+				"Noun":129,
+				"condacts":
+					[
+					{
+						"Opcode":0,
+						"Condact":"AT",
+						"Indirection1":0,
+						"Param1":9,
+						"NumParams":1
+					},
+					{
+						"Opcode":12,
+						"Condact":"NOTZERO",
+						"Indirection1":0,
+						"Param1":78,
+						"NumParams":1
+					},
+					{
+						"Opcode":38,
+						"Condact":"MESSAGE",
+						"Indirection1":0,
+						"Param1":44,
+						"NumParams":1
+					},
+					{
+						"Opcode":22,
+						"Condact":"DONE",
+						"NumParams":0
+					}
+					]
+			},
+			{
+				"Entry":"COGER MECHE",
+				"Verb":20,
+				"Noun":128,
+				"condacts":
+					[
+					{
+						"Opcode":0,
+						"Condact":"AT",
+						"Indirection1":0,
+						"Param1":9,
+						"NumParams":1
+					},
+					{
+						"Opcode":12,
+						"Condact":"NOTZERO",
+						"Indirection1":0,
+						"Param1":78,
+						"NumParams":1
+					},
+					{
+						"Opcode":40,
+						"Condact":"GET",
+						"Indirection1":0,
+						"Param1":14,
+						"NumParams":1
+					},
+					{
+						"Opcode":38,
+						"Condact":"MESSAGE",
+						"Indirection1":0,
+						"Param1":45,
+						"NumParams":1
+					},
+					{
+						"Opcode":22,
+						"Condact":"DONE",
+						"NumParams":0
+					}
+					]
+			},
+			{
+				"Entry":"USAR MECHE",
+				"Verb":33,
+				"Noun":128,
+				"condacts":
+					[
+					{
+						"Opcode":0,
+						"Condact":"AT",
+						"Indirection1":0,
+						"Param1":9,
+						"NumParams":1
+					},
+					{
+						"Opcode":38,
+						"Condact":"MESSAGE",
+						"Indirection1":0,
+						"Param1":46,
+						"NumParams":1
+					},
+					{
+						"Opcode":21,
+						"Condact":"END",
+						"NumParams":0
+					}
+					]
+			},
+			{
+				"Entry":"EX ASEO",
+				"Verb":30,
+				"Noun":130,
+				"condacts":
+					[
+					{
+						"Opcode":0,
+						"Condact":"AT",
+						"Indirection1":0,
+						"Param1":9,
+						"NumParams":1
+					},
+					{
+						"Opcode":8,
+						"Condact":"CARRIED",
+						"Indirection1":0,
+						"Param1":14,
+						"NumParams":1
+					},
+					{
+						"Opcode":38,
+						"Condact":"MESSAGE",
+						"Indirection1":0,
+						"Param1":47,
+						"NumParams":1
+					},
+					{
+						"Opcode":22,
+						"Condact":"DONE",
+						"NumParams":0
+					}
+					]
+			},
+			{
+				"Entry":"EX ASEO",
+				"Verb":30,
+				"Noun":130,
+				"condacts":
+					[
+					{
+						"Opcode":0,
+						"Condact":"AT",
+						"Indirection1":0,
+						"Param1":9,
+						"NumParams":1
+					},
+					{
+						"Opcode":9,
+						"Condact":"NOTCARR",
+						"Indirection1":0,
+						"Param1":14,
+						"NumParams":1
+					},
+					{
+						"Opcode":38,
+						"Condact":"MESSAGE",
+						"Indirection1":0,
+						"Param1":48,
+						"NumParams":1
+					},
+					{
+						"Opcode":22,
+						"Condact":"DONE",
+						"NumParams":0
+					}
+					]
+			},
+			{
 				"Entry":"M _",
 				"Verb":24,
 				"Noun":255,
@@ -3377,7 +4044,7 @@
 						"Opcode":38,
 						"Condact":"MESSAGE",
 						"Indirection1":0,
-						"Param1":35,
+						"Param1":49,
 						"NumParams":1
 					},
 					{
@@ -3404,7 +4071,7 @@
 						"Opcode":38,
 						"Condact":"MESSAGE",
 						"Indirection1":0,
-						"Param1":36,
+						"Param1":50,
 						"NumParams":1
 					},
 					{
@@ -3431,7 +4098,7 @@
 						"Opcode":38,
 						"Condact":"MESSAGE",
 						"Indirection1":0,
-						"Param1":37,
+						"Param1":51,
 						"NumParams":1
 					},
 					{
@@ -3458,7 +4125,7 @@
 						"Opcode":38,
 						"Condact":"MESSAGE",
 						"Indirection1":0,
-						"Param1":38,
+						"Param1":52,
 						"NumParams":1
 					},
 					{
@@ -3469,9 +4136,9 @@
 					]
 			},
 			{
-				"Entry":"EX FREGA",
+				"Entry":"EX LAVAD",
 				"Verb":30,
-				"Noun":125,
+				"Noun":126,
 				"condacts":
 					[
 					{
@@ -3485,7 +4152,7 @@
 						"Opcode":38,
 						"Condact":"MESSAGE",
 						"Indirection1":0,
-						"Param1":39,
+						"Param1":53,
 						"NumParams":1
 					},
 					{
@@ -3526,7 +4193,7 @@
 						"Opcode":38,
 						"Condact":"MESSAGE",
 						"Indirection1":0,
-						"Param1":40,
+						"Param1":54,
 						"NumParams":1
 					},
 					{
@@ -3676,7 +4343,7 @@
 						"Opcode":11,
 						"Condact":"ZERO",
 						"Indirection1":0,
-						"Param1":76,
+						"Param1":77,
 						"NumParams":1
 					},
 					{
@@ -3690,7 +4357,7 @@
 						"Opcode":38,
 						"Condact":"MESSAGE",
 						"Indirection1":0,
-						"Param1":41,
+						"Param1":55,
 						"NumParams":1
 					},
 					{
@@ -3717,14 +4384,14 @@
 						"Opcode":12,
 						"Condact":"NOTZERO",
 						"Indirection1":0,
-						"Param1":76,
+						"Param1":77,
 						"NumParams":1
 					},
 					{
 						"Opcode":38,
 						"Condact":"MESSAGE",
 						"Indirection1":0,
-						"Param1":42,
+						"Param1":56,
 						"NumParams":1
 					},
 					{
@@ -3782,14 +4449,14 @@
 						"Opcode":12,
 						"Condact":"NOTZERO",
 						"Indirection1":0,
-						"Param1":76,
+						"Param1":77,
 						"NumParams":1
 					},
 					{
 						"Opcode":38,
 						"Condact":"MESSAGE",
 						"Indirection1":0,
-						"Param1":42,
+						"Param1":56,
 						"NumParams":1
 					},
 					{
@@ -3828,7 +4495,7 @@
 						"Opcode":11,
 						"Condact":"ZERO",
 						"Indirection1":0,
-						"Param1":76,
+						"Param1":77,
 						"NumParams":1
 					},
 					{
@@ -3870,7 +4537,7 @@
 						"Opcode":38,
 						"Condact":"MESSAGE",
 						"Indirection1":0,
-						"Param1":43,
+						"Param1":57,
 						"NumParams":1
 					},
 					{
@@ -3911,7 +4578,7 @@
 						"Opcode":38,
 						"Condact":"MESSAGE",
 						"Indirection1":0,
-						"Param1":44,
+						"Param1":58,
 						"NumParams":1
 					},
 					{
@@ -3966,14 +4633,14 @@
 						"Opcode":11,
 						"Condact":"ZERO",
 						"Indirection1":0,
-						"Param1":76,
+						"Param1":77,
 						"NumParams":1
 					},
 					{
 						"Opcode":38,
 						"Condact":"MESSAGE",
 						"Indirection1":0,
-						"Param1":45,
+						"Param1":59,
 						"NumParams":1
 					},
 					{
@@ -4040,7 +4707,7 @@
 						"Opcode":38,
 						"Condact":"MESSAGE",
 						"Indirection1":0,
-						"Param1":46,
+						"Param1":60,
 						"NumParams":1
 					},
 					{
@@ -4055,7 +4722,7 @@
 						"Opcode":38,
 						"Condact":"MESSAGE",
 						"Indirection1":0,
-						"Param1":47,
+						"Param1":61,
 						"NumParams":1
 					},
 					{
@@ -4103,7 +4770,7 @@
 						"Opcode":38,
 						"Condact":"MESSAGE",
 						"Indirection1":0,
-						"Param1":48,
+						"Param1":62,
 						"NumParams":1
 					},
 					{
@@ -4130,14 +4797,14 @@
 						"Opcode":12,
 						"Condact":"NOTZERO",
 						"Indirection1":0,
-						"Param1":76,
+						"Param1":77,
 						"NumParams":1
 					},
 					{
 						"Opcode":38,
 						"Condact":"MESSAGE",
 						"Indirection1":0,
-						"Param1":49,
+						"Param1":63,
 						"NumParams":1
 					},
 					{
@@ -4164,21 +4831,21 @@
 						"Opcode":11,
 						"Condact":"ZERO",
 						"Indirection1":0,
-						"Param1":76,
+						"Param1":77,
 						"NumParams":1
 					},
 					{
 						"Opcode":47,
 						"Condact":"SET",
 						"Indirection1":0,
-						"Param1":76,
+						"Param1":77,
 						"NumParams":1
 					},
 					{
 						"Opcode":38,
 						"Condact":"MESSAGE",
 						"Indirection1":0,
-						"Param1":50,
+						"Param1":64,
 						"NumParams":1
 					},
 					{
@@ -4205,14 +4872,14 @@
 						"Opcode":12,
 						"Condact":"NOTZERO",
 						"Indirection1":0,
-						"Param1":76,
+						"Param1":77,
 						"NumParams":1
 					},
 					{
 						"Opcode":38,
 						"Condact":"MESSAGE",
 						"Indirection1":0,
-						"Param1":51,
+						"Param1":65,
 						"NumParams":1
 					}
 					]
@@ -4234,7 +4901,7 @@
 						"Opcode":38,
 						"Condact":"MESSAGE",
 						"Indirection1":0,
-						"Param1":52,
+						"Param1":66,
 						"NumParams":1
 					},
 					{
@@ -4261,7 +4928,7 @@
 						"Opcode":38,
 						"Condact":"MESSAGE",
 						"Indirection1":0,
-						"Param1":53,
+						"Param1":67,
 						"NumParams":1
 					},
 					{
@@ -4295,7 +4962,7 @@
 						"Opcode":38,
 						"Condact":"MESSAGE",
 						"Indirection1":0,
-						"Param1":54,
+						"Param1":68,
 						"NumParams":1
 					},
 					{
@@ -4344,7 +5011,7 @@
 						"Opcode":38,
 						"Condact":"MESSAGE",
 						"Indirection1":0,
-						"Param1":55,
+						"Param1":69,
 						"NumParams":1
 					},
 					{
@@ -4358,7 +5025,7 @@
 						"Opcode":38,
 						"Condact":"MESSAGE",
 						"Indirection1":0,
-						"Param1":56,
+						"Param1":70,
 						"NumParams":1
 					},
 					{
@@ -4385,21 +5052,21 @@
 						"Opcode":12,
 						"Condact":"NOTZERO",
 						"Indirection1":0,
-						"Param1":76,
+						"Param1":77,
 						"NumParams":1
 					},
 					{
 						"Opcode":48,
 						"Condact":"CLEAR",
 						"Indirection1":0,
-						"Param1":76,
+						"Param1":77,
 						"NumParams":1
 					},
 					{
 						"Opcode":38,
 						"Condact":"MESSAGE",
 						"Indirection1":0,
-						"Param1":57,
+						"Param1":71,
 						"NumParams":1
 					},
 					{
@@ -4426,14 +5093,14 @@
 						"Opcode":11,
 						"Condact":"ZERO",
 						"Indirection1":0,
-						"Param1":76,
+						"Param1":77,
 						"NumParams":1
 					},
 					{
 						"Opcode":38,
 						"Condact":"MESSAGE",
 						"Indirection1":0,
-						"Param1":57,
+						"Param1":71,
 						"NumParams":1
 					},
 					{
@@ -4481,7 +5148,7 @@
 						"Opcode":38,
 						"Condact":"MESSAGE",
 						"Indirection1":0,
-						"Param1":58,
+						"Param1":72,
 						"NumParams":1
 					},
 					{
@@ -4522,7 +5189,7 @@
 						"Opcode":38,
 						"Condact":"MESSAGE",
 						"Indirection1":0,
-						"Param1":44,
+						"Param1":58,
 						"NumParams":1
 					},
 					{
@@ -4623,7 +5290,7 @@
 						"Opcode":38,
 						"Condact":"MESSAGE",
 						"Indirection1":0,
-						"Param1":44,
+						"Param1":58,
 						"NumParams":1
 					},
 					{
@@ -4724,7 +5391,7 @@
 						"Opcode":38,
 						"Condact":"MESSAGE",
 						"Indirection1":0,
-						"Param1":44,
+						"Param1":58,
 						"NumParams":1
 					},
 					{
@@ -4779,7 +5446,7 @@
 						"Opcode":38,
 						"Condact":"MESSAGE",
 						"Indirection1":0,
-						"Param1":59,
+						"Param1":73,
 						"NumParams":1
 					},
 					{
@@ -4832,7 +5499,7 @@
 						"Opcode":38,
 						"Condact":"MESSAGE",
 						"Indirection1":0,
-						"Param1":44,
+						"Param1":58,
 						"NumParams":1
 					},
 					{
@@ -4887,7 +5554,7 @@
 						"Opcode":38,
 						"Condact":"MESSAGE",
 						"Indirection1":0,
-						"Param1":59,
+						"Param1":73,
 						"NumParams":1
 					},
 					{
@@ -4940,7 +5607,7 @@
 						"Opcode":38,
 						"Condact":"MESSAGE",
 						"Indirection1":0,
-						"Param1":44,
+						"Param1":58,
 						"NumParams":1
 					},
 					{
@@ -4995,7 +5662,7 @@
 						"Opcode":38,
 						"Condact":"MESSAGE",
 						"Indirection1":0,
-						"Param1":59,
+						"Param1":73,
 						"NumParams":1
 					},
 					{
@@ -5031,37 +5698,17 @@
 						"NumParams":1
 					},
 					{
-						"Opcode":38,
-						"Condact":"MESSAGE",
+						"Opcode":9,
+						"Condact":"NOTCARR",
 						"Indirection1":0,
-						"Param1":60,
-						"NumParams":1
-					},
-					{
-						"Opcode":22,
-						"Condact":"DONE",
-						"NumParams":0
-					}
-					]
-			},
-			{
-				"Entry":"E _",
-				"Verb":4,
-				"Noun":255,
-				"condacts":
-					[
-					{
-						"Opcode":0,
-						"Condact":"AT",
-						"Indirection1":0,
-						"Param1":6,
+						"Param1":5,
 						"NumParams":1
 					},
 					{
 						"Opcode":38,
 						"Condact":"MESSAGE",
 						"Indirection1":0,
-						"Param1":60,
+						"Param1":74,
 						"NumParams":1
 					},
 					{
@@ -5095,7 +5742,7 @@
 						"Opcode":38,
 						"Condact":"MESSAGE",
 						"Indirection1":0,
-						"Param1":61,
+						"Param1":75,
 						"NumParams":1
 					},
 					{
@@ -5136,7 +5783,7 @@
 						"Opcode":38,
 						"Condact":"MESSAGE",
 						"Indirection1":0,
-						"Param1":62,
+						"Param1":76,
 						"NumParams":1
 					},
 					{
@@ -5177,7 +5824,7 @@
 						"Opcode":38,
 						"Condact":"MESSAGE",
 						"Indirection1":0,
-						"Param1":63,
+						"Param1":77,
 						"NumParams":1
 					},
 					{
@@ -5230,16 +5877,16 @@
 						"NumParams":1
 					},
 					{
+						"Opcode":29,
+						"Condact":"CLS",
+						"NumParams":0
+					},
+					{
 						"Opcode":37,
 						"Condact":"GOTO",
 						"Indirection1":0,
 						"Param1":3,
 						"NumParams":1
-					},
-					{
-						"Opcode":29,
-						"Condact":"CLS",
-						"NumParams":0
 					},
 					{
 						"Opcode":117,
@@ -5277,7 +5924,7 @@
 						"Opcode":38,
 						"Condact":"MESSAGE",
 						"Indirection1":0,
-						"Param1":64,
+						"Param1":78,
 						"NumParams":1
 					},
 					{
@@ -5311,41 +5958,7 @@
 						"Opcode":38,
 						"Condact":"MESSAGE",
 						"Indirection1":0,
-						"Param1":65,
-						"NumParams":1
-					},
-					{
-						"Opcode":22,
-						"Condact":"DONE",
-						"NumParams":0
-					}
-					]
-			},
-			{
-				"Entry":"E _",
-				"Verb":4,
-				"Noun":255,
-				"condacts":
-					[
-					{
-						"Opcode":0,
-						"Condact":"AT",
-						"Indirection1":0,
-						"Param1":6,
-						"NumParams":1
-					},
-					{
-						"Opcode":11,
-						"Condact":"ZERO",
-						"Indirection1":0,
-						"Param1":66,
-						"NumParams":1
-					},
-					{
-						"Opcode":38,
-						"Condact":"MESSAGE",
-						"Indirection1":0,
-						"Param1":66,
+						"Param1":79,
 						"NumParams":1
 					},
 					{
