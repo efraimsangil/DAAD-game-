@@ -94,7 +94,7 @@ _
 #define lPasillo3    18
 
 ;Objetos
-#define oMovil          0
+#define oLinterna       0
 #define oLlave1         1
 #define oLlave2         2
 #define oBateriaCoche   3
@@ -107,8 +107,12 @@ _
 #define oTablon         10
 #define oSecretKey1     11
 #define oLlaveCaja      12
-#define oLinterna       13
+#define oMovil          13
 #define oMechero        14
+#define oLlavePatio     15
+#define oFotografia1    16
+
+
 
 ;------------------------------------------------------------------------------
 /VOC    ;Vocabulario
@@ -131,6 +135,7 @@ SUBIR   10      verb
 AB      11      noun
 ABAJO   11      noun
 BAJAR   11      verb
+SALID   12      verb
 
 ;                       Nombres <20 indica que se pueden usar como verbos
 ;                               <50 indica nombre propio (no admite lo, la...)
@@ -171,8 +176,11 @@ FREGADERO 125    noun
 LAVADORA  126    noun
 TELEFONO  127    noun
 MECHERO   128    noun
-INTERRUPTOR 129     noun
+INTERRUPTOR 129  noun
 ASEO      130    noun
+SUMIDERO  131    noun
+PLANTA    132    noun
+FOTOGRAFIA     133    noun
 
 ;                       Verbos
 COGER   20      verb
@@ -211,6 +219,7 @@ MOVER    40      verb
 GOLPEAR  41      verb
 LANZAR   42      verb
 ROMPER   43      verb
+X        44      verb
 
 ;                            Adjetivos
 PEQUE   2       adjective
@@ -312,18 +321,34 @@ LUEGO   2       conjugation
 /60 "Nombre del fichero:"
 /61 "Pon en marcha la cinta."
 /62 "¿Cinta o disco?"
-
+/63 "Salidas: "
+/64 "N," 
+/65 "S," 
+/66 "E," 
+/67 "O,"
 
 ;------------------------------------------------------------------------------
 /MTX    ;Mensajes
-/0 ""
-
+/0 "Salidas visibles: "
+/1 "ninguna"
+/2 "norte "
+/3 "sur "
+/4 "este "
+/5 "oeste "
+/6 "noreste "
+/7 "noroeste "
+/8 "sureste "
+/9 "suroeste "
+/10 "arriba "
+/11 "abajo "
+/12 "entrar "
+/13 "salir "
 
 ;------------------------------------------------------------------------------
 /OTX    ;Object Texts
-/0 "un teléfono móvil"
-/1 "llave de la leñera"
-/2 "llave del garage"
+/0 "una linterna"
+/1 "la llave de la leñera"
+/2 "la llave del garage"
 /3 "una batería de coche"
 /4 "unas pinzas de coche"
 /5 "una llave de la entrada principal"
@@ -333,31 +358,33 @@ LUEGO   2       conjugation
 /9 "una caja de cerillas"
 /10 "una tarjeta de seguridad"
 /11 "una llave dorada"
-/12 "llave de una caja pequeña"
-/13 "una linterna"
+/12 "la llave de una caja pequeña"
+/13 "un teléfono móvil"
 /14 "un mechero"
+/15 "la llave del patio"
+/16 "una fotografía"
 
 ;------------------------------------------------------------------------------
 /LTX    ;Location Texts
-/0 "Marcos es un tipo serio, con carácter, muy trabajador y responsable. Sus amigos lo ven como un soltero amargado, que no echa un polvo desde ni se sabe y por eso tiene ese mal genio.#n#n Está de fin de semana, en casa, tranquilo. No tiene planes excepto disfrutar de las pequeñas cosas de sus 48 horas de libertad condicional. Así denomina el, los fines de semana.#n#n Es sábado, son las 08:00AM y aún sigues en la cama. Semi despierto y sin ganas de levantarte. Madrugas mucho durante la semana y no te apetece mucho abandonar el calorcito que sientes bajo el plumón.#n#n"
+/0 "Marcos es un tipo serio, con carácter, muy trabajador y responsable. Sus amigos lo ven como un soltero amargado, que no echa un polvo desde ni se sabe y por eso tiene ese mal genio.#n#n Está de fin de semana, en casa, tranquilo. No tiene planes excepto disfrutar de las pequeñas cosas de sus 48 horas de libertad condicional. Así denomina el, los fines de semana.#n#n Es sábado, son las 08:00AM de un fresquito día de invierno y aún sigues en la cama. Semi despierto y sin ganas de levantarte. Madrugas mucho durante la semana y no te apetece mucho abandonar el calorcito que sientes bajo el plumón.#n#n"
 /1 "Te giras en la cama con la firme intención de dormir un poquito más pero, suena el teléfono móvil. Alguien ya decidió por ti que te debes despertar del todo. Tienes a tu lado la mesita de noche."
-/2 "Coges tu coche rumbo a la sierra de gredos desde Madrid. Es un paseito, pero el viaje se hace ameno escuchando un poco de música. Te desvías hacia una carretera comarcal. Al final de la misma, hay una salida a la derecha que lleva directamente a la cabaña de tus padres. El camino tiene una preciosa arboleda a los lados de modo que hace un efecto tunel que siempre te ha dado respeto cuando eras un niño. Cuando se levantaba niebla, tu imaginación echaba a volar. Salidas: Este"
-/3 "Estás en el exterior de la cabaña. La verdad es que tus padres hicieron una preciosa reforma a la misma. Tiene dos plantas, y desde el aquí, puede ver al Norte la leñera, al Sur el garage y al Este tienes el porche, es decir, la entrada principal."
+/2 "Coges tu coche rumbo a la sierra de gredos desde Madrid. Es un paseito, pero el viaje se hace ameno escuchando un poco de música. Te desvías hacia una carretera comarcal. Al final de la misma, hay una salida a la derecha que lleva directamente a la cabaña de tus padres. El camino tiene una preciosa arboleda a los lados de modo que hace un efecto tunel que siempre te ha dado respeto cuando eras un niño. Cuando se levantaba niebla, tu imaginación echaba a volar."
+/3 "Estás en el exterior de la cabaña. Es prácticamente de noche. La verdad es que tus padres hicieron una preciosa reforma a la misma. Tiene dos plantas, y desde aquí, puedes ver al Norte la leñera, al Sur el garage y al Este tienes el porche, es decir, la entrada principal."
 /4 "Estás en la leñera. Puedes Entrar o volver al Sur"
 /5 "Lograste entrar en el garage. Que fácil es todo cuando tienes las llaves"
-/6 "Un par de potentes luces iluminan el porche. Nunca te gustaron esas luces porque atraín muchos insectos las noches de verano y era imposible estar allí sin sufrir el feroz ataque de un mosquito sediento de sangre. Frente a ti está la puerta principal de la cabaña."
+/6 "Un par de potentes luces iluminan el porche. Nunca te gustaron esas luces porque atraían muchos insectos las noches de verano y era imposible estar allí sin sufrir el feroz ataque de un mosquito sediento de sangre. Frente a ti está la puerta principal de la cabaña."
 /7 "Estás en el descansillo."
 /8 "Estás en la bodega."
 /9 "Estás en el aseo. No hay apenas luz y no logras ver nada. Tienes un interruptor a la derecha. Quizás, si lo usas para encender la luz..."
-/10 "Estás en la cocina. Es una preciosidad y además es enorme. Tiene un toque vintage muy chulo, todo de madera. Puedes ver el fregadero, algunos muebles, un almacén para la comida y cacharros, la vieja lavadora que con más de 35 años, aún sigue dando servicio. Ya no se fabrican como antes. Jodida obsolescencia programada. Ah! Tienes acceso al almacén en el Este. Salidas: N E" 
+/10 "Estás en la cocina. Es una preciosidad y además es enorme. Tiene un toque vintage muy chulo, todo de madera. Puedes ver el fregadero, algunos muebles, un almacén para la comida y cacharros, la vieja lavadora que con más de 35 años, aún sigue dando servicio. Ya no se fabrican como antes. Jodida obsolescencia programada. Ah! Tienes acceso al almacén en el Este." 
 /11 "Estás en el Salon."
 /12 "Estás en las escaleras. Puedes subir a la primera planta o bajar al descansillo."
 /13 "Estás en el almacén. Ves una estantería casi vacía."
 /14 "Estás en el patio."
 /15 "Estás en una habitación secreta."
-/16 "Estás en el primer tramo del pasillo. Es un pasillo largo. Salidas: N E BAJAR"
-/17 "Estás en el segundo tramo del pasillo. Salidas: N E O"
-/18 "Estás en el tercer tramo del pasillo. Salidas: N O"
+/16 "Estás en el primer tramo del pasillo. Es un pasillo largo."
+/17 "Estás en el segundo tramo del pasillo."
+/18 "Estás en el tercer tramo del pasillo."
 
 ;------------------------------------------------------------------------------
 /CON    ;Conexiones
@@ -383,7 +410,7 @@ S lCocina
 E lSalon
 SUBIR lEscaleras
 /8
-N lDescansillo
+SUBIR lDescansillo
 /9
 S lDescansillo
 /10
@@ -415,7 +442,7 @@ O lPasillo2
 /OBJ    ;Objetos
 ;obj  starts  weight    c w  5 4 3 2 1 0 9 8 7 6 5 4 3 2 1 0    noun   adjective
 ;num    at
-/0      252     1       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    MOVIL       _
+/0      252     1       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    LINTERNA    _
 /1      252     1       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    LLAV1       _
 /2      252     1       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    LLAV2       _
 /3      252     1       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    BATERIA     _
@@ -428,8 +455,10 @@ O lPasillo2
 /10     252     1       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    TABLON      _
 /11     252     1       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    SKEY1       _
 /12     252     1       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    KCAJA       _
-/13     252     1       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    LINTERNA    _
+/13     252     1       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    MOVIL       _
 /14     252     1       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    MECHERO     _
+/15     252     1       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    LLAV3       _
+/16     252     1       _ _  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _    FOTOGRAFIA  _
 
 ;------------------------------------------------------------------------------
 /PRO 0       ;Bucle principal de localidades
@@ -439,8 +468,8 @@ O lPasillo2
 
 > _       _     WINDOW  0               ; Ventana de gráficos
                 CLEAR   fDarkF           ; Asume que hay luz
-                NOTZERO fDark
-                ABSENT  oLinterna
+                NOTZERO 0
+                ABSENT  0
                 SET     fDarkF           ; Oscuro
 
 > _       _     PICTURE @fPlayer        ; Si hay gráfico, cárgalo
@@ -452,6 +481,11 @@ O lPasillo2
 
 > _       _     ZERO    fDarkF
                 DESC   @fPlayer        ; DESC No sale del bucle ahora
+
+;> _       _     NEWLINE 
+;                INK     6 
+;                SYSMESS 63
+;                INK     1 
 
 > _       _     PROCESS 3
 
@@ -481,6 +515,7 @@ O lPasillo2
 > _       _     INK     15              ; Color verde para la entrada de acciones
 
 > _       _     PROCESS 5               ; La antigua tabla de respuestas
+                INK     15
                 ISDONE                  ; Ha hecho algo?
                 REDO                    ; Sí­: pedimos otra orden del jugador
 
@@ -489,15 +524,20 @@ O lPasillo2
 
 > _       _     NEWTEXT
                 LT      fVerb    14
+                INK     15
                 SYSMESS 7
                 REDO
 
-> _       _     SYSMESS 8
+> _       _     INK     15
+                SYSMESS 8
                 REDO
 
 
 ;------------------------------------------------------------------------------
 /PRO 2
+
+> _       _     INK     2
+
 > _       _     HASAT TIMEOUT
                 SYSMESS 35
                 DONE
@@ -518,6 +558,7 @@ O lPasillo2
 
 > _       _     NEWLINE
                 ZERO    fDarkF            ; No está oscuro
+                PROCESS 7
                 LISTOBJ
 
 
@@ -527,14 +568,12 @@ O lPasillo2
 > _       _     NOTZERO fLuz
                 MINUS fLuz 1
                 ZERO fLuz
-                MESSAGE "la cerilla se ha consumido"
-
-> _       _     NOTZERO fLuz2
-                MINUS fLuz2 1
-                ZERO fLuz2
-                MESSAGE "la cerilla se ha consumido"
+                MESSAGE "#nLa cerilla se ha consumido."
 
 /PRO 5 ; Interpretamos los comando como en la antigua tabla de respuestas
+
+> SALID     _   PROCESS 7
+                DONE
 
 > USAR PINZAS    AT lMadrid
                 GOTO lDescansillo
@@ -543,16 +582,11 @@ O lPasillo2
 
 ; Meter un COGER MOVIL pero controlar que NO ha aparecido NOAT o algo asi, de modo que le suelte el mensaje de... "Pero dónde está móvil! Estoy un poco dormido. Debería echar un vistazo a la mesita."
 
-> COGER MOVIL AT lMadrid            
-                ISAT oMovil 252
-                MESSAGE "Estás muy adormilado. Mejor echa un vistazo a la mesita de noche."
-                DONE
-
 > EXAMINA MESITA AT lMadrid
-                ISAT oMovil 252
-                CREATE oMovil
                 MESSAGE "Es una mesita de noche sencilla, minimalista. Como tu sueles decir, una tabla con cuatro patas. Ahora bien, está muy limpia y sin rayaduras o arañazos.#n"
+                ISAT oMovil 252                                
                 MESSAGE "Hay un teléfono móvil en ella y no deja de sonar."
+                CREATE oMovil
                 DONE
 
 > EXAMINA MESITA AT lMadrid
@@ -562,6 +596,11 @@ O lPasillo2
 
 > EXAMINA MESITA AT lMadrid
                 DONE  
+
+> COGER MOVIL AT lMadrid            
+                ISAT oMovil 252
+                MESSAGE "Estás muy adormilado como para saber de dónde viene el sonido del móvil. Mejor echa un vistazo a la mesita de noche."
+                DONE
 
 > USAR TELEFONO
                 SYNONYM USAR MOVIL
@@ -576,6 +615,18 @@ O lPasillo2
 > USAR MOVIL AT lMadrid
                 NOTZERO fUsarMovil 
                 MESSAGE "Tu padre ya ha colgado. Es mejor que muevas el culo y te vayas a por el coche (Este)."
+                DONE
+
+> MIRAR   _    AT lMadrid
+                NOTCARR oMovil
+                ZERO fUsarMovil
+                MESSAGE "Estás aún en la cama, escuchando como suena el móvil. El sonido viene de la mesita de noche."
+                DONE
+
+> MIRAR   _    AT lMadrid
+                CARRIED oMovil
+                ZERO fUsarMovil
+                MESSAGE "Estás aún en la cama, escuchando como suena el móvil. Tienes el móvil en la mano. Piensas usarlo para seguir la aventura o seguimos así todo el día? No serás un betatester, no?."
                 DONE
 
 > MIRAR   _    AT lMadrid ; Si ya has cogido el movil e insistes en mirar cosas
@@ -600,6 +651,9 @@ O lPasillo2
                 ;GOTO 0 ; vamos a la localización 0
                 ;RESTART ; Y recargamos todo, gráficos, descripcion de la LOCalizacion, etc
 
+> EXAMINAR PLANTA
+                SYNONYM EXAMINAR MACETA
+
 > EXAMINAR MACETA AT lPorche
                 NOTCARR oMaceta ; No ha cogido la maceta
                 MESSAGE "Igual es mejor coger la maceta para verla más de cerca"
@@ -609,12 +663,12 @@ O lPasillo2
                 CARRIED oMaceta ; Ha cogido la maceta
                 ZERO fExaminarMaceta ; Activo un flag para controlar que YA examinó la maceta
                 SET fExaminarMaceta
-                MESSAGE "La maceta contiene aún arena y una planta que está más seca que la mojama."
+                MESSAGE "La maceta aún contiene arena y lo que en sus buenos tiempo sería una planta, que ahora mismo está más seca que la mojama."
                 DONE
 
 > EXAMINAR MACETA AT lPorche
                 NOTZERO fExaminarMaceta 
-                MESSAGE "Yo creo que ya está bien de jugar con la maceta."
+                MESSAGE "No creo que vayas a sacar mucha más información de la maceta."
                 DONE
 
 > EXAMINAR FELPUDO AT lPorche
@@ -625,17 +679,10 @@ O lPasillo2
                 NOTCARR oGnomo ; No ha cogido el gnomo
                 MESSAGE "Es un gnomo rechoncho, con sonrisa picaresca y una mirada intensa."
                 DONE
-                ;NOTCARR oGnomo
-                ;ZERO fCogerGnomo
-                ;SET fCogerGnomo
-                ;ISAT oGnomo 252
-                ;CREATE oGnomo
-	            ;MESSAGE "Es un gnomo rechoncho, con sonrisa picaresca y una mirada intensa."
-                ;DONE
-
+               
 > EXAMINAR GNOMO AT lPorche
                 CARRIED oGnomo
-	            MESSAGE "Lo miras con atención y lo agitas en el aire. Suena algo suelto dentro."
+	            MESSAGE "Lo examinas con atención. Parece estar hecho de escayola, pesa poco. Posiblemente esté hueco por dentro. Lo agitas en el aire y ops! Algo pequeño golpea las paredes internas del gnomo. Buscas la apertura por la cual se introdujo el objeto dentro... sus pies, pero ahora están sellados con yeso. No se puede abrir."
                 DONE
 
 > MIRAR     _ AT lPorche
@@ -680,7 +727,7 @@ O lPasillo2
                 SYNONYM TIRAR GNOMO
 
 > ROMPER GNOMO AT lPorche
-                MESSAGE "Está duro como una piedra. Es de arcilla. Y si lo tiras al suelo?"
+                MESSAGE "Con las manos no puedo romperlo pero, si lo tiras al suelo?"
                 DONE
 
 > ABRIR GNOMO AT lPorche
@@ -689,9 +736,10 @@ O lPasillo2
 
 > TIRAR GNOMO AT lPorche
                 ISAT oLlavePorche 252
-                CREATE oLlavePorche
+                CREATE oLlavePorche                
+            	MESSAGE "Tiras el gnomo contra el suelo y salta en mil pedazos. Parece ser que escondía una llave metálica. (Me encanta ese grupo)."
                 GET oLlavePorche
-            	MESSAGE " al tirar el gnomo contra el suelo y saltar en mil pedazos. Es una llave metálica. Me encanta ese grupo! Ahora bien, cuando se entere tu madre que has roto el gnomo... vas a flipar!!!. "
+                MESSAGE "Ahora bien, cuando se entere tu madre que has roto el gnomo... vas a flipar!!!."                
                 DESTROY oGnomo
                 DONE	
 
@@ -726,16 +774,26 @@ O lPasillo2
                 DONE
 
 > ABRIR PUERTA	AT lPorche
+                CARRIED oMaceta
+                MESSAGE "Decides dejar la maceta donde estaba. Bastante tiene tu madre con haberle destrozado el gnomo."
                 CARRIED oLlavePorche
-            	MESSAGE "Ya estás dentro de la casa. Hace frío. Y apenas hay luz. Te has tropezado con la mesita de la entrada.#n- Hola? Hay alguien en casa?#n-No quiero bromitas porque sino me voy a cabrear y lo sabéis!#nNo responde nadie. La puerta se cierra tras de tí de un portazo. Ya no se abre. Está atascada.#n"
+            	MESSAGE "Ya estás dentro de la casa. Hace frío. Y apenas hay luz. Te has tropezado con la mesita de la entrada.#n- Hola? Hay alguien en casa?#n-No quiero bromitas porque sino me voy a cabrear y lo sabéis!#nNo responde nadie. La puerta se cierra tras de tí de un portazo. Ya no se abre. Está atascada y por tanto, estás encerrado.#n"
+                DESTROY oMaceta
+                goto lDescansillo
+                RESTART
+                DONE
+
+> ABRIR PUERTA	AT lPorche
+                CARRIED oLlavePorche
+            	MESSAGE "Ya estás dentro de la casa. Hace frío. Y apenas hay luz. Te has tropezado con la mesita de la entrada.#n- Hola? Hay alguien en casa?#n-No quiero bromitas porque sino me voy a cabrear y lo sabéis!#nNo responde nadie. La puerta se cierra tras de tí de un portazo. Ya no se abre. Está atascada y por tanto, estás encerrado.#n"
                 goto lDescansillo
                 RESTART
                 DONE
 
 ; Ya estamos dentro de la casa y no podemos salir al exterior
 
-> MIRAR _       AT lDescansillo
-                MESSAGE "Hay poca luz. Puedes ver las escaleras que suben a las habitaciones de la planta superior, el baño de la planta de abajo, la entrada a la cocina y enfrente el salón. Y por supuesto, la mesita con la que has tropezado. #n#nSalidas: N S E SUBIR"
+> MIRAR     _   AT lDescansillo
+                MESSAGE "Hay poca luz. Puedes ver las escaleras que suben a las habitaciones de la planta superior, el baño de la planta de abajo, la entrada a la cocina y enfrente el salón. Y por supuesto, la mesita con la que has tropezado."
                 DONE
 
 > EXAMINAR MESITA AT lDescansillo
@@ -772,7 +830,7 @@ O lPasillo2
                 LET fCerillas 15
                 ZERO fCajon
                 SET fCajon
-	            MESSAGE "Tienes una caja con 15 cerillas."
+	            MESSAGE "#nLa caja contiene 15 cerillas."
                 DONE            
 
 > ABRIR CAJON AT lDescansillo
@@ -785,29 +843,23 @@ O lPasillo2
                 MESSAGE "Es una caja de cerillas de palo largo, típicas para encender los fogones de la cocina y velas. Contiene 15 cerillas."
                 DONE
 
-> ENCENDER CERILLA
-                SYNONYM USAR CERIL
-
-> PRENDER CERILLA
-                SYNONYM USAR CERIL
+> BAJAR BODEGA AT lDescansillo
+                MESSAGE "Necesitas la llave de la bodega para poder entrar."
+                DONE
 
 > USAR CERILLA 
                 CARRIED oCerillas
                 NOTEQ fCerillas 0
-                LET fLuz 2
+                LET fLuz 4
                 MINUS fCerillas 1
-                MESSAGE "Las cerillas funcionan y ves bastante mejor. Pero ojo, se gastan.#nTe quedan:"
+                MESSAGE "Las cerillas funcionan y ves bastante mejor. Pero ojo, se consumen.#nTe quedan:"
                 PRINT fCerillas
-                DONE
-
-> BAJAR BODEGA AT lDescansillo
-                MESSAGE "Necesitas la llave de la bodega para poder entrar."
                 DONE
 
 > S         _  AT lDescansillo ; No podemos entrar en la cocina sin LUZ
                 ZERO fLuz
                 SET fDark
-                MESSAGE "La cocina está muy oscura. Sin luz no es buena idea entrar. Necesito algo para iluminar."
+                MESSAGE "La cocina está muy oscura. Sin luz no es buena idea entrar. Necesitas algo para iluminar."
                 DONE
 
 > S         _  AT lDescansillo ; Tenemos LUZ y nos metemos en la cocina
@@ -815,16 +867,20 @@ O lPasillo2
                 NOTZERO fLuz
                 NOTZERO fCerillas
                 CARRIED oCerillas
+                CARRIED oLinterna
+                ;CLEAR fDark
+                MESSAGE "Enciendes la linterna para entrar en la cocina."
                 GOTO lCocina
                 RESTART
                 DONE
 
+
 > USAR INTERRUPTOR AT lAseo
                 ZERO fUsarInterruptor
                 SET fUsarInterruptor
-                ISAT oMechero 252
-                CREATE oMechero
-                MESSAGE "Pulsas el interruptor de la luz y ves un mechero en el suelo pero la luz comienza a parpadear con rapidez y la bombilla salta por los aires. Te has sobresaltado un poco, la verdad."
+                ISAT oFotografia1 252
+                CREATE oFotografia1
+                MESSAGE "Pulsas el interruptor de la luz y ves una fotografía en el suelo pero la luz comienza a parpadear con rapidez y la bombilla salta por los aires. Te has sobresaltado un poco, la verdad."
                 DONE
 
 > USAR INTERRUPTOR AT lAseo
@@ -832,44 +888,56 @@ O lPasillo2
                 MESSAGE "Obviamente no funciona. Hasta dónde llegan tus conocimientos de electricidad? Si no hay bombilla... no puede haber luz."
                 DONE
 
-> COGER MECHERO AT lAseo
+> COGER FOTOGRAFIA AT lAseo
                 NOTZERO fUsarInterruptor
-                GET oMechero
-                MESSAGE "aún a pesar del susto y con sumo cuidado para no cortarte con los cristales de la bombilla.#nAl cogerlo has sentido como si algo te tocara la mano, algo muy frío. Se te ponen los pelos como escarpias. Ahora SI que te has asustado. Te acojona pensar lo que podrás encontrarte si usas el mechero."
+                GET oFotografia1
+                MESSAGE "#nAún a pesar del susto y con sumo cuidado para no cortarte con los cristales de la bombilla.#nAl cogerla has sentido como si algo te tocara la mano, algo muy frío. Se te han puesto los pelos como escarpias. Ahora SI que te has asustado. Podrías encender algo para iluminarte y ver que te ha tocado, o mejor salimos del aseo y olvidamos el asunto."
                 DONE
 
-> USAR MECHERO AT lAseo
+> USAR LINTERNA AT lAseo
 	            MESSAGE "No debiste hacer eso. Lo que pareció ser un niño en sus buenos momentos, te lanza con fuerza contra el lavabo y oyes un fuerte CRACK en tu cabeza. Caes al suelo como un muñeco. Lo último que pasa por tu mente es el sonido de tu sangre gorgotear. Has muerto."
                 END
 
+> EXAMINAR LINTERNA
+                MESSAGE "Es una linterna moderna, no ilumina mucho pero es una ayuda. Ojo con las baterías, porque se agotan."
+                DONE
+
 > EXAMINAR ASEO AT lAseo
-	            CARRIED oMechero               
+	            CARRIED oLinterna               
             	MESSAGE "No se ve nada. Y no puedes encender la luz, ya que no hay bombilla. Olvídate del aseo y sal de aquí."
                 DONE
 
 > EXAMINAR ASEO AT lAseo
-                NOTCARR oMechero
-                MESSAGE "No se ve nada. Y no puedes encender la luz, ya que no hay bombilla. Pero tocas un mechero en el suelo."
+                NOTCARR oLinterna
+                MESSAGE "No se ve nada. Y no puedes encender la luz, ya que no hay bombilla. Pero tocas una linterna en el suelo."
                 DONE
 
 > MIRAR     _ AT lCocina
                 CLEAR fDark
-                NOTZERO fLuz
-                NOTZERO fCerillas
-                CARRIED oCerillas
                 MESSAGE "Puedes ver el fregadero, un mueble con cajones y la vieja lavadora que con 35 años, aún sigue dando servicio. Ya no se fabrican como antes."
                 DONE
 
 > EXAMINAR FREGADERO AT lCocina
-                MESSAGE "No hay nada que ver en el fregadero. Está vacio."
+                ISAT oLlavePatio 252
+                MESSAGE "El fregadero está vacío, tiene un sumidero grande tipo americano. Algo parece estar atascado ahí dentro."
+                DONE
+
+> EXAMINAR SUMIDERO AT lCocina
+                MESSAGE "Te alzas en el fregadero para poder meter mejor la mano en el sumidero. Vas introduciendo la mano poco a poco, es un proceso delicado, pues podría caerse lo que hubiera allí atascado hasta el fondo de la cañería y darlo por perdido. Tus dedos ya rozan el objeto. Con la punta de los dedos consigues cogerlo y según comienzas a sacar los dedos oyes que se pone el marcha el triturador del fregadero. Por el susto y la excitación sacas tu mano a toda velocidad y el objeto que tenías cogido por los dedos sale por los aires. Echas las dos manos al aire para coger el objeto al vuelo y de tu mano izquierda salta la caja de cerillas por los aires también. Mierda! Ahora tienes dos objetos en los aires y tus brazos en alto esperando coger alguno. Ves que el objeto del sumidero son unas... llaves, así que por instinto, echas las manos hacia ellas para asegurar su rescate. Las cerillas caen en el sumidero. Oyes como el triturador se hace cargo de sus destrucción."
+                CREATE oLlavePatio
+                DESTROY oCerillas
+                GET oLlavePatio
                 DONE
 
 > EXAMINAR MUEBLE AT lCocina
-                MESSAGE "Es un típico mueble de cocina con varios cajones."
+                MESSAGE "Es un típico mueble de cocina hecho en madera con varios cajones. Mis padres lo compraron en el rastro de Madrid en no muy buenas condiciones pero a un fantástico precio. La idea de mi padre era restaurarlo y vaya si lo hizo!"
                 DONE
 
 > EXAMINAR CAJONES AT lCocina
-                MESSAGE "Puedes ver unas pilas, unas velas y las llaves del patio.#nQue curioso, no hay cuchillos."
+                MESSAGE "Puedes ver una linterna.#nEs curioso, no hay cuchillos en los cajones."
+                CREATE oLinterna
+                GET oLinterna
+                MESSAGE "Decides"
                 DONE
 
 > EXAMINAR LAVADORA AT lCocina
@@ -877,16 +945,12 @@ O lPasillo2
                 DONE
 
 > E         _  AT lCocina ; No podemos entrar en el almacén sin LUZ
-                ZERO fLuz
                 SET fDark
                 MESSAGE "El almacén está muy oscura. Sin luz no se puede entrar."
                 DONE
 
 > E         _  AT lCocina ; Tenemos LUZ y nos metemos en el almacén
                 CLEAR fDark
-                NOTZERO fLuz
-                NOTZERO fCerillas
-                CARRIED oCerillas
                 GOTO lAlmacen
                 RESTART
                 MESSAGE ""
@@ -899,7 +963,6 @@ O lPasillo2
                 DONE
 
 > SUBIR     _  AT lDescansillo
-                ZERO fLuz
                 SET fDark
                 ZERO fTablon
                 NOTCARR oLinterna
@@ -915,7 +978,6 @@ O lPasillo2
                 DONE
 
 > SUBIR     _  AT lEscaleras
-                ZERO fLuz
                 SET fDark                
                 NOTZERO fTablon                
                 MESSAGE "Metes el pie accidentalmente en el escalón al que quitaste el tablón y ;tropiezas malamente. Caes rodando las escaleras y te partes el cuello. Has muerto."
@@ -926,25 +988,21 @@ O lPasillo2
 > SUBIR     _  AT lDescansillo
                 ZERO fTablon
                 CLEAR fDark
-                NOTZERO fLuz
-                NOTZERO fCerillas
-                CARRIED oCerillas
+                CARRIED oLinterna
                 GOTO lEscaleras
                 ;RESTART
                 MESSAGE "#nNotas un pequeño crujido bajo tus pies. Siempre ha habido un tablón suelto en esa escalera y nadie se preocupó de arreglarlo."
                 DONE
 
 > SUBIR     _  AT lEscaleras
-                ZERO fLuz
+                NOTCARR oLinterna
                 SET fDark
                 MESSAGE "No puedes moverte si vas a ciegas. Utiliza algo para iluminarte."
                 DONE
 
 > SUBIR     _  AT lEscaleras
                 CLEAR fDark
-                NOTZERO fLuz
-                NOTZERO fCerillas
-                CARRIED oCerillas
+                CARRIED oLinterna
                 ZERO fTablon
                 MESSAGE "Menos mal que llevas algo de luz. Toda la planta superior está a oscuras."
                 GOTO lPasillo1
@@ -953,9 +1011,7 @@ O lPasillo2
 
 > EXAMINAR ESCALERAS AT lEscaleras
                 CLEAR fDark
-                NOTZERO fLuz
-                NOTZERO fCerillas
-                CARRIED oCerillas
+                CARRIED oLinterna
                 MESSAGE "Sientes curiosidad por examinar la escalera con más detalle."
                 ISAT oTablon 252
                 MESSAGE "Hay un tablón que parece tener cierta holgura y se mueve un poco."
@@ -964,7 +1020,6 @@ O lPasillo2
 
 > EXAMINAR TABLON AT lEscaleras
                 CLEAR fDark
-                NOTZERO fLuz
                 MESSAGE "Efectivamente está un poco suelto. Creo que podría moverlo."
                 DONE
 
@@ -1023,88 +1078,71 @@ O lPasillo2
                 MESSAGE "Has vuelto al descansillo."
                 DONE
 
-;> BAJAR     _  AT lPasillo1
-;                ZERO fLuz
-;                SET fDark                
-;                NOTZERO fTablon                
-;                MESSAGE "Metes el pie accidentalmente en el escalón al que quitaste el tablón y tropiezas malamente. Caes rodando las escaleras y te partes el cuello. Has muerto."
-;                GOTO 0 ; vamos a la localización 0
-;                RESTART ; Y recargamos todo, gráficos, descripcion de la LOCalizacion, etc
-;                DONE
-
 > E     _      AT lPasillo1 
-                ZERO fLuz
+                NOTCARR oLinterna
                 SET fDark
                 MESSAGE "No puedes moverte si vas a ciegas. Utiliza algo para iluminarte."
                 DONE
 
 > E     _      AT lPasillo1
                 CLEAR fDark
-                NOTZERO fLuz
-                NOTZERO fCerillas
-                CARRIED oCerillas
+                CARRIED oLinterna
                 GOTO lPasillo2
                 RESTART
                 DONE
 
-> BAJAR     _  AT lPasillo1 
-                ZERO fLuz
+> BAJAR     _  AT lPasillo1
+                NOTCARR oLinterna
                 SET fDark
                 MESSAGE "No puedes moverte si vas a ciegas. Utiliza algo para iluminarte."
                 DONE
 
 > BAJAR     _  AT lPasillo1
+                ZERO fTablon
                 CLEAR fDark
-                NOTZERO fLuz
-                NOTZERO fCerillas
-                CARRIED oCerillas
+                CARRIED oLinterna
                 GOTO lEscaleras
-                RESTART
+                ;RESTART
+                MESSAGE "#nNotas un pequeño crujido bajo tus pies. Siempre ha habido un tablón suelto en esa escalera y nadie se preocupó de arreglarlo."
                 DONE
 
 > E     _      AT lPasillo2
-                ZERO fLuz
+                NOTCARR oLinterna
                 SET fDark
                 MESSAGE "No puedes moverte si vas a ciegas. Utiliza algo para iluminarte."
                 DONE
 
 > E     _      AT lPasillo2
                 CLEAR fDark
-                NOTZERO fLuz
-                NOTZERO fCerillas
-                CARRIED oCerillas
+                CARRIED oLinterna
                 MESSAGE "Con algo que genere luz, siempre será mucho mejor desplazarse por esta planta."
                 GOTO lPasillo3
                 RESTART
                 DONE
 
 > O     _      AT lPasillo2
-                ZERO fLuz
+                NOTCARR oLinterna
                 SET fDark
                 MESSAGE "No puedes moverte si vas a ciegas. Utiliza algo para iluminarte."
                 DONE
 
 > O     _      AT lPasillo2
                 CLEAR fDark
-                NOTZERO fLuz
-                NOTZERO fCerillas
-                CARRIED oCerillas
+                CARRIED oLinterna
                 MESSAGE "Con algo que genere luz, siempre será mucho mejor desplazarse por esta planta."
                 GOTO lPasillo1
                 RESTART
                 DONE
 
 > O     _      AT lPasillo3
-                ZERO fLuz
+                NOTCARR oLinterna
                 SET fDark
                 MESSAGE "No puedes moverte si vas a ciegas. Utiliza algo para iluminarte."
                 DONE
 
 > O     _      AT lPasillo3
                 CLEAR fDark
-                NOTZERO fLuz
-                NOTZERO fCerillas
-                CARRIED oCerillas
+                CARRIED oLinterna
                 MESSAGE "Con algo que genere luz, siempre será mucho mejor desplazarse por esta planta."
                 GOTO lPasillo2
                 RESTART
@@ -1137,7 +1175,7 @@ O lPasillo2
                 RESTART
                 DONE
 
-> E     _     AT lCoche
+> E     _      AT lCoche
               CLS
               GOTO lExtcasa
               RESTART
@@ -1196,6 +1234,7 @@ O lPasillo2
 
 > MIRAR   _     RESTART
 
+
 /PRO 6 ; Inicialización
 
 > _       _     WINDOW  0               ; Window para imágenes
@@ -1205,7 +1244,7 @@ O lPasillo2
                 DISPLAY 0
 
 > _       _     WINDOW  1               ; Window para los textos
-                WINAT   14      0
+                WINAT   15      0
                 WINSIZE 25      127     ; Tamaño máximo
                 CLS
                 DESC    0               ; Introducción
@@ -1226,4 +1265,33 @@ O lPasillo2
                 SET     fCPronounNoun
                 SET     fCPronounAdject
                 GOTO    1               ; Primera localidad del juego
+
+/PRO 7
+
+; Listado automático de salidas
+; ¡OJO!, gasta los flags 100 y 101
+
+>
+_       _       MES 0
+                CLEAR 101
+                LET 33 2
+
+>
+_       _       COPYFF 38 100
+                MOVE 100
+                MES @33
+                PLUS 101 1
+
+>
+_       _       PLUS 33 1
+                LT 33 14
+                SKIP -2
+
+>
+_       _       NOTZERO 101
+                DONE
+
+>
+_       _       MESSAGE 1
+
 /END
