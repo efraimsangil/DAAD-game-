@@ -237,6 +237,8 @@ LAMPARA         159    noun
 CASSETTE        160    noun
 MURO            161    noun
 MANCHA          162    noun
+COJONES         163    noun
+RANURA          164    noun
 
 ;                       Verbos
 COGER           20      verb
@@ -443,21 +445,21 @@ LUEGO           2       conjugation
 
 ;------------------------------------------------------------------------------
 /LTX    ;Location Texts
-/0 "La Sorpresa.#n#nUna idea original de Efraim Sánchez Gil#n#nCon la colaboración de Javier Quílez (Invértigo)#nJorge Romero#nMiguel Angel (Mortimer)#nNatalia (NatyPC).#n#n#n#nCopyright 2020#n#nDesarrollado con DAAD y MSX2DAAD.#n#n"
+/0 "La Sorpresa.#n#nUna idea original de Efraim Sánchez Gil#n#nCon la colaboración de:#n#nJavier Quílez <Invértigo>#nJorge Romero#nMiguel Angel <Mortimer>#nNatalia Pujol<NatyPC>. #n#n#n#nCopyright 2020#n#nDesarrollado con DAAD y MSX2DAAD.#n#n"
 /1 "Marcos es un tipo serio, con carácter, muy trabajador y responsable. Sus amigos lo ven como un soltero amargado, que no echa un polvo desde ni se sabe cuando y por eso tiene ese mal genio. Suele hablar mucho solo, mantiene conversaciones con... consigo mismo, supongo.#n#n Está de fin de semana, en casa, tranquilo. No tiene planes excepto disfrutar de las pequeñas cosas dentro de sus 48 horas de libertad condicional; así denomina él los fines de semana.#n#nEs sábado, son las 12:30PM de un frío día de invierno y aún sigue en la cama, semi despierto y sin ganas de levantarse. Marcos madruga bastante durante la semana y no le apetece abandonar el calorcito que siente bajo el plumón.#n#nSe gira en la cama con la firme intención de dormir un poco más, pero suena el teléfono móvil; alguien decidió por él que debe despertarse del todo.#n#nTiene a su lado la mesita de noche."
 /2 "Marcos baja al garaje y coge su coche rumbo a la sierra de gredos desde Madrid, es un paseito, pero el viaje se hace ameno escuchando un poco de música. Se desvía hacia una carretera comarcal y al final de la misma, hay una salida al este que lleva directamente a la casa de sus padres. #n#n#n#n#n#n#n#n#n#n#n#n#n#n#n#n#n#n#nEl camino tiene una preciosa arboleda a los lados de modo que hace un efecto tunel que siempre le dió respeto cuando era un niño. Cuando se levantaba niebla, su imaginación le jugaba malas pasadas. Nunca ha sido muy valiente, pero igualmente, tampoco ha sido un miedoso."
 /3 "Te encuentras en los aledaños de la hacienda familiar. Contemplas como los últimos atisbos de claridad, dejan paso al manto endrino y silencioso de la noche, de allende los vientos adventicios que silban a través de los cipreses que acotan la finca. La casa dispone de dos plantas y desde aquí puedes divisar al norte el viejo chamizo, al sur la cochera y al este se encuentra el porche; la entrada principal de la casa.#n#nTe echas las manos a los bolsillos y te das cuenta de que olvidaste el móvil en casa."
 /4 "Estás en la entrada del chamizo. Frente a ti tienes una puerta... bla bla bla "
 /5 "Estás en la entrada de la cochera."
 /6 "Un par de potentes focos iluminan el porche. Nunca te gustaron esas luces porque atraían a muchos insectos las noches de verano y era imposible estar allí, sin sufrir el feroz ataque de un mosquito sediento de sangre.#n#nFrente a ti, está la puerta principal de la casa."
-/7 "El recibidor. Despojado de todo detalle y vestido tan solo con el sutil resplandor de los focos del exterior, es desalentador y no invita a entrar en sus dependencias.#n#nPuedes ver las escaleras que dan paso a la planta superior, el aseo al norte, la cocina al sur, al este el salón y por supuesto, la consola con la que has tropezado.#n#nNo parece haber nadie en casa."
+/7 "El recibidor. Despojado de todo detalle y vestido tan solo con el sutil resplandor de los focos del exterior, es desalentador y no invita a entrar en sus dependencias.#n#nPuedes ver las escaleras que dan paso a la planta superior, el aseo al norte, la cocina al sur, al este el salón y por supuesto, la consola con la que has tropezado.#n#nParece no haber nadie en la casa."
 /8 "Estás en el aseo, no hay apenas luz y la cerilla apenas ilumina. Es una oscuridad extraña, densa.#nTienes un interruptor a la derecha."
 /9 "La bodega. Un lugar angosto y húmedo que despide un aroma a tierra excavada profundo y penetrante.#n#nEn una de las paredes destaca un botellero de madera mohosa y también puedes observar una mancha de gran tamaño."
 /10 "Estás en la cocina. Te invade una sensación de frío que proviene de la humedad que contienen las paredes. Puedes ver el fregadero, un aparador, una despensa para la comida al este y como no, la vieja lavadora que con más de 35 años, aún sigue dando servicio." 
 /11 "La tenue luz de la cerilla ilumina débilmente el salón de la casa.#n#nLa estancia es amplia y está presidida por una gran chimenea de piedra con un cassette de forja. Tu padre la instaló por el miedo a la muerte dulce que era tan propia en las casas de los pueblos. De la misma, nacen unos conductos de ventilación pensados para distribuir el calor a través de todas las habitaciones de la casa.#n#nPuedes observar una vitrina donde antaño se apilaban algunos libros, adornos familiares y una majestuosa vajilla de cristal de Murano, que vestía las grandes celebraciones de una elegancia y glamour propios de la alta nobleza.#n#nDesde aquí se accede a un amplio patio trasero al este."
 /12 "Estás en las escaleras, notas un pequeño crujido bajo tus pies. Siempre ha habido un tablón suelto en esa escalera y nadie se preocupó de arreglarlo. Son bastante anchas, lo que facilitó la subida del mobiliario a las habitaciones."
 /13 "Estás en la despensa. Ves una alacena que usaban tus padres para guardar latas de comida y algún que otro utensilio de cocina."
-/14 "Estás en el patio, es bastante extenso y el muro que lo rodea es bastante alto. No podrías saltarlo aunque quisieras. A tus padres les importaba mucho la seguridad y la privacidad."
+/14 "Entras en el patio, es extenso y el muro que lo rodea es bastante alto. No podrías saltarlo aunque quisieras. A tus padres les importaba mucho la seguridad y la privacidad."
 /15 "Estás en una habitación secreta. Hay un control de seguridad con monitores desde los que se posiblemente, se pueda visualizar toda la casa. Frente a tí tienes un panel de control para el manejo de las cámaras."
 /16 "Estás en un enorme pasillo desde el cual se accede a todas las habitaciones. La casa es gigantesca, la verdad.#nTienes una habitación al norte y el pasillo continúa al este."
 /17 "Estás en el centro del pasillo, tienes una habitación al norte y el pasillo continúa del este a oeste."
@@ -689,10 +691,6 @@ O lChamizo
 ;------------------------------------------------------------------------------
 /PRO 4 ; Antiguo proceso 2 del PAW
 
-;   INK 9      Narrador
-;   INK 2       Voz en off que habla con el personaje
-;   INK 3       Marcos
-
 > _         _
                 GT      fCerillas 0
                 MINUS   fCerillas 1
@@ -713,10 +711,11 @@ O lChamizo
 ;INK 2       Voz de la conciencia
 ;INK 3       Voz de Marcos
 ;INK 4       Muerte
-;INK 9       Voz del narrador
+;INK 9       Mensajes del sistema
 ;INK 12      Voz del Padre
 ;INK 14      Voz del niño fantasma
-;INK 9      mensajes del sistema
+;INK 15      Voz del narrador
+
 
 ; Poner sistema de claves para continuar la aventura desde algún punto determinado
 
@@ -1050,7 +1049,9 @@ O lChamizo
                 MESSAGE "#nTe fries las retinas y caes insconsciente al suelo. Tu cabeza se golpea contra la barandilla del porche y la sangre emana a borbotones de tu cabeza."
                 INKEY
                 INK 4
-                MESSAGE "#nHas muerto.#n"
+                ;MESSAGE "#nHas muerto.#n"
+                MESSAGE "#n#$% &'()*+"
+                MESSAGE "[][][][][]#n"
                 INK 9
                 END                
 
@@ -1335,7 +1336,9 @@ O lChamizo
                 INK 9
                 MESSAGE "Metes el pie accidentalmente en el escalón al que quitaste el tablón y tropiezas malamente. Caes rodando las escaleras y te partes el cuello."
                 INK 4
-                MESSAGE"#nHas muerto."
+                ;MESSAGE"#nHas muerto."
+                MESSAGE "#n#$% &'()*+"
+                MESSAGE "[][][][][]#n"
                 INKEY
                 GOTO 0 ; vamos a la localización 0
                 RESTART ; Y recargamos todo, gráficos, descripcion de la LOCalizacion, etc
@@ -1384,7 +1387,7 @@ O lChamizo
                 ZERO fTurnosLuz
                 ;SET fDarkF
                 INK 9
-                MESSAGE "El salón está muy oscura. Sin luz no se puede entrar."
+                MESSAGE "El salón está muy oscuro. Sin luz no se puede entrar."
                 DONE
 
 > E         _  				AT lRecibidor 
@@ -1433,19 +1436,17 @@ O lChamizo
                 DONE
 
 > MIRAR     _   		AT lRecibidor
-                ZERO fRecibidor
-                SET fRecibidor
+                ;ZERO fRecibidor
+                ;SET fRecibidor
                 INK 9
                 MESSAGE "Es un recibidor amplio y desde esta posición puedes ver que el aseo se encuentra al norte, al este contemplas el salon, al sur tienes la cocina, bajando está la bodega y subiendo están las habitaciones. Tienes una consola de madera a tu lado."
-                INK 2
-                MESSAGE "#nQuizás encuentres algo de interés."
                 DONE
 
-> MIRAR     _   		AT lRecibidor
-                NOTZERO fRecibidor
-                INK 9
-                MESSAGE "Es un recibidor amplio y desde esta posición puedes ver que el aseo se encuentra al norte, al este contemplas el salon, al sur tienes la cocina, bajando está la bodega y subiendo están las habitaciones. Tienes una consola de madera a tu lado."                
-                DONE                
+;> MIRAR     _   		AT lRecibidor
+;                NOTZERO fRecibidor
+;                INK 9
+;                MESSAGE "Es un recibidor amplio y desde esta posición puedes ver que el aseo se encuentra al norte, al este contemplas el salon, al sur tienes la cocina, bajando está la bodega y subiendo están las habitaciones. Tienes una consola de madera a tu lado."                
+;                DONE                
 
 > EXAMINAR	CONSOLA		AT lRecibidor
                 ZERO fConsola
@@ -1542,7 +1543,7 @@ O lChamizo
                 INK 9
                 MESSAGE "#nRascas la mancha con la espátula y descubres un contorno en la pared."
                 INK 3
-                MESSAGE "¡Es una puerta!"
+                MESSAGE "#n¡Es una puerta!"
                 DONE
 
 > MIRAR     _   		AT lBodega
@@ -1564,20 +1565,22 @@ O lChamizo
                 INKEY
                 CLS
                 INK 9
-                GOTO lCochera                
+                GOTO lCochera
                 RESTART
                 DONE
 
-; Estamos en el Garaje
+; Estamos en la Cochera
+
+; Poner el control de N, S, etc y anunciar con un mensaje, que has usado la llave de la cochera para salir al exterior de la casa.
 
 > MIRAR     _ 			AT lCochera
 				NOTZERO fTurnosLuz
                 INK 9
                 MESSAGE "Entre todos los trastos de la cochera puedes ver las llaves de tu coche."
                 INK 3
-                MESSAGE"¿Pero como han llegado hasta aquí?."
+                MESSAGE"#n¿Pero como han llegado hasta aquí?."
                 INK 2
-                MESSAGE "¿Con todo lo que ha pasado hasta ahora y te haces esa pregunta? jajaja"
+                MESSAGE "#n¿Con todo lo que ha pasado hasta ahora y te haces esa pregunta? jajaja"
                 ISAT oLlaveCoche 252
                 CREATE oLlaveCoche
                 DONE
@@ -1603,7 +1606,7 @@ O lChamizo
                 INK 3
                 MESSAGE "Ey! He encontrado las llaves de mi coche!."
                 INK 2
-                MESSAGE "Mira que me alegro. Venga, sigue, que aún no hemos acabado."
+                MESSAGE "Mira que me alegro. Venga, sigue, que aún no hemos acabado.#n"
                 INK 15
                 GET oLlaveCoche
                 DONE
@@ -1643,15 +1646,19 @@ O lChamizo
 ; Estamos en lAseo
 
 > USAR		CERILLA 		AT lAseo
-                CLS                
-                NOTZERO fVasAMorir               
+                CLS
+                CLEAR fDarkF
+                NOTZERO fTurnosLuz
+                NOTZERO fCerillas
+                CARRIED oCerillas
+                NOTZERO fVasAMorir
                 INK 9
                 MESSAGE "No debiste hacer eso. Lo que pareció ser un niño antaño, te lanza con fuerza contra el lavabo y oyes un fuerte CRACK en tu cabeza."
                 MESSAGE "#nCaes al suelo como un muñeco. Lo último que pasa por tu mente es el sonido de tu sangre gorgotear."
                 INK 4
                 ;MESSAGE "#nHas muerto.#n"
-                MESSAGE "#n!" #$% &'()*+#n"
-                MESSAGE "!"!"!"!"!"!"!"!#n"
+                MESSAGE "#n#$% &'()*+"
+                MESSAGE "[][][][][]#n"
                 INK 15
                 END
 
@@ -1730,13 +1737,20 @@ O lChamizo
                 MESSAGE "Obviamente no funciona. ¿Hasta dónde llegan tus conocimientos de electricidad? Si no hay bombilla, no puede haber luz."
                 DONE
 
+> COGER     FOTOGRAFIA 	AT lAseo 
+            NOTZERO fTurnosLuz
+            SET fDarkF
+            INK 9
+            MESSAGE "No puedo saber dónde está la fotografía si no hay luz."
+            DONE
+
 > COGER		FOTOGRAFIA 		AT lAseo
                 CLS
                 CLEAR fDarkF
                 NOTZERO fTurnosLuz
                 NOTZERO fCerillas
                 CARRIED oCerillas
-                NOTZERO fUsarInterruptor        
+                ;NOTZERO fUsarInterruptor        
                 INK 9
                 MESSAGE "#nAún a pesar del susto y con sumo cuidado para no cortarte con los cristales de la bombilla, extiendes tu mano y llegas a la fotografía.#n"
                 INK 15
@@ -1746,8 +1760,6 @@ O lChamizo
                 INK 2
                 MESSAGE "#nPodrías encender algo para iluminarte y ver que te ha tocado, o igual no es buena idea. ¿Nos vamos?."
                 DONE
-
-
 
 > EXAMINAR	FOTOGRAFIA
                 CLS
@@ -1784,7 +1796,7 @@ O lChamizo
                 NOTZERO fCerillas
                 CARRIED oCerillas
                 INK 9
-                GOTO lDespensa                
+                GOTO lDespensa
                 RESTART
                 DONE
 
@@ -1831,13 +1843,13 @@ O lChamizo
                 NOTZERO fCerillas
                 CARRIED oCerillas
                 INK 9
-                MESSAGE "Te alzas en el fregadero para poder meter mejor la mano en el sumidero. Vas introduciendo la mano poco a poco; es un proceso delicado, pues podría caerse lo que hubiera allí atascado hasta el fondo de la cañería y darlo por perdido. Tus dedos ya rozan el objeto."
+                MESSAGE "Te alzas en el fregadero para poder acceder mejor al sumidero. Vas introduciendo la mano poco a poco; es un proceso delicado, pues podría caerse en el fondo lo que hubiera allí atascado y darlo por perdido."
                 MESSAGE "#nCon la punta de los dedos consigues cogerlo y según comienzas a sacar la mano, sientes que se pone el marcha el triturador del fregadero."
                 MESSAGE "#nPor el susto y la excitación sacas tu mano a toda velocidad y el objeto que tenías cogido por los dedos sale despedido, con la suerte de que consigues capturarlo al vuelo."
                 INKEY
                 INK 2
                 MESSAGE "#n¿En serio acabo de jugarme la vida metiendo la mano en un triturador?"
-                MESSAGE "#nPor cierto, lo que has cogido son unas llaves!#n"
+                MESSAGE "#nPor cierto, lo que has cogido son unas llaves.#n"
                 CREATE oLlavePatio
                 INK 15
                 GET oLlavePatio
@@ -1845,7 +1857,7 @@ O lChamizo
                 MESSAGE "#n#nEl triturador se ha parado."
                 DONE
 
-> EXAMINAR      CUCHARAS     AT lCocina
+> EXAMINAR  CUCHARAS     AT lCocina
                 CLEAR fDarkF
                 NOTZERO fTurnosLuz
                 NOTZERO fCerillas
@@ -1888,7 +1900,9 @@ O lChamizo
                 MESSAGE "#nHay sangre por todas partes."
                 INKEY
                 INK 4
-                MESSAGE "#nHas muerto.#n"
+                ;MESSAGE "#nHas muerto.#n"
+                MESSAGE "#n#$% &'()*+"
+                MESSAGE "[][][][][]#n"
                 INK 15
                 END
 
@@ -1904,6 +1918,9 @@ O lChamizo
                 MESSAGE "Es un típico aparador de cocina hecho en madera con varios cajones. Tus padres lo compraron en el rastro de Madrid en no muy buenas condiciones pero a un fantástico precio. La idea de tu padre era restaurarlo y lo hizo estupendamente."
                 DONE
 
+> ABRIR     CAJONES         AT lCocina
+            SYNONYM     EXAMINAR CAJONES
+
 > EXAMINAR	CAJONES 		AT lCocina
                 CLEAR fDarkF
                 NOTZERO fTurnosLuz
@@ -1913,6 +1930,15 @@ O lChamizo
                 MESSAGE "Es curioso, solo hay cucharas. ¿Dónde está lo que falta?"
                 INK 2
                 MESSAGE "#nJoder, no sé si quiero saberlo."
+                DONE
+
+> EXAMINAR	COJONES 		AT lCocina
+                CLEAR fDarkF
+                NOTZERO fTurnosLuz
+                NOTZERO fCerillas
+                CARRIED oCerillas
+                INK 2
+                MESSAGE "No es momento de mirar tus genitales."
                 DONE
 
 > ABRIR     LAVADORA
@@ -1961,22 +1987,33 @@ O lChamizo
             SYNONYM     EMPUJAR ALACENA
 
 > EMPUJAR   ALACENA          AT lDespensa
-            INK 9
-            MESSAGE "No se mueve ni un ápice."
-            DONE            
+                INK 9
+                MESSAGE "No se mueve ni un ápice."
+                DONE            
 
 > ROMPER    ALACENA          AT lDespensa
                 INK 2
                 MESSAGE "¿Quieres darle un disgusto a madre?"
                 DONE
 
-> O         _               at lDespensa
+> O         _  				AT lDespensa 
+                ZERO fTurnosLuz     ; La cerilla se ha consumido
+                SET fDarkF
+                INK 9
+                MESSAGE "La cocina está muy oscura. Sin luz no se puede entrar."
+                DONE
+
+> O         _               AT lDespensa
                 CLS
+                CLEAR fDarkF
+                NOTZERO fTurnosLuz
+                NOTZERO fCerillas
+                CARRIED oCerillas
+                MESSAGE fTurnosLuz
                 INK 9
                 GOTO lCocina
                 RESTART
                 DONE
-
 
 ; Estamos en lEscaleras
 
@@ -2202,15 +2239,23 @@ O lChamizo
 > EXAMINAR  MUEBLE
                 SYNONYM     EXAMINAR	VITRINA
 
+> ABRIR     VITRINA
+            SYNONYM     EXAMINAR VITRINA
+
 > EXAMINAR	VITRINA 		AT lSalon
                 NOTZERO fTurnosLuz
                 ZERO    fUsarTarjeta                
                 INK 3
                 MESSAGE "¡Pero que coño! ¡La vitrina está vacía! ¿Dónde están las cosas? ¿Se las habrán llevado mis padres? ¿Tal vez mis hermanos?"
                 INK 9
-                MESSAGE "#nAhora que la ves vacío, notas que al fondo de uno de los estantes, donde antaño había libros, hay una pequeña ranura. Es del tamaño de una tarjeta de crédito."
+                MESSAGE "#nAhora que la ves vacía, notas que al fondo de uno de los estantes, donde antaño había libros, hay una pequeña ranura que es del tamaño de una tarjeta de crédito."
                 INK 2
                 MESSAGE "#nPues venga, genio, igual tienes un objeto para interactuar con esa ranura y si no, tenemos que buscarlo."
+                DONE
+
+> EXAMINAR  RANURA          AT lSalon
+                INK 2
+                MESSAGE "¿Que parte de que es del tamaño de una tarjeta de crédito no has entendido?"
                 DONE
 
 > EXAMINAR  VITRINA         AT lSalon
@@ -2283,13 +2328,6 @@ O lChamizo
                 MESSAGE "El patio está muy oscuro. No puedes ver nada."
                 DONE      
 
-> O         _  				AT lSalon                
-                CLS      
-                INK 9
-                GOTO lRecibidor
-                RESTART
-                DONE
-
 > E         _  				AT lSalon
                 NOTCARR oLlavePatio
                 CLEAR fDarkF
@@ -2307,6 +2345,13 @@ O lChamizo
                 SET fDarkF
                 INK 9
                 MESSAGE "El patio está muy oscura. Sin luz no se puede entrar."
+                DONE
+
+> O         _  				AT lSalon                
+                CLS
+                GOTO lRecibidor
+                INK 9
+                RESTART
                 DONE
 
 ; Estamos en lSecret2
@@ -2347,7 +2392,7 @@ O lChamizo
                 MESSAGE "¡No, más bien a alguien! Porque sale la mujer de la otra pareja y se dirige directamente al salón.#n"
                 INKEY
                 INK 9
-                MESSAGE "Va vestida con un camisón bastante corto, de esos que si te hagachas un poco, no deja nada para la imaginación.#n"
+                MESSAGE "Va vestida con un camisón bastante corto, de esos que si te agachas un poco, no deja nada para la imaginación.#n"
                 MESSAGE "Cuando llega junto al hombre, éste se levanta y se abrazan, se besan como si no hubiera un mañana. El hombre le pone una mano en la parte posterior de la cabeza mientras con la otra, por debajo del camisón, sujeta bien el culo de la mujer y la atrae hacia él con fuerza.#n"
                 INK 3
                 MESSAGE "¡Ufff! Esto se pone serio.#n"
@@ -2373,7 +2418,8 @@ O lChamizo
                 INKEY
                 MESSAGE "Entra en el salón despacio, sigilosa y logra ponerse detrás del sofá sin que la pareja de amantes note su presencia. Levanta el enorme cuchillo con las dos manos y lo clava con fuerza en la espalda de la mujer, que en ese momento estaba encima de su marido.#n"
                 INKEY
-                MESSAGE "La mujer se encoje de dolor y echa sus manos a la espalda cuando la otra mujer le asesta una segunda puñalada. Puedes contar cinco o seis puñaladas antes de que su marido, que estaba debajo, reaccionara y se incorporara en el sofá. La mujer en un ágil movimiento con el cuchillo en mano, lo dirige con rapidez al cuello del marido que poniendo como barrera sus manos, logra perder varios de sus dedos.#n"
+                INK 9
+                MESSAGE "La mujer se encoge de dolor y echa sus manos a la espalda cuando la otra mujer le asesta una segunda puñalada. Puedes contar cinco o seis puñaladas antes de que su marido, que estaba debajo, reaccionara y se incorporara en el sofá. La mujer en un ágil movimiento con el cuchillo en mano, lo dirige con rapidez al cuello del marido que poniendo como barrera sus manos, logra perder varios de sus dedos.#n"
                 INKEY
                 MESSAGE "El otro hombre, sale corriendo de su habitación y baja las escaleras a toda velocidad. Seguramente ha escuchado los gritos. Cruza el recibidor casi derrapando y entra en el salón. El paranoma lo deja inmóvil por unos segundos. Su mujer en el suelo, inmóvil y desnuda, mientras la otra pareja se pelea con cuchillo en mano.#n"
                 INKEY
@@ -2389,55 +2435,61 @@ O lChamizo
                 DONE
 
 > USAR      PANEL           AT lSecret2
-            NOTZERO     fTurnosLuz
-            NOTZERO     fUsarPanel
-            INK 2            
-            MESSAGE "Ya he visto suficiente. No pienso poner el video de nuevo."
-            DONE
+                NOTZERO     fTurnosLuz
+                NOTZERO     fUsarPanel
+                INK 2            
+                MESSAGE "Ya he visto suficiente. No pienso poner el video de nuevo."
+                DONE
 
 > MIRAR     _               AT lSecret2
-            NOTZERO     fTurnosLuz
-            NOTZERO     fUsarPanel
-            INK 2
-            MESSAGE "Salgamos de aquí."
-            DONE            
+                NOTZERO     fTurnosLuz
+                NOTZERO     fUsarPanel
+                INK 2
+                MESSAGE "Salgamos de aquí."
+                DONE            
 
 > N         _               AT lSecret2
-            INK 9
-            MESSAGE "Vuelves al salón y la vitrina vuelve a colocarse sola en su sitio, cerrando de nuevo el acceso a la habitación secreta."
-            INKEY
-            CLS
-            INK 9
-            GOTO lSalon
-            RESTART
-            DONE
+                INK 9
+                MESSAGE "Vuelves al salón y la vitrina vuelve a colocarse sola en su sitio, cerrando de nuevo el acceso a la habitación secreta."
+                INKEY
+                CLS
+                INK 9
+                GOTO lSalon
+                RESTART
+                DONE
+
+; Controlar la LUZ al salir desde la habitacion secreta al salon
 
 ; Estamos en el lPatio
 
-> O         _           AT lPatio
+> O         _               AT lPatio
             INK 9
+            NOTZERO fTurnosLuz
             GOTO lSalon
             RESTART
             DONE
 
-;> ESCALAR   MURO
-;            SYNONYM     SALTAR  MURO
+> EXAMINAR   MURO           AT lPatio
+                INK 15
+                MESSAGE "Se trata de un muro de mampostería de granito con unión de mortero bastardo de cemento blanco, cal morena y arena roja con un rejuntado de cemento gris y arena de río."
+                DONE
 
 > TREPAR    MURO
             SYNONYM     SALTAR  MURO
 
-> SALTAR    MURO
-            INK 9
-            MESSAGE "Sin más dilacíón, coges impulso y te dispones a coronar el muro con todo el arrojo que te caracteriza..."
-            INKEY
-            MESSAGE "#n#nLamentablemente el arrojo que te caracteriza es absolutamente nulo...."
-            INKEY
-            MESSAGE "#n#nLamentablemente el arrojo que te caracteriza es absolutamente nulo...."
-            INKEY
-            MESSAGE "#n#nLo primero en impactar contra la tapia es tu cráneo, el cual te comprime con tanta fuerza la columna, que se te abre como un plátano dejándote las vertebras hechas fosfatina... Si alguien necesita células madre, aquí las puede recoger con una cuchara."
-            INK 4
-            MESSAGE "#n#nHas Muerto."
-            END
+> SALTAR    MURO            AT lPatio
+                INK 9
+                MESSAGE "Sin más dilacíón, coges impulso y te dispones a coronar el muro con todo el arrojo que te caracteriza..."
+                INKEY
+                MESSAGE "#n#nLamentablemente el arrojo que te caracteriza es absolutamente nulo...."
+                INKEY
+                MESSAGE "#n#nLo primero en impactar contra la tapia es tu cráneo, el cual te comprime con tanta fuerza la columna, que se te abre como un plátano dejándote las vertebras hechas fosfatina... Si alguien necesita células madre, aquí las puede recoger con una cuchara.#n"
+                INK 4
+                ;MESSAGE "#n#nHas Muerto."
+                MESSAGE "#n#$% &'()*+"
+                MESSAGE "[][][][][]#n"
+                INK 15
+                END
 
 > MIRAR     _               AT lPatio
                 ZERO fPatio
@@ -2453,14 +2505,23 @@ O lChamizo
                 MESSAGE "No encuentro a mis padres. ¿Quieres jugar?"
                 INK 2
                 MESSAGE "Joder Marcos, ¿este crío es real? Ya no veo al otro crío.#n"
+                INK 3 
+                MESSAGE "Juguemos un poco, supongo.#n"
+                INK 14
+                MESSAGE "#nQuiero jugar a la pelota.#n"
+                INK 3 
+                MESSAGE "No tengo ninguna pelota.#n"
+                INK 14
+                MESSAGE "En la casa seguro que hay una pelota, yo traje una. ¿Podrías encontrarla y venir a jugar conmigo?#n"
+                INK 2
+                MESSAGE "No sé si es buena idea jugar con un... ¿fantasma? Por otro lado, igual nos echa una mano. ¿Le echamos un par o escribimos FIN y acabamos con esta agonía?#n"
                 DONE
 
 > MIRAR     _               AT lPatio
                 NOTZERO fPatio              
-                INK 2
-                MESSAGE "Marcos, ya hemos mirado suficiente. Salgamos de aquí."                
+                INK 15
+                MESSAGE "El crío sigue en el patio esperando a que juegues con el."
                 DONE
-
 
 > LANZAR      PELOTA        AT lPatio
                 SYNONYM JUGAR _
@@ -2489,17 +2550,8 @@ O lChamizo
 
 > JUGAR     _               AT lPatio
                 NOTCARR oPelota
-                SET fJugar
-                INK 3 
-                MESSAGE "Juguemos un poco, supongo."
                 INK 14
-                MESSAGE "#nQuiero jugar a la pelota.#n"
-                INK 3 
-                MESSAGE "No tengo ninguna pelota.#n"
-                INK 14
-                MESSAGE "En la casa seguro que hay una pelota, yo traje una. ¿Podrías encontrarla y venir a jugar conmigo?#n"
-                INK 2
-                MESSAGE "No sé si es buena idea jugar con un... ¿fantasma? Por otro lado, igual nos echa una mano. ¿Le echamos un par o escribimos FIN y acabamos con esta agonía?#n"
+                MESSAGE "No has traído mi pelota, ¿me la buscas?"
                 DONE
 
 ; Estamos en lRoom1
@@ -2528,7 +2580,7 @@ O lChamizo
                 INK 9
                 MESSAGE "La foto salta de tu manos para caer de nuevo en la cama. Notas como una fuerza sobrenatural te arrastra fuera de la habitación y se cierra la puerta de golpe.#n"
                 INK 3
-                MESSAGE "¿Pero que ostias está pasando aquí? ¡Esto es una puta locura!#n"
+                MESSAGE "¿Pero que hostias está pasando aquí? ¡Esto es una puta locura!#n"
                 INK 2
                 MESSAGE "No tengo la menor idea, pero ya no puedes entrar en la habitación.#n"
                 INK 9
@@ -2547,18 +2599,23 @@ O lChamizo
 
 ; Estamos en el Bath 2
 
+> EXAMINAR  RESPIRADERO     AT lBath2
+                INK 15
+                MESSAGE "Es un respiradero metálico que está encastrado en el techo. De el sale un aire frío y denso que te sobrecoge."
+                DONE
+
 > MIRAR     _   			AT lBath2
                 NOTZERO fTurnosLuz
                 ISAT oEspatula 252
                 CREATE oEspatula
                 INK 9
-                MESSAGE "Puedes ver una espátula dentro de la bañera. Alguien lo subiría para hacer algún arreglo aquí."
+                MESSAGE "Puedes ver una espátula dentro de la bañera. Alguien la subiría para hacer algún arreglo aquí."
                 DONE                
 
 > COGER     ESPATULA 		AT lBath2
                 NOTZERO fTurnosLuz
                 INK 9
-                MESSAGE "Según vas a agacharte para recoger la espátula, notas que desde el fondo de la habitación se acerca volando un objeto con ciertos brillos metálicos. Te agachas de forma instintiva y  la coges. Giras la cabeza hacia la pared que tienes detrás y ves un hacha clavado en la pared. Ha pasado muy cerca de tu cabeza.#n"
+                MESSAGE "Según vas a agacharte para recoger la espátula, notas que desde el fondo de la habitación se acerca volando un objeto con ciertos brillos metálicos. Te agachas de forma instintiva y la coges. Giras la cabeza hacia la pared que tienes detrás y ves un hacha clavada en ella. Ha pasado muy cerca de tu cabeza.#n"
                 INK 3
                 MESSAGE "¿Quién ha lanzado ese hacha? Como sea alguno de mis hermanos, le voy a partir la cara. Casi me mata el muy cabrón.#n"
                 INK 15
@@ -2569,8 +2626,8 @@ O lChamizo
 
 > COGER     HACHA 			AT lBath2
                 NOTZERO fTurnosLuz
-                INK 3
-                MESSAGE "No hay duda alguna, es el hacha que usaba mi padre para cortar leña en verano y guardarla en el chamizo para que secara. Esa leña es la que usábamos en la chimenea durante el invierno para calentar la casa.#n"
+                INK 9
+                MESSAGE "¡Hostia! Conozco este hacha, es el hacha de mi padre. No hay duda alguna, es el hacha que usaba mi padre para cortar leña en verano y guardarla en el chamizo para que secara. Esa leña es la que usábamos en la chimenea durante el invierno para calentar la casa."
 				INK 2
                 MESSAGE "#nNo quisiera ser inoportuno, pero a ver como vas a justificar a tus padres el destrozo del baño.#n"
                 INK 3
@@ -2586,7 +2643,7 @@ O lChamizo
                 INK 4
                 MESSAGE "No eres bienvenido aquí. ¡Márchate!#n"
                 INK 9
-                MESSAGE "Notas como una fuerza sobrecogedora  tira de tí y te saca al pasillo.#nEs una locura. No dejan de pasar cosas muy raras en la casa. Busca la forma de salir antes de que todo empeore.#n"
+                MESSAGE "Notas como una fuerza sobrecogedora tira de tí y te saca al pasillo.#nEs una locura. No dejan de pasar cosas muy raras en la casa. Busca la forma de salir antes de que todo empeore.#n"
                 GOTO lPasillo2
                 INK 2
                 MESSAGE "Esto mejora por momentos, ¿verdad?#n"
